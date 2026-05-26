@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://coobctfje2xa4"]
 
-[ext_resource type="PackedScene" uid="uid://b8pcqjalon378" path="res://player.tscn" id="1_k6s54"]
+[ext_resource type="PackedScene" uid="uid://b8pcqjalon378" path="res://Assets/Prefabs/player.tscn" id="1_k6s54"]
 [ext_resource type="Script" uid="uid://c47eytvl5xbe0" path="res://serving_area.gd" id="2_7tmfp"]
 [ext_resource type="Script" uid="uid://n0b0mu3oq2lx" path="res://kitchen_area.gd" id="3_j6xku"]
 
