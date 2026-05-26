@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://3wnufx1ygrxs"]
+
+[ext_resource type="Texture2D" uid="uid://c53wg8pq2wx7k" path="res://icon.svg" id="1_5ji0t"]
+[ext_resource type="PackedScene" uid="uid://cbbte4do35776" path="res://Prefabs/chat_bubble.tscn" id="2_7hvhy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hvhy"]
+atlas = ExtResource("1_5ji0t")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_soyhw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hvhy")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Patient" type="Node2D" unique_id=1386610887]
+texture_filter = 3
+
+[node name="PatientSprite" type="AnimatedSprite2D" parent="." unique_id=903477064]
+texture_filter = 5
+sprite_frames = SubResource("SpriteFrames_soyhw")
+animation = &"idle"
+
+[node name="ChatBubble" parent="." unique_id=629623447 instance=ExtResource("2_7hvhy")]
+position = Vector2(144, -133)
+symptom_list = Array[int]([0, 1, 0, 2])
