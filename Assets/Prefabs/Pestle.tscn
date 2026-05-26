@@ -133,6 +133,7 @@ script = ExtResource("1_dc2rc")
 [node name="PestleSprite" type="AnimatedSprite2D" parent="." unique_id=1287281234]
 sprite_frames = SubResource("SpriteFrames_35dvj")
 animation = &"idle"
+frame_progress = 0.17433701
 
 [node name="Collision Detector" type="Area2D" parent="." unique_id=867185578]
 
