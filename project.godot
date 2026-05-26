@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Apothecary Allergies"
-run/main_scene="uid://b8pcqjalon378"
+run/main_scene="uid://coobctfje2xa4"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
