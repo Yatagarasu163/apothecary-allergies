@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cbbte4do35776"]
+
+[ext_resource type="Script" uid="uid://ctywyjqh1b7rl" path="res://Assets/Scripts/chat_bubble.gd" id="1_nragh"]
+[ext_resource type="Texture2D" uid="uid://c53wg8pq2wx7k" path="res://icon.svg" id="2_6lmn4"]
+
+[node name="ChatBubble" type="Node2D" unique_id=629623447]
+texture_filter = 5
+script = ExtResource("1_nragh")
+
+[node name="ChatBubbleSprite" type="Sprite2D" parent="." unique_id=2117035467]
+texture = ExtResource("2_6lmn4")
+
+[node name="SymptomSprite" type="Sprite2D" parent="." unique_id=1282594428]
+scale = Vector2(0.3203125, 0.3203125)
+texture = ExtResource("2_6lmn4")
