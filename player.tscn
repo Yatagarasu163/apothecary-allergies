@@ -8,11 +8,14 @@
 [node name="Player" type="CharacterBody2D" unique_id=1739173272]
 texture_filter = 5
 script = ExtResource("1_onrkg")
+speed = 180
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=939646427]
 texture_filter = 5
+position = Vector2(3, 3)
 texture = ExtResource("2_i3pqv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1963124265]
+position = Vector2(2.9999998, 2.9999995)
 scale = Vector2(6.5886, 6.217118)
 shape = SubResource("RectangleShape2D_hqtel")
