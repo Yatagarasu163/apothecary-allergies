@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://3wnufx1ygrxs"]
 
 [ext_resource type="Texture2D" uid="uid://c53wg8pq2wx7k" path="res://icon.svg" id="1_5ji0t"]
-[ext_resource type="PackedScene" uid="uid://cbbte4do35776" path="res://Prefabs/chat_bubble.tscn" id="2_7hvhy"]
+[ext_resource type="PackedScene" uid="uid://cbbte4do35776" path="res://Assets/Prefabs/chat_bubble.tscn" id="2_7hvhy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7hvhy"]
 atlas = ExtResource("1_5ji0t")

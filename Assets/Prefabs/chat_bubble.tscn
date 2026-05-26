@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cbbte4do35776"]
 
-[ext_resource type="Script" uid="uid://ctywyjqh1b7rl" path="res://Prefabs/chat_bubble.gd" id="1_nragh"]
+[ext_resource type="Script" uid="uid://ctywyjqh1b7rl" path="res://Assets/Scripts/chat_bubble.gd" id="1_nragh"]
 [ext_resource type="Texture2D" uid="uid://c53wg8pq2wx7k" path="res://icon.svg" id="2_6lmn4"]
 
 [node name="ChatBubble" type="Node2D" unique_id=629623447]
