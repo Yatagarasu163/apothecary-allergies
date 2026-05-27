@@ -22,7 +22,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hr5m6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tkxci"]
-size = Vector2(14.601725, 20)
+size = Vector2(14.601727, 20)
 
 [node name="Patient" type="Node2D" unique_id=1386610887]
 texture_filter = 3
@@ -37,6 +37,7 @@ sprite_frames = SubResource("SpriteFrames_soyhw")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=721830994]
+scale = Vector2(6.402699, 6.402699)
 shape = SubResource("RectangleShape2D_hr5m6")
 
 [node name="ChatBubble" parent="." unique_id=629623447 instance=ExtResource("2_7hvhy")]
@@ -56,4 +57,4 @@ offset_top = -172.0
 offset_right = 26.0
 offset_bottom = -149.0
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
