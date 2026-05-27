@@ -26,6 +26,18 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	check_item_visibility();
+	check_player_interaction();
+	
+func body_entered(body) -> void:
+	if body.is_in_group("Player"):
+		is_player_inside = true;
+
+func body_exited(body) -> void:
+	if body.is_in_group("Player"):
+		is_player_inside = false;
+	
+func check_item_visibility() -> void:
 	match total_visible_items:
 		0: 
 			item.visible = false;
@@ -34,7 +46,8 @@ func _process(_delta: float) -> void:
 			item.position.y = -50;
 			item.scale = 0.5;
 			item.visible = true;
-	
+
+func check_player_interaction() -> void: 
 	if is_player_inside:
 		if Input.is_action_just_pressed("Add"):
 			if total_visible_items < 1:
@@ -50,12 +63,3 @@ func _process(_delta: float) -> void:
 			await get_tree().create_timer(boiling_timer).timeout;
 			total_visible_items = 1;
 			has_boiled_item = true;
-
-func body_entered(body) -> void:
-	if body.is_in_group("Player"):
-		is_player_inside = true;
-
-func body_exited(body) -> void:
-	if body.is_in_group("Player"):
-		is_player_inside = false;
-	
