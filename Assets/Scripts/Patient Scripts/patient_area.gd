@@ -1,6 +1,7 @@
 extends Area2D
 @onready var chat_bubble: Node2D = $"../ChatBubble"
 @onready var label: Label = $"../Label"
+@onready var patient: Node2D = $".."
 var interactable : bool = false
 
 # Called when the node enters the scene tree for the first time.
@@ -18,5 +19,7 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if(body.name == "Player"):
 		label.visible = true
-		label.text = "Press F to take order"
 		interactable = true
+		label.text = "Press F to take order"
+	if(body.name == "Patient"):
+		patient.speed = 0

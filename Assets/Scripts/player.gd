@@ -9,6 +9,7 @@ var current_dash_cooldown: float = 0.0;
 
 @onready var anim := $"Player Sprite"
 
+
 var walkedRight: bool = true
 var walkedDown: bool = true
 var moveDirection: Vector2
