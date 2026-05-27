@@ -30,7 +30,6 @@ var boiled_versions = {
 func _ready() -> void:
 	total_visible_items = 0;
 	boiler_sprite.play("Idle");
-	interactable_area.shape.size = Vector2(100, 100) * interaction_range;
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -67,7 +66,7 @@ func check_item_visibility() -> void:
 			item.visible = false;
 		1:
 			item.position.x = 0;
-			item.position.y = -50;
+			item.position.y = -75;
 			item.visible = true;
 
 func check_player_interaction() -> void: 

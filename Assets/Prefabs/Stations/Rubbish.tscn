@@ -4,7 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://c53wg8pq2wx7k" path="res://icon.svg" id="2_evh7b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyw0i"]
-size = Vector2(178, 171)
+size = Vector2(75, 140.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1w3i3"]
+size = Vector2(128, 128)
 
 [node name="Rubbish" type="Node2D" unique_id=55351558]
 texture_filter = 5
@@ -13,8 +16,16 @@ script = ExtResource("1_1w3i3")
 [node name="Rubbish Sprite" type="Sprite2D" parent="." unique_id=1471421336]
 texture = ExtResource("2_evh7b")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=46704245]
+[node name="Collision Detector" type="Area2D" parent="." unique_id=46704245]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2121073043]
-position = Vector2(0, 1.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision Detector" unique_id=2121073043]
+position = Vector2(0, 17.75)
 shape = SubResource("RectangleShape2D_kyw0i")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=633083334]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=316098448]
+shape = SubResource("RectangleShape2D_1w3i3")
+
+[connection signal="body_entered" from="Collision Detector" to="." method="body_entered"]
+[connection signal="body_exited" from="Collision Detector" to="." method="body_exited"]

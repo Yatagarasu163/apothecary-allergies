@@ -55,6 +55,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c5sqm"]
 size = Vector2(224, 187)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2c3m"]
+size = Vector2(128, 112)
+
 [node name="Boiler" type="Node2D" unique_id=1355668019]
 script = ExtResource("1_c5sqm")
 
@@ -70,11 +73,17 @@ frame_progress = 0.08486358
 shape = SubResource("RectangleShape2D_c5sqm")
 
 [node name="Items" type="Node2D" parent="." unique_id=762423721]
-position = Vector2(0, -45)
+position = Vector2(0, -75)
 scale = Vector2(0.3, 0.3)
 
 [node name="Item" type="Sprite2D" parent="Items" unique_id=900082432]
 texture = ExtResource("2_nlwqm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=635866809]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1949838909]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_i2c3m")
 
 [connection signal="body_entered" from="Collision Detector" to="." method="body_entered"]
 [connection signal="body_exited" from="Collision Detector" to="." method="body_exited"]
