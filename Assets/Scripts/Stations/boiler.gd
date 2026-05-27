@@ -29,7 +29,7 @@ var boiled_versions = {
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	total_visible_items = 0;
-	boiler_sprite.play("idle");
+	boiler_sprite.play("Idle");
 	interactable_area.shape.size = Vector2(100, 100) * interaction_range;
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -49,7 +49,9 @@ func boil_item() -> void:
 	if boiled_versions.has(item_to_boil):
 		print("Interacting with the boiler!");
 		total_visible_items = 0;
+		boiler_sprite.play("Using");
 		await get_tree().create_timer(boiling_timer).timeout;
+		boiler_sprite.play("Idle");
 		print("Boiled an item!");
 		item_to_boil = boiled_versions[item_to_boil];
 		print(item_to_boil);

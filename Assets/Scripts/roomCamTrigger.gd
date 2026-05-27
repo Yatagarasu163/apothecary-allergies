@@ -1,5 +1,8 @@
 extends Area2D
-@onready var camera_2d: Camera2D = $"../Camera2D"
+class_name AreaDetect
+
+@export var roomCamPosition: Vector2
+@export var camera_2d: CameraControl
 
 
 # Called when the node enters the scene tree for the first time.
@@ -13,6 +16,6 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if(body.name == "Player"):
-		print("Player enter kitchen")
-		camera_2d.position.y = 1082
+	if (body.name == "Player"):
+		print("Player enter the serving area")
+		camera_2d.setNewPosition(roomCamPosition)

@@ -1,41 +1,54 @@
 [gd_scene format=3 uid="uid://b7yo08pgjog3l"]
 
-[ext_resource type="Script" uid="uid://c2fcdwmvfyklc" path="res://Assets/Scripts/boiler.gd" id="1_c5sqm"]
+[ext_resource type="Script" uid="uid://c2fcdwmvfyklc" path="res://Assets/Scripts/Stations/boiler.gd" id="1_c5sqm"]
+[ext_resource type="Texture2D" uid="uid://45yvapnk231r" path="res://Assets/Sprites/Sprite Sheets/PotionTools.png" id="2_i2c3m"]
 [ext_resource type="Texture2D" uid="uid://c53wg8pq2wx7k" path="res://icon.svg" id="2_nlwqm"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cvuf1"]
-atlas = ExtResource("2_nlwqm")
-region = Rect2(32, 32, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqcmu"]
+atlas = ExtResource("2_i2c3m")
+region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dtb6x"]
-atlas = ExtResource("2_nlwqm")
-region = Rect2(64, 32, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ubyl7"]
+atlas = ExtResource("2_i2c3m")
+region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_eusp3"]
-atlas = ExtResource("2_nlwqm")
-region = Rect2(32, 64, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_20gkb"]
+atlas = ExtResource("2_i2c3m")
+region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ac4vt"]
-atlas = ExtResource("2_nlwqm")
-region = Rect2(64, 64, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_rs5d4"]
+atlas = ExtResource("2_i2c3m")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c55bi"]
+atlas = ExtResource("2_i2c3m")
+region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_q0oec"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cvuf1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dtb6x")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eusp3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ac4vt")
+"texture": SubResource("AtlasTexture_jqcmu")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ubyl7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20gkb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rs5d4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c55bi")
+}],
+"loop": true,
+"name": &"Using",
 "speed": 5.0
 }]
 
@@ -46,8 +59,10 @@ size = Vector2(224, 187)
 script = ExtResource("1_c5sqm")
 
 [node name="Boiler Sprite" type="AnimatedSprite2D" parent="." unique_id=548914325]
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_q0oec")
-animation = &"idle"
+animation = &"Using"
+frame_progress = 0.08486358
 
 [node name="Collision Detector" type="Area2D" parent="." unique_id=1292967573]
 
@@ -55,6 +70,7 @@ animation = &"idle"
 shape = SubResource("RectangleShape2D_c5sqm")
 
 [node name="Items" type="Node2D" parent="." unique_id=762423721]
+position = Vector2(0, -45)
 scale = Vector2(0.3, 0.3)
 
 [node name="Item" type="Sprite2D" parent="Items" unique_id=900082432]

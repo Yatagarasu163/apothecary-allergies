@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://d2oj4bhdh1lim"]
 
-[ext_resource type="Script" uid="uid://sfvo1qoae553" path="res://Assets/Prefabs/rubbish.gd" id="1_b3kam"]
-[ext_resource type="Texture2D" uid="uid://c53wg8pq2wx7k" path="res://icon.svg" id="2_f7vf5"]
+[ext_resource type="Script" uid="uid://sfvo1qoae553" path="res://Assets/Scripts/Stations/rubbish.gd" id="1_1w3i3"]
+[ext_resource type="Texture2D" uid="uid://c53wg8pq2wx7k" path="res://icon.svg" id="2_evh7b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyw0i"]
 size = Vector2(178, 171)
 
 [node name="Rubbish" type="Node2D" unique_id=55351558]
 texture_filter = 5
-script = ExtResource("1_b3kam")
+script = ExtResource("1_1w3i3")
 
 [node name="Rubbish Sprite" type="Sprite2D" parent="." unique_id=1471421336]
-texture = ExtResource("2_f7vf5")
+texture = ExtResource("2_evh7b")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=46704245]
 
