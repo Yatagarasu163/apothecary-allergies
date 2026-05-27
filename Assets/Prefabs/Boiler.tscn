@@ -42,21 +42,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c5sqm"]
 size = Vector2(224, 187)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nlwqm"]
-atlas = ExtResource("2_nlwqm")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_cvuf1"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nlwqm")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [node name="Boiler" type="Node2D" unique_id=1355668019]
 script = ExtResource("1_c5sqm")
 
@@ -70,9 +55,10 @@ animation = &"idle"
 shape = SubResource("RectangleShape2D_c5sqm")
 
 [node name="Items" type="Node2D" parent="." unique_id=762423721]
+scale = Vector2(0.3, 0.3)
 
-[node name="Item" type="AnimatedSprite2D" parent="Items" unique_id=1745352474]
-sprite_frames = SubResource("SpriteFrames_cvuf1")
+[node name="Item" type="Sprite2D" parent="Items" unique_id=900082432]
+texture = ExtResource("2_nlwqm")
 
 [connection signal="body_entered" from="Collision Detector" to="." method="body_entered"]
 [connection signal="body_exited" from="Collision Detector" to="." method="body_exited"]

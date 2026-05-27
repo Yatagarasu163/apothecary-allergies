@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c8g1k6fsab7t8"]
+
+[ext_resource type="Script" uid="uid://dv837tgm4bppl" path="res://Assets/Scripts/camera.gd" id="1_l7rmy"]
+[ext_resource type="Texture2D" uid="uid://c53wg8pq2wx7k" path="res://icon.svg" id="2_0t875"]
+
+[node name="Camera2D" type="Camera2D" unique_id=1833252064]
+anchor_mode = 0
+script = ExtResource("1_l7rmy")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1229661176]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(48.46918, 3.345468)
+color = Color(0.7411765, 0.41960785, 1, 0.5137255)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2091628048]
+offset_left = 35.0
+offset_top = 26.0
+offset_right = 163.0
+offset_bottom = 154.0
+scale = Vector2(0.6188136, 0.6188136)
+texture = ExtResource("2_0t875")

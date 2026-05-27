@@ -7,7 +7,15 @@ extends Node2D
 # VARIABLES
 var is_player_inside: bool = false;
 var total_visible_items: int = 0;
-var has_boiled_item: bool = false;
+var item_to_boil = null;
+var has_boiled = false;
+
+var boiled_versions = {
+	GameManager.items.NYAA_LEAF: GameManager.items.BOILED_NYAA_LEAF,
+	GameManager.items.STAR_FLOWER: GameManager.items.BOILED_STAR_FLOWER,
+	GameManager.items.OOF_ROCK: GameManager.items.BOILED_OOF_ROCK,
+	GameManager.items.DRAGON_SCALE: GameManager.items.BOILED_DRAGON_SCALE,	
+}
 
 # INTERACTION AREA
 @onready var interactable_area = $"Collision Detector/CollisionShape2D";
@@ -36,6 +44,20 @@ func body_entered(body) -> void:
 func body_exited(body) -> void:
 	if body.is_in_group("Player"):
 		is_player_inside = false;
+
+func boil_item() -> void:
+	if boiled_versions.has(item_to_boil):
+		print("Interacting with the boiler!");
+		total_visible_items = 0;
+		await get_tree().create_timer(boiling_timer).timeout;
+		print("Boiled an item!");
+		item_to_boil = boiled_versions[item_to_boil];
+		print(item_to_boil);
+		item.texture = GameManager.items_sprites[item_to_boil];
+		total_visible_items = 1;
+	else:
+		print("Uh oh, that item is already boiled!");
+
 	
 func check_item_visibility() -> void:
 	match total_visible_items:
@@ -44,22 +66,24 @@ func check_item_visibility() -> void:
 		1:
 			item.position.x = 0;
 			item.position.y = -50;
-			item.scale = 0.5;
 			item.visible = true;
 
 func check_player_interaction() -> void: 
 	if is_player_inside:
 		if Input.is_action_just_pressed("Add"):
-			if total_visible_items < 1:
-				if has_boiled_item:
-					total_visible_items = 0;
-					print("Taken boiled item!");
-				else:
-					total_visible_items = 1;
-					print("Adding item!");
-		elif Input.is_action_just_pressed("Interact"):
-			print("Interacting with the boiler!");
-			total_visible_items = 0;
-			await get_tree().create_timer(boiling_timer).timeout;
-			total_visible_items = 1;
-			has_boiled_item = true;
+			if total_visible_items < 1 && GameManager.player_inventory != null:
+				total_visible_items = 1;
+				item_to_boil = GameManager.player_inventory;
+				GameManager.player_inventory = null;
+				print("Adding item!");
+			else:
+				total_visible_items = 0;
+				GameManager.player_inventory = item_to_boil;
+				GameManager.player_inventory_sprite = GameManager.items_sprites\
+				[GameManager.player_inventory];
+				item_to_boil = null;
+				print("Taken item from the boiler!");
+				has_boiled = false;
+		elif Input.is_action_just_pressed("Interact") && has_boiled == false:
+			boil_item();
+			has_boiled = true;

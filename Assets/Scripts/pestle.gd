@@ -30,7 +30,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	check_item_visibility();
-	
+	check_player_interaction();
 	
 
 func body_entered(body) -> void:
@@ -41,8 +41,9 @@ func body_exited(body) -> void:
 	if body.is_in_group("Player"):
 		is_player_inside = false;
 	
-func add_item(item) -> void:
+func add_item() -> void:
 	if GameManager.player_inventory != null:
+		print("Adding an item!");
 		var current_item = null;
 		match total_visible_items:
 			0:
@@ -54,6 +55,8 @@ func add_item(item) -> void:
 			
 		current_item.texture = GameManager.items_sprites[GameManager.player_inventory];
 		items_to_grind.append(GameManager.player_inventory);
+		total_visible_items += 1;
+		GameManager.player_inventory = null;
 	else:
 		print("No item to add to the pestle!");
 
@@ -62,18 +65,17 @@ func grind_items() -> void:
 		return
 	
 	var key = get_recipe_key(items_to_grind);
-	
+
+	print("Interacting with the grinder!");
+	total_visible_items = 0;
+	var current_item = null;
+
 	if GameManager.recipes.has(key):
 		print("Crafted:", GameManager.recipes[key]);
 	else:
 		print("Uh Oh, that wasn't a real recipe!");
-	pass;
-	
-	
-	print("Interacting with the grinder!");
-	total_visible_items = 0;
-	
-	match key:
+		
+	match GameManager.recipes[key]:
 		GameManager.antidotes.DE_MEOWER:
 			print("Made a De-Meower!");
 		GameManager.antidotes.DE_NNERBONE:
@@ -84,11 +86,15 @@ func grind_items() -> void:
 			print("Made A Sack O' Onions!");
 		GameManager.antidotes.UNMEOWING_DE_NNERBONE:
 			print("Made an Unmeowing De-nnerbone!");
-		
+		_:
+			print("That recipe doesn't exist!");
+	item_1.texture = GameManager.antidote_sprites[GameManager.recipes[key]];
+	current_item = GameManager.recipes[key];
 	
 	await get_tree().create_timer(grinding_timer).timeout;
 	total_visible_items = 1;
 	has_grinded_item = true;
+	items_to_grind = [current_item];
 	
 func get_recipe_key(items: Array) -> Array:
 	var sorted = items.duplicate();
@@ -123,14 +129,18 @@ func check_player_interaction() -> void:
 				if(has_grinded_item):
 					print("Picked up grinded item!");
 					total_visible_items = 0;
+					GameManager.player_inventory = items_to_grind[0];
+					if GameManager.player_inventory != GameManager.items.RUBBISH:
+						GameManager.player_inventory_sprite = GameManager.antidote_sprites\
+						[GameManager.player_inventory];
+					else:
+						GameManager.player_inventory_sprite = GameManager.items_sprites\
+						[GameManager.items.RUBBISH];
 					has_grinded_item = false;
 				# Else, then it is just the player adding another item to the grinder.
 				else:
-					print("Adding an item!");
-					add_item(GameManager.player_inventory);
-					total_visible_items += 1;
+					add_item();
 			else:
 				print("You cannot add anymore items!");
 		elif Input.is_action_just_pressed("Interact"):
 			grind_items();
-			

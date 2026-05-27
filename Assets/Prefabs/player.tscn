@@ -178,6 +178,8 @@ size = Vector2(19.427494, 20.588316)
 script = ExtResource("1_onrkg")
 
 [node name="Player Sprite" type="AnimatedSprite2D" parent="." unique_id=1286987361]
+position = Vector2(-1.0000019, -2.000002)
+scale = Vector2(4.185, 4.185)
 sprite_frames = SubResource("SpriteFrames_eot0c")
 animation = &"right_up"
 
