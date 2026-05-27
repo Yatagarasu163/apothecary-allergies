@@ -57,7 +57,7 @@ func add_item() -> void:
 		items_to_grind.append(GameManager.player_inventory);
 		GameManager.player_inventory = null;
 		total_visible_items += 1;
-	elif GameManager.player_inventory >= GameManager.items.RUBBISH:
+	elif GameManager.player_inventory != null && GameManager.player_inventory >= GameManager.items.RUBBISH:
 		print("You cannot add that item!");
 	else:
 		print("No item to add to the pestle!");
