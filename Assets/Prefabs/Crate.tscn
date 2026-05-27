@@ -4,6 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://c53wg8pq2wx7k" path="res://icon.svg" id="2_kkbt5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mooop"]
+size = Vector2(104, 94)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qk6a2"]
+size = Vector2(128, 128)
 
 [node name="Crate" type="Node2D" unique_id=103595422]
 script = ExtResource("1_qk6a2")
@@ -15,7 +19,13 @@ texture = ExtResource("2_kkbt5")
 [node name="Collision Detector" type="Area2D" parent="." unique_id=148557739]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collision Detector" unique_id=1079258331]
+position = Vector2(2, 38)
 shape = SubResource("RectangleShape2D_mooop")
+
+[node name="Collider" type="StaticBody2D" parent="." unique_id=1776442655]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collider" unique_id=1777228383]
+shape = SubResource("RectangleShape2D_qk6a2")
 
 [connection signal="body_entered" from="Collision Detector" to="." method="body_entered"]
 [connection signal="body_exited" from="Collision Detector" to="." method="body_exited"]

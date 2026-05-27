@@ -25,7 +25,6 @@ var items_to_grind = [];
 func _ready() -> void:
 	total_visible_items = 0;
 	pestle_sprite.play("idle");
-	interactable_area.shape.size = Vector2(100, 100) * interaction_range;
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -55,8 +54,8 @@ func add_item() -> void:
 			
 		current_item.texture = GameManager.items_sprites[GameManager.player_inventory];
 		items_to_grind.append(GameManager.player_inventory);
-		total_visible_items += 1;
 		GameManager.player_inventory = null;
+		total_visible_items += 1;
 	else:
 		print("No item to add to the pestle!");
 
@@ -74,6 +73,7 @@ func grind_items() -> void:
 		print("Crafted:", GameManager.recipes[key]);
 	else:
 		print("Uh Oh, that wasn't a real recipe!");
+		return;
 		
 	match GameManager.recipes[key]:
 		GameManager.antidotes.DE_MEOWER:

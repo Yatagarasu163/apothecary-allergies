@@ -76,7 +76,7 @@ func check_player_interaction() -> void:
 				item_to_boil = GameManager.player_inventory;
 				GameManager.player_inventory = null;
 				print("Adding item!");
-			else:
+			elif total_visible_items > 0 && GameManager.player_inventory == null:
 				total_visible_items = 0;
 				GameManager.player_inventory = item_to_boil;
 				GameManager.player_inventory_sprite = GameManager.items_sprites\
