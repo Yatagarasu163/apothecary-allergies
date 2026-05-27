@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c8g1k6fsab7t8" path="res://Assets/Prefabs/camera_2d.tscn" id="5_rpgfy"]
 [ext_resource type="PackedScene" uid="uid://cvvf61erirt5j" path="res://Assets/Prefabs/Crate.tscn" id="6_03ung"]
 [ext_resource type="PackedScene" uid="uid://b7yo08pgjog3l" path="res://Assets/Prefabs/Boiler.tscn" id="8_mepfo"]
+[ext_resource type="PackedScene" uid="uid://dvrksvj06ahdt" path="res://Assets/Prefabs/patient_spawner.tscn" id="9_p7uqy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4h7gu"]
 size = Vector2(222.86566, 33.48005)
@@ -34,7 +35,7 @@ sources/1 = SubResource("TileSetAtlasSource_03ung")
 [node name="Testing Scene" type="Node2D" unique_id=1542158696]
 
 [node name="Player" parent="." unique_id=1739173272 instance=ExtResource("1_k6s54")]
-position = Vector2(681, 399)
+position = Vector2(801, 416)
 dash_speed = 15000
 
 [node name="Pestle" parent="." unique_id=205812332 instance=ExtResource("4_oceud")]
@@ -124,6 +125,8 @@ item_provider = 3
 
 [node name="Boiler" parent="." unique_id=1355668019 instance=ExtResource("8_mepfo")]
 position = Vector2(713, 687)
+
+[node name="Patient_Spawner" parent="." unique_id=187455173 instance=ExtResource("9_p7uqy")]
 
 [connection signal="body_entered" from="ServingArea" to="ServingArea" method="_on_body_entered"]
 [connection signal="body_entered" from="KitchenArea" to="KitchenArea" method="_on_body_entered"]
