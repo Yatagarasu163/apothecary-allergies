@@ -2,8 +2,7 @@
 
 [ext_resource type="Script" uid="uid://gnamq3aldr64" path="res://Assets/Scripts/Patient Scripts/patient.gd" id="1_3c0vk"]
 [ext_resource type="Texture2D" uid="uid://c53wg8pq2wx7k" path="res://icon.svg" id="1_5ji0t"]
-[ext_resource type="PackedScene" uid="uid://cbbte4do35776" path="res://Assets/Prefabs/Chat_Bubble.tscn" id="2_7hvhy"]
-[ext_resource type="Script" uid="uid://cvvp27jvkkyyd" path="res://Assets/Scripts/Patient Scripts/patient_area.gd" id="4_tkxci"]
+[ext_resource type="PackedScene" uid="uid://cbbte4do35776" path="res://Assets/Prefabs/chat_bubble.tscn" id="2_7hvhy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7hvhy"]
 atlas = ExtResource("1_5ji0t")
@@ -20,27 +19,34 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hr5m6"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tkxci"]
-size = Vector2(34.899784, 20)
+size = Vector2(14.601725, 20)
 
 [node name="Patient" type="Node2D" unique_id=1386610887]
 texture_filter = 3
+position = Vector2(2159, 530)
 script = ExtResource("1_3c0vk")
 
-[node name="PatientSprite" type="AnimatedSprite2D" parent="." unique_id=903477064]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=390868079 groups=["Patient"]]
+
+[node name="PatientSprite" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=903477064]
 texture_filter = 5
 sprite_frames = SubResource("SpriteFrames_soyhw")
 animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=721830994]
+shape = SubResource("RectangleShape2D_hr5m6")
 
 [node name="ChatBubble" parent="." unique_id=629623447 instance=ExtResource("2_7hvhy")]
 position = Vector2(144, -133)
 symptom_list = Array[int]([0, 1, 0, 2])
 
 [node name="Area2D" type="Area2D" parent="." unique_id=624450733]
-script = ExtResource("4_tkxci")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=44697536]
-position = Vector2(-48.469597, 0)
+position = Vector2(-114.5, 0)
 scale = Vector2(6.5060806, 6.393654)
 shape = SubResource("RectangleShape2D_tkxci")
 

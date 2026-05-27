@@ -1,12 +1,13 @@
 [gd_scene format=4 uid="uid://coobctfje2xa4"]
 
-[ext_resource type="PackedScene" uid="uid://b8pcqjalon378" path="res://Assets/Prefabs/Player.tscn" id="1_k6s54"]
+[ext_resource type="PackedScene" uid="uid://b8pcqjalon378" path="res://Assets/Prefabs/player.tscn" id="1_k6s54"]
 [ext_resource type="Script" uid="uid://c47eytvl5xbe0" path="res://Assets/Scripts/roomCamTrigger.gd" id="2_7tmfp"]
 [ext_resource type="PackedScene" uid="uid://b40l382tqoc3" path="res://Assets/Prefabs/Pestle.tscn" id="4_oceud"]
 [ext_resource type="Texture2D" uid="uid://dt312itx5pv75" path="res://Assets/Sprites/Tileset/floor tile.png" id="5_4h7gu"]
 [ext_resource type="PackedScene" uid="uid://c8g1k6fsab7t8" path="res://Assets/Prefabs/Camera.tscn" id="5_rpgfy"]
 [ext_resource type="PackedScene" uid="uid://cvvf61erirt5j" path="res://Assets/Prefabs/Stations/Crate.tscn" id="6_03ung"]
 [ext_resource type="PackedScene" uid="uid://b7yo08pgjog3l" path="res://Assets/Prefabs/Stations/Boiler.tscn" id="8_mepfo"]
+[ext_resource type="PackedScene" uid="uid://dvrksvj06ahdt" path="res://Assets/Prefabs/patient_spawner.tscn" id="8_p7uqy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4h7gu"]
 
@@ -123,6 +124,9 @@ item_provider = 3
 
 [node name="Boiler" parent="." unique_id=1355668019 instance=ExtResource("8_mepfo")]
 position = Vector2(-300, 300)
+
+[node name="Patient_Spawner" parent="." unique_id=187455173 instance=ExtResource("8_p7uqy")]
+position = Vector2(-894, -495)
 
 [connection signal="body_entered" from="Shop Layout/ServingArea" to="Shop Layout/ServingArea" method="_on_body_entered"]
 [connection signal="body_entered" from="Shop Layout/KitchenArea" to="Shop Layout/KitchenArea" method="_on_body_entered"]
