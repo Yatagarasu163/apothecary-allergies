@@ -16,7 +16,9 @@ var moveDirection: Vector2
 
 func handleInput():
 	moveDirection = Input.get_vector("WalkLeft","WalkRight","WalkUp","WalkDown")
-	velocity = moveDirection * base_speed;
+	velocity += moveDirection * base_speed / 10;
+	
+	velocity = lerp(velocity, Vector2.ZERO, 0.1)
 	
 	if Input.is_action_just_pressed("Dash") && current_dash_cooldown <= 0:
 		current_dash_cooldown = dash_cooldown;

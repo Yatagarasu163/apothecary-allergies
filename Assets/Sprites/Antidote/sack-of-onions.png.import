@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://babxqucdjmyg7"
-path="res://.godot/imported/sack-of-onions.png-ad17962d577a076fb79822f00aef0f66.ctex"
+path="res://.godot/imported/sack-of-onions.png-2c9f126c096b092657d5b523a1d49515.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Sprite Sheets/sack-of-onions.png"
-dest_files=["res://.godot/imported/sack-of-onions.png-ad17962d577a076fb79822f00aef0f66.ctex"]
+source_file="res://Assets/Sprites/Antidote/sack-of-onions.png"
+dest_files=["res://.godot/imported/sack-of-onions.png-2c9f126c096b092657d5b523a1d49515.ctex"]
 
 [params]
 

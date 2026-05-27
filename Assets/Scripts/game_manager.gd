@@ -21,10 +21,10 @@ enum items {NYAA_LEAF,
 			};
 enum antidotes {}
 @onready var items_sprites: Array[Texture] = [
-	preload("res://Assets/Sprites/Sprite Sheets/nyaa_leaf.png"),
-	preload("res://Assets/Sprites/Sprite Sheets/star_flower.png"),
-	preload("res://Assets/Sprites/Sprite Sheets/oof_rock.png"),
-	preload("res://Assets/Sprites/Sprite Sheets/dragon_scale.png"),
+	preload("res://Assets/Sprites/Ingredients/nyaa_leaf.png"),
+	preload("res://Assets/Sprites/Ingredients/star_flower.png"),
+	preload("res://Assets/Sprites/Ingredients/oof_rock.png"),
+	preload("res://Assets/Sprites/Ingredients/dragon_scale.png"),
 	
 	preload("res://icon.svg"),
 	preload("res://icon.svg"),
@@ -36,7 +36,7 @@ enum antidotes {}
 	preload("res://icon.svg"),
 	preload("res://icon.svg"),
 	preload("res://icon.svg"),
-	preload("res://Assets/Sprites/Sprite Sheets/sack-of-onions.png"),
+	preload("res://Assets/Sprites/Antidote/sack-of-onions.png"),
 	preload("res://icon.svg"),
 ]
 

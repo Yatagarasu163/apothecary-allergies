@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4vb8ty457ep3"
-path="res://.godot/imported/star_flower.png-565d20cba7b2349e937277e18407b707.ctex"
+uid="uid://danr6lhqx2m"
+path="res://.godot/imported/Sickness.png-aa15e9e9884e942153f4915a0e467e29.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Sprite Sheets/star_flower.png"
-dest_files=["res://.godot/imported/star_flower.png-565d20cba7b2349e937277e18407b707.ctex"]
+source_file="res://Assets/Sprites/Sprite Sheets/Sickness.png"
+dest_files=["res://.godot/imported/Sickness.png-aa15e9e9884e942153f4915a0e467e29.ctex"]
 
 [params]
 

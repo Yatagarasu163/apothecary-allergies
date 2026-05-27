@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba0ckvfiwashl"
-path="res://.godot/imported/oof_rock.png-3e873f0dd8f958f39c4481b2a134bd1c.ctex"
+uid="uid://ck6j0qdapwccg"
+path="res://.godot/imported/nyaa_leaf.png-8d64654dd751892c68d949d245dcddab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Sprite Sheets/oof_rock.png"
-dest_files=["res://.godot/imported/oof_rock.png-3e873f0dd8f958f39c4481b2a134bd1c.ctex"]
+source_file="res://Assets/Sprites/Ingredients/nyaa_leaf.png"
+dest_files=["res://.godot/imported/nyaa_leaf.png-8d64654dd751892c68d949d245dcddab.ctex"]
 
 [params]
 
