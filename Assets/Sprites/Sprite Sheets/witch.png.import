@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fed4v8viydtn"
-path="res://.godot/imported/witch..png-0f460c5f1f629e14504ce70412792dab.ctex"
+uid="uid://k0p637tmcmpp"
+path="res://.godot/imported/witch.png-0bd1de1e8cba540cd678a76ee5684187.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Sprite Sheets/witch..png"
-dest_files=["res://.godot/imported/witch..png-0f460c5f1f629e14504ce70412792dab.ctex"]
+source_file="res://Assets/Sprites/Sprite Sheets/witch.png"
+dest_files=["res://.godot/imported/witch.png-0bd1de1e8cba540cd678a76ee5684187.ctex"]
 
 [params]
 
