@@ -1,10 +1,9 @@
 extends CharacterBody2D;
 
-@export_category("Movement")
-@export var base_speed: int = 350;
-@export var dash_speed: int = 600;
-@export var dash_duration: float = 0.01;
-@export var dash_cooldown: float = 3.0;
+@export var base_speed: int = 35;
+@export var dash_speed: int = 750
+@export var dash_cooldown: float = 1;
+@export var slippery: float = 10
 var current_dash_cooldown: float = 0.0;
 
 @onready var anim := $"Player Sprite"
@@ -15,16 +14,15 @@ var walkedDown: bool = true
 var moveDirection: Vector2
 
 func handleInput():
-	moveDirection = Input.get_vector("WalkLeft","WalkRight","WalkUp","WalkDown")
-	velocity += moveDirection * base_speed / 10;
+	velocity = lerp(velocity, Vector2.ZERO, 1 / slippery)
 	
-	velocity = lerp(velocity, Vector2.ZERO, 0.1)
+	moveDirection = Input.get_vector("WalkLeft","WalkRight","WalkUp","WalkDown")
+	velocity += moveDirection * base_speed;
 	
 	if Input.is_action_just_pressed("Dash") && current_dash_cooldown <= 0:
 		current_dash_cooldown = dash_cooldown;
-		velocity = moveDirection * dash_speed;
+		velocity += moveDirection * dash_speed;
 		await get_tree().create_timer(dash_cooldown).timeout;
-		velocity = moveDirection * base_speed;
 
 func handleSpriteAnim() -> void:
 	if Input.is_action_just_pressed("WalkRight"): walkedRight = true

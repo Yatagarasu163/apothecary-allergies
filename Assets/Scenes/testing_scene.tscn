@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://coobctfje2xa4"]
 
-[ext_resource type="PackedScene" uid="uid://b8pcqjalon378" path="res://Assets/Prefabs/Player.tscn" id="1_k6s54"]
+[ext_resource type="PackedScene" uid="uid://crw08vlyljkh7" path="res://Assets/Prefabs/Player.tscn" id="1_k6s54"]
 [ext_resource type="Script" uid="uid://c47eytvl5xbe0" path="res://Assets/Scripts/roomCamTrigger.gd" id="2_7tmfp"]
 [ext_resource type="PackedScene" uid="uid://b40l382tqoc3" path="res://Assets/Prefabs/Pestle.tscn" id="4_oceud"]
 [ext_resource type="Texture2D" uid="uid://dt312itx5pv75" path="res://Assets/Sprites/Tileset/floor tile.png" id="5_4h7gu"]
@@ -84,11 +84,9 @@ sources/2 = SubResource("TileSetAtlasSource_r7i73")
 
 [node name="Player" parent="." unique_id=1739173272 instance=ExtResource("1_k6s54")]
 position = Vector2(504, 389)
-dash_speed = 15000
 
 [node name="Pestle" parent="." unique_id=205812332 instance=ExtResource("4_oceud")]
 position = Vector2(1483, 563)
-scale = Vector2(4.2, 4.2)
 interaction_range = 1.5
 
 [node name="Shop Layout" type="Node2D" parent="." unique_id=1616522250]

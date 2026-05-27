@@ -42,25 +42,21 @@ func body_exited(body) -> void:
 		is_player_inside = false;
 	
 func add_item() -> void:
-	if GameManager.player_inventory != null && GameManager.player_inventory < GameManager.items.RUBBISH:
+	if GameManager.player_inventory == null:
+		print("No item to add to the pestle!");
+	elif GameManager.player_inventory < GameManager.items.RUBBISH:
 		print("Adding an item!");
 		var current_item = null;
 		match total_visible_items:
-			0:
-				current_item = item_1;
-			1:
-				current_item = item_2;
-			2: 
-				current_item = item_3;
-			
+			0: current_item = item_1;
+			1: current_item = item_2;
+			2: current_item = item_3;
 		current_item.texture = GameManager.items_sprites[GameManager.player_inventory];
 		items_to_grind.append(GameManager.player_inventory);
 		GameManager.player_inventory = null;
 		total_visible_items += 1;
-	elif GameManager.player_inventory != null && GameManager.player_inventory >= GameManager.items.RUBBISH:
+	elif GameManager.player_inventory >= GameManager.items.RUBBISH:
 		print("You cannot add that item!");
-	else:
-		print("No item to add to the pestle!");
 
 func grind_items() -> void:
 	if items_to_grind.size() < 1:
