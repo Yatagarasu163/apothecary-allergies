@@ -38,8 +38,6 @@ func handleSpriteAnim() -> void:
 	else: animName += "Back"
 	
 	anim.play(animName)
-	
-	pass
 
 func _physics_process(delta: float) -> void:
 	handleInput()
