@@ -42,7 +42,7 @@ func body_exited(body) -> void:
 		is_player_inside = false;
 	
 func add_item() -> void:
-	if GameManager.player_inventory != null:
+	if GameManager.player_inventory != null && GameManager.player_inventory < GameManager.items.RUBBISH:
 		print("Adding an item!");
 		var current_item = null;
 		match total_visible_items:
@@ -57,6 +57,8 @@ func add_item() -> void:
 		items_to_grind.append(GameManager.player_inventory);
 		GameManager.player_inventory = null;
 		total_visible_items += 1;
+	elif GameManager.player_inventory >= GameManager.items.RUBBISH:
+		print("You cannot add that item!");
 	else:
 		print("No item to add to the pestle!");
 
@@ -75,22 +77,23 @@ func grind_items() -> void:
 	if GameManager.recipes.has(key):
 		print("Crafted:", GameManager.recipes[key]);
 		match GameManager.recipes[key]:
-			GameManager.antidotes.DE_MEOWER:
+			GameManager.items.DE_MEOWER:
 				print("Made a De-Meower!");
-			GameManager.antidotes.DE_NNERBONE:
+			GameManager.items.DE_NNERBONE:
 				print("Made a De-nnerbone!");
-			GameManager.antidotes.WATERY_WOOFER:
+			GameManager.items.WATERY_WOOFER:
 				print("Made a Watery Woofer!");
-			GameManager.antidotes.A_SACK_O_ONIONS:
+			GameManager.items.A_SACK_O_ONIONS:
 				print("Made A Sack O' Onions!");
-			GameManager.antidotes.UNMEOWING_DE_NNERBONE:
+			GameManager.items.UNMEOWING_DE_NNERBONE:
 				print("Made an Unmeowing De-nnerbone!");
 			_:
 				print("That recipe doesn't exist!");
-		item_1.texture = GameManager.antidote_sprites[GameManager.recipes[key]];
+		item_1.texture = GameManager.items_sprites[GameManager.recipes[key]];
 		current_item = GameManager.recipes[key];
 	else:
 		print("Uh Oh, that wasn't a real recipe!");
+		item_1.texture = GameManager.items_sprites[GameManager.items.RUBBISH];
 		current_item = GameManager.items.RUBBISH;
 	
 	anim.play("grinding"); 
@@ -130,16 +133,20 @@ func check_player_interaction() -> void:
 			# Checks if the amount of items is less than 3
 			if(total_visible_items < 3):
 				# If the pestle has already grinded something, then pick it up
-				if(has_grinded_item):
-					print("Picked up grinded item!");
-					total_visible_items = 0;
-					GameManager.player_inventory = items_to_grind[0];
-					if GameManager.player_inventory != GameManager.items.RUBBISH:
-						GameManager.player_inventory_sprite = GameManager.antidote_sprites\
-						[GameManager.player_inventory];
+				if has_grinded_item:
+					if GameManager.player_inventory == null:
+						print("Picked up grinded item!");
+						total_visible_items = 0;
+						GameManager.player_inventory = items_to_grind[0];
+						if GameManager.player_inventory != GameManager.items.RUBBISH:
+							GameManager.player_inventory_sprite = GameManager.items_sprites\
+							[GameManager.player_inventory];
+						else:
+							GameManager.player_inventory_sprite = GameManager.items_sprites\
+							[GameManager.items.RUBBISH];
+						items_to_grind = [];
 					else:
-						GameManager.player_inventory_sprite = GameManager.items_sprites\
-						[GameManager.items.RUBBISH];
+						print("Player already has an item!");
 					has_grinded_item = false;
 				# Else, then it is just the player adding another item to the grinder.
 				else:

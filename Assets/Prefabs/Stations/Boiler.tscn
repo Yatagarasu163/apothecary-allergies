@@ -74,7 +74,6 @@ shape = SubResource("RectangleShape2D_c5sqm")
 
 [node name="Items" type="Node2D" parent="." unique_id=762423721]
 position = Vector2(0, -75)
-scale = Vector2(0.3, 0.3)
 
 [node name="Item" type="Sprite2D" parent="Items" unique_id=900082432]
 texture = ExtResource("2_nlwqm")

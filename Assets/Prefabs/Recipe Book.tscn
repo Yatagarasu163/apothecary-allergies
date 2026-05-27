@@ -25,3 +25,28 @@ shape = SubResource("RectangleShape2D_hj8ig")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=475737675]
 shape = SubResource("RectangleShape2D_arwjt")
+
+[node name="RecipeBookUI" type="Control" parent="." unique_id=241845652]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="RecipeBookUI" unique_id=1129352643]
+layout_mode = 0
+offset_right = 1921.0
+offset_bottom = 1081.0
+color = Color(0.31322798, 0.24463195, 0.1610401, 1)
+
+[node name="Label" type="Label" parent="RecipeBookUI" unique_id=1378001989]
+layout_mode = 0
+offset_left = 541.0
+offset_top = 492.0
+offset_right = 724.0
+offset_bottom = 515.0
+scale = Vector2(5, 5)
+text = "DIS A TEST, NIGGAAAAA"
+
+[connection signal="body_entered" from="Collision Detector" to="." method="body_entered"]
+[connection signal="body_exited" from="Collision Detector" to="." method="body_exited"]

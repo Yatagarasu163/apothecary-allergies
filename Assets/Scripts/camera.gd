@@ -9,6 +9,7 @@ func _process(_delta: float) -> void:
 	if GameManager.player_inventory == null:
 		current_item_gui.visible = false;
 	else:
+		current_item_gui.texture = GameManager.player_inventory_sprite;
 		current_item_gui.visible = true;
 	position = lerp(position, currentTargetPosition, camMoveSpeed * _delta)
 

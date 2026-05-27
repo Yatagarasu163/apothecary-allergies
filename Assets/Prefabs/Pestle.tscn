@@ -88,20 +88,20 @@ shape = SubResource("RectangleShape2D_68iyi")
 
 [node name="Item 1" type="Sprite2D" parent="Items" unique_id=498833994]
 visible = false
-position = Vector2(0, -50)
-scale = Vector2(0.1640625, 0.1640625)
+position = Vector2(0, -25)
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_1e3v2")
 
 [node name="Item 2" type="Sprite2D" parent="Items" unique_id=1207497301]
 visible = false
-position = Vector2(-24, -50)
-scale = Vector2(0.1640625, 0.1640625)
+position = Vector2(-24, -25)
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_1e3v2")
 
 [node name="Item 3" type="Sprite2D" parent="Items" unique_id=928852486]
 visible = false
-position = Vector2(24, -50)
-scale = Vector2(0.1640625, 0.1640625)
+position = Vector2(24, -25)
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_1e3v2")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=165950386]

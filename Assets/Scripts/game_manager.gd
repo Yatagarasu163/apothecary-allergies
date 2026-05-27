@@ -1,27 +1,42 @@
 extends Node2D;
 
 # ITEM ENUMS AND SPRITES
-enum items {NYAA_LEAF, STAR_FLOWER, OOF_ROCK, DRAGON_SCALE, 
-			BOILED_NYAA_LEAF, BOILED_STAR_FLOWER, BOILED_OOF_ROCK,
-			BOILED_DRAGON_SCALE, RUBBISH};
-enum antidotes {DE_MEOWER, DE_NNERBONE, WATERY_WOOFER, A_SACK_O_ONIONS,
-				UNMEOWING_DE_NNERBONE}
+enum items {NYAA_LEAF, 
+			STAR_FLOWER, 
+			OOF_ROCK, 
+			DRAGON_SCALE, 
+			
+			BOILED_NYAA_LEAF, 
+			BOILED_STAR_FLOWER, 
+			BOILED_OOF_ROCK,
+			BOILED_DRAGON_SCALE, 
+			
+			RUBBISH,
+			
+			DE_MEOWER, 
+			DE_NNERBONE, 
+			WATERY_WOOFER, 
+			A_SACK_O_ONIONS,
+			UNMEOWING_DE_NNERBONE
+			};
+enum antidotes {}
 @onready var items_sprites: Array[Texture] = [
+	preload("res://Assets/Sprites/Sprite Sheets/nyaa_leaf.png"),
+	preload("res://Assets/Sprites/Sprite Sheets/star_flower.png"),
+	preload("res://Assets/Sprites/Sprite Sheets/oof_rock.png"),
+	preload("res://Assets/Sprites/Sprite Sheets/dragon_scale.png"),
+	
 	preload("res://icon.svg"),
 	preload("res://icon.svg"),
 	preload("res://icon.svg"),
 	preload("res://icon.svg"),
+	
+	preload("res://icon.svg"),
+	
 	preload("res://icon.svg"),
 	preload("res://icon.svg"),
 	preload("res://icon.svg"),
-	preload("res://icon.svg"),
-	preload("res://icon.svg"),
-]
-@onready var antidote_sprites: Array[Texture] = [
-	preload("res://icon.svg"),
-	preload("res://icon.svg"),
-	preload("res://icon.svg"),
-	preload("res://icon.svg"),
+	preload("res://Assets/Sprites/Sprite Sheets/sack-of-onions.png"),
 	preload("res://icon.svg"),
 ]
 
@@ -31,12 +46,12 @@ var player_inventory_sprite = null;
 
 # RECIPES
 var recipes = {
-	sort_recipe_key([items.BOILED_NYAA_LEAF, items.OOF_ROCK]): antidotes.DE_MEOWER,
-	sort_recipe_key([items.BOILED_STAR_FLOWER, items.BOILED_DRAGON_SCALE]): antidotes.DE_NNERBONE,
-	sort_recipe_key([items.NYAA_LEAF, items.BOILED_OOF_ROCK, items.STAR_FLOWER]): antidotes.WATERY_WOOFER,
-	sort_recipe_key([items.DRAGON_SCALE]): antidotes.A_SACK_O_ONIONS,
+	sort_recipe_key([items.BOILED_NYAA_LEAF, items.OOF_ROCK]): items.DE_MEOWER,
+	sort_recipe_key([items.BOILED_STAR_FLOWER, items.BOILED_DRAGON_SCALE]): items.DE_NNERBONE,
+	sort_recipe_key([items.NYAA_LEAF, items.BOILED_OOF_ROCK, items.STAR_FLOWER]): items.WATERY_WOOFER,
+	sort_recipe_key([items.DRAGON_SCALE]): items.A_SACK_O_ONIONS,
 	sort_recipe_key([items.BOILED_STAR_FLOWER, 
-	items.BOILED_DRAGON_SCALE, items.BOILED_NYAA_LEAF]): antidotes.UNMEOWING_DE_NNERBONE
+	items.BOILED_DRAGON_SCALE, items.BOILED_NYAA_LEAF]): items.UNMEOWING_DE_NNERBONE
 };
 
 func sort_recipe_key(recipe: Array) -> Array:
