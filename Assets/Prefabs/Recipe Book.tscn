@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://lku2iex7kybq"]
+
+[ext_resource type="Script" uid="uid://yirbr82rvnec" path="res://Assets/Scripts/recipe_book.gd" id="1_l5iqb"]
+[ext_resource type="Texture2D" uid="uid://c53wg8pq2wx7k" path="res://icon.svg" id="2_srkpf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hj8ig"]
+size = Vector2(164, 165)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_arwjt"]
+size = Vector2(128, 128)
+
+[node name="RecipeBook" type="Node2D" unique_id=1057398287]
+script = ExtResource("1_l5iqb")
+
+[node name="Book Sprite" type="Sprite2D" parent="." unique_id=1955881859]
+texture = ExtResource("2_srkpf")
+
+[node name="Collision Detector" type="Area2D" parent="." unique_id=605446250]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision Detector" unique_id=1514109048]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hj8ig")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1188459962]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=475737675]
+shape = SubResource("RectangleShape2D_arwjt")

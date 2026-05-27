@@ -12,6 +12,7 @@ var items_to_grind = [];
 
 # INTERACTION AREA
 @onready var interactable_area = $"Collision Detector/CollisionShape2D";
+@onready var anim = $PestleSprite;
 
 # ITEMS
 @onready var item_1 = $"Items/Item 1";
@@ -60,8 +61,10 @@ func add_item() -> void:
 		print("No item to add to the pestle!");
 
 func grind_items() -> void:
-	if items_to_grind.size() == 0:
+	if items_to_grind.size() < 1:
+		print("Not enough items to grind!")
 		return
+	
 	
 	var key = get_recipe_key(items_to_grind);
 
@@ -71,27 +74,28 @@ func grind_items() -> void:
 
 	if GameManager.recipes.has(key):
 		print("Crafted:", GameManager.recipes[key]);
+		match GameManager.recipes[key]:
+			GameManager.antidotes.DE_MEOWER:
+				print("Made a De-Meower!");
+			GameManager.antidotes.DE_NNERBONE:
+				print("Made a De-nnerbone!");
+			GameManager.antidotes.WATERY_WOOFER:
+				print("Made a Watery Woofer!");
+			GameManager.antidotes.A_SACK_O_ONIONS:
+				print("Made A Sack O' Onions!");
+			GameManager.antidotes.UNMEOWING_DE_NNERBONE:
+				print("Made an Unmeowing De-nnerbone!");
+			_:
+				print("That recipe doesn't exist!");
+		item_1.texture = GameManager.antidote_sprites[GameManager.recipes[key]];
+		current_item = GameManager.recipes[key];
 	else:
 		print("Uh Oh, that wasn't a real recipe!");
-		return;
-		
-	match GameManager.recipes[key]:
-		GameManager.antidotes.DE_MEOWER:
-			print("Made a De-Meower!");
-		GameManager.antidotes.DE_NNERBONE:
-			print("Made a De-nnerbone!");
-		GameManager.antidotes.WATERY_WOOFER:
-			print("Made a Watery Woofer!");
-		GameManager.antidotes.A_SACK_O_ONIONS:
-			print("Made A Sack O' Onions!");
-		GameManager.antidotes.UNMEOWING_DE_NNERBONE:
-			print("Made an Unmeowing De-nnerbone!");
-		_:
-			print("That recipe doesn't exist!");
-	item_1.texture = GameManager.antidote_sprites[GameManager.recipes[key]];
-	current_item = GameManager.recipes[key];
+		current_item = GameManager.items.RUBBISH;
 	
+	anim.play("grinding"); 
 	await get_tree().create_timer(grinding_timer).timeout;
+	anim.play("idle");
 	total_visible_items = 1;
 	has_grinded_item = true;
 	items_to_grind = [current_item];
