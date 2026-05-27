@@ -83,7 +83,7 @@ sources/2 = SubResource("TileSetAtlasSource_r7i73")
 [node name="Testing Scene" type="Node2D" unique_id=1542158696]
 
 [node name="Player" parent="." unique_id=1739173272 instance=ExtResource("1_k6s54")]
-position = Vector2(690, 502)
+position = Vector2(541, 1311)
 dash_speed = 15000
 
 [node name="Pestle" parent="." unique_id=205812332 instance=ExtResource("4_oceud")]

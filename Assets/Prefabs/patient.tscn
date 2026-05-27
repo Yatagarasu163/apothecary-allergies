@@ -22,11 +22,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hr5m6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tkxci"]
-size = Vector2(14.601727, 20)
+size = Vector2(19.904455, 11.876862)
 
 [node name="Patient" type="Node2D" unique_id=1386610887]
 texture_filter = 3
-position = Vector2(2159, 530)
+position = Vector2(658, 2419)
 script = ExtResource("1_3c0vk")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=390868079 groups=["Patient"]]
@@ -47,14 +47,15 @@ symptom_list = Array[int]([0, 1, 0, 2])
 [node name="Area2D" type="Area2D" parent="." unique_id=624450733]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=44697536]
-position = Vector2(-114.5, 0)
+position = Vector2(-0.75, -105.03174)
 scale = Vector2(6.5060806, 6.393654)
 shape = SubResource("RectangleShape2D_tkxci")
 
 [node name="Label" type="Label" parent="." unique_id=1830242506]
-offset_left = -14.0
-offset_top = -172.0
-offset_right = 26.0
-offset_bottom = -149.0
+offset_left = -59.0
+offset_top = -109.0
+offset_right = -19.0
+offset_bottom = -86.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
