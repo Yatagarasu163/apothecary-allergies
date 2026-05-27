@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cjhhn3uwnoqc3"]
 
-[ext_resource type="PackedScene" uid="uid://b8pcqjalon378" path="res://Assets/Prefabs/player.tscn" id="1_n6ix6"]
+[ext_resource type="PackedScene" uid="uid://b8pcqjalon378" path="res://Assets/Prefabs/Player.tscn" id="1_n6ix6"]
 [ext_resource type="PackedScene" uid="uid://b40l382tqoc3" path="res://Assets/Prefabs/Pestle.tscn" id="2_0of8k"]
 
 [node name="MainLevel" type="Node2D" unique_id=1153300467]

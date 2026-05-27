@@ -1,13 +1,13 @@
 [gd_scene format=4 uid="uid://coobctfje2xa4"]
 
-[ext_resource type="PackedScene" uid="uid://b8pcqjalon378" path="res://Assets/Prefabs/player.tscn" id="1_k6s54"]
-[ext_resource type="Script" uid="uid://c47eytvl5xbe0" path="res://Assets/Scripts/serving_area.gd" id="2_7tmfp"]
-[ext_resource type="Script" uid="uid://n0b0mu3oq2lx" path="res://Assets/Scripts/kitchen_area.gd" id="3_j6xku"]
+[ext_resource type="PackedScene" uid="uid://b8pcqjalon378" path="res://Assets/Prefabs/Player.tscn" id="1_k6s54"]
+[ext_resource type="Script" uid="uid://c47eytvl5xbe0" path="res://Assets/Scripts/Location Area/serving_area.gd" id="2_7tmfp"]
+[ext_resource type="Script" uid="uid://n0b0mu3oq2lx" path="res://Assets/Scripts/Location Area/kitchen_area.gd" id="3_j6xku"]
 [ext_resource type="PackedScene" uid="uid://b40l382tqoc3" path="res://Assets/Prefabs/Pestle.tscn" id="4_oceud"]
 [ext_resource type="Texture2D" uid="uid://dt312itx5pv75" path="res://Assets/Sprites/Tileset/floor tile.png" id="5_4h7gu"]
-[ext_resource type="PackedScene" uid="uid://c8g1k6fsab7t8" path="res://Assets/Prefabs/camera_2d.tscn" id="5_rpgfy"]
-[ext_resource type="PackedScene" uid="uid://cvvf61erirt5j" path="res://Assets/Prefabs/Crate.tscn" id="6_03ung"]
-[ext_resource type="PackedScene" uid="uid://b7yo08pgjog3l" path="res://Assets/Prefabs/Boiler.tscn" id="8_mepfo"]
+[ext_resource type="PackedScene" uid="uid://c8g1k6fsab7t8" path="res://Assets/Prefabs/Camera.tscn" id="5_rpgfy"]
+[ext_resource type="PackedScene" uid="uid://cvvf61erirt5j" path="res://Assets/Prefabs/Stations/Crate.tscn" id="6_03ung"]
+[ext_resource type="PackedScene" uid="uid://b7yo08pgjog3l" path="res://Assets/Prefabs/Stations/Boiler.tscn" id="8_mepfo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4h7gu"]
 size = Vector2(222.86566, 33.48005)
