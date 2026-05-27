@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ck6j0qdapwccg"
-path="res://.godot/imported/nyaa_leaf.png-1b227c869b59bbb6280768e69e194ef6.ctex"
+uid="uid://d1ux8fs45cbk0"
+path="res://.godot/imported/dragon_scale.png-858b9354ab3e41715767b6295373eb85.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Sprite Sheets/nyaa_leaf.png"
-dest_files=["res://.godot/imported/nyaa_leaf.png-1b227c869b59bbb6280768e69e194ef6.ctex"]
+source_file="res://Assets/Sprites/Ingredients/dragon_scale.png"
+dest_files=["res://.godot/imported/dragon_scale.png-858b9354ab3e41715767b6295373eb85.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1ux8fs45cbk0"
-path="res://.godot/imported/dragon_scale.png-605c2751124771076e6fec20e72f4d7a.ctex"
+uid="uid://ba0ckvfiwashl"
+path="res://.godot/imported/oof_rock.png-913bd964c88b288289b90125a901fe9d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Sprite Sheets/dragon_scale.png"
-dest_files=["res://.godot/imported/dragon_scale.png-605c2751124771076e6fec20e72f4d7a.ctex"]
+source_file="res://Assets/Sprites/Ingredients/oof_rock.png"
+dest_files=["res://.godot/imported/oof_rock.png-913bd964c88b288289b90125a901fe9d.ctex"]
 
 [params]
 
