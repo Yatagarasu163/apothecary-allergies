@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://3wnufx1ygrxs"]
 
 [ext_resource type="Script" uid="uid://gnamq3aldr64" path="res://Assets/Scripts/Patient Scripts/patient.gd" id="1_3c0vk"]
-[ext_resource type="PackedScene" path="res://Assets/Prefabs/Chat_Bubble.tscn" id="2_7hvhy"]
 [ext_resource type="Texture2D" uid="uid://cw81w0syjwqdd" path="res://Assets/Sprites/Sprite Sheets/CustomerVarients.png" id="2_tkxci"]
 [ext_resource type="Texture2D" uid="uid://danr6lhqx2m" path="res://Assets/Sprites/Sprite Sheets/Sickness.png" id="3_hr5m6"]
+[ext_resource type="PackedScene" uid="uid://bp0yuboa6xdef" path="res://Assets/Prefabs/chat_bubble.tscn" id="4_tkxci"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hr5m6"]
 
@@ -112,10 +112,6 @@ scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_utfjr")
 animation = &"none"
 
-[node name="ChatBubble" parent="." unique_id=629623447 instance=ExtResource("2_7hvhy")]
-position = Vector2(144, -133)
-symptom_list = Array[int]([0, 1, 2])
-
 [node name="Area2D" type="Area2D" parent="." unique_id=624450733]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=44697536]
@@ -128,6 +124,9 @@ offset_left = -59.0
 offset_top = -109.0
 offset_right = -19.0
 offset_bottom = -86.0
+
+[node name="ChatBubble" parent="." unique_id=629623447 instance=ExtResource("4_tkxci")]
+position = Vector2(95, -100)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

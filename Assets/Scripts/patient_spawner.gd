@@ -7,6 +7,7 @@ var amount_of_patient_in_scene = 0
 
 func _on_timer_timeout() -> void:
 	var patient = patient_prefab.instantiate()
+	patient.global_position.y = 1500;
 	if(amount_of_patient_in_scene < maximum_amount_of_patient):
 		timer.start()
 		print("Time out patient spawn")

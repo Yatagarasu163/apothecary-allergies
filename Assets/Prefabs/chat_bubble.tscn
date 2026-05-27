@@ -6,6 +6,8 @@
 [node name="ChatBubble" type="Node2D" unique_id=629623447]
 texture_filter = 5
 script = ExtResource("1_nragh")
+symptom_list = Array[int]([0, 1])
+symptom_display_delay = 1.5
 
 [node name="ChatBubbleSprite" type="Sprite2D" parent="." unique_id=2117035467]
 texture = ExtResource("2_6lmn4")

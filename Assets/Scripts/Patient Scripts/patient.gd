@@ -6,6 +6,7 @@ extends Node2D
 @export var patien_status = false
 var interactable : bool = false
 var queueing : bool = false
+@export var queue_point:Vector2 = Vector2(530, 600);
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,18 +16,16 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if(patien_status == false):
-		if(position.y > 1670):
+		if(position.y > queue_point.y):
 			position.y -= speed
 		if(position.x != 530):
 			position.x = 530
 	if interactable == true && Input.is_action_just_pressed("Interact"):
 		print("Player took customer's order")
 		label.visible = false
-		chat_bubble.visible = true
-		await get_tree().create_timer(2.0).timeout
-		chat_bubble.visible = false
+		chat_bubble.play_symptom_anim();
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

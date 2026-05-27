@@ -19,6 +19,8 @@ func _process(delta: float) -> void:
 	pass
 
 func play_symptom_anim() -> void:
+	print("PLAYING SYMPTOM ANIM")
+	visible = true;
 	for symptom in symptom_list:
 		symptom_sprite.visible = true;
 		match symptom:
@@ -37,4 +39,4 @@ func play_symptom_anim() -> void:
 		await get_tree().create_timer(symptom_display_delay).timeout;
 		symptom_sprite.visible = false;
 		await get_tree().create_timer(symptom_display_delay).timeout;
-		
+	visible = false;
