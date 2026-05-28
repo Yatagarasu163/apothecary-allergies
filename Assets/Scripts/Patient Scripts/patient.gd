@@ -83,3 +83,4 @@ func check_patient_status() -> void:
 			position.y -= speed
 		else:
 			queue_free();
+			GameManager.amount_of_patient_on_screen -= 1

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://lku2iex7kybq"]
 
 [ext_resource type="Script" uid="uid://yirbr82rvnec" path="res://Assets/Scripts/recipe_book.gd" id="1_l5iqb"]
-[ext_resource type="Texture2D" uid="uid://c53wg8pq2wx7k" path="res://icon.svg" id="2_srkpf"]
+[ext_resource type="Texture2D" uid="uid://dw6blcmiogtmi" path="res://Assets/Sprites/SpellBook.png" id="2_706vf"]
 [ext_resource type="Texture2D" uid="uid://b85aayqdj7764" path="res://Assets/Sprites/Recipe Book/SpellBook.png" id="3_3u5pv"]
 [ext_resource type="Texture2D" uid="uid://om8oh72t3or1" path="res://Assets/Sprites/Recipe Book/Boiler_Atlas.tres" id="4_706vf"]
 [ext_resource type="Texture2D" uid="uid://ck6j0qdapwccg" path="res://Assets/Sprites/Ingredients/nyaa_leaf.png" id="5_7eswm"]
@@ -26,7 +26,8 @@ script = ExtResource("1_l5iqb")
 recipePages = [NodePath("RecipeBookUI/Page 1"), NodePath("RecipeBookUI/Page 2"), NodePath("RecipeBookUI/Page 3")]
 
 [node name="Book Sprite" type="Sprite2D" parent="." unique_id=1955881859]
-texture = ExtResource("2_srkpf")
+scale = Vector2(1.3734637, 1.3734637)
+texture = ExtResource("2_706vf")
 
 [node name="Collision Detector" type="Area2D" parent="." unique_id=605446250]
 

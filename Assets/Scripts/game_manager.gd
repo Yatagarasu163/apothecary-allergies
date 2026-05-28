@@ -1,5 +1,8 @@
 extends Node2D;
 
+# DETECT THE AMOUNT OF PATIENT ON SCREEN (FOR PATIENT_SPAWNER)
+var amount_of_patient_on_screen = 0;
+
 # ITEM ENUMS AND SPRITES
 enum items {NYAA_LEAF, 
 			STAR_FLOWER, 
@@ -18,7 +21,9 @@ enum items {NYAA_LEAF,
 			DE_NNERBONE, 
 			WATERY_WOOFER, 
 			A_SACK_O_ONIONS,
-			UNMEOWING_DE_NNERBONE
+			UNMEOWING_DE_NNERBONE,
+			HONEY_ITS_A_ROCK,
+			UNMEWING_PENICILLIN
 			};
 @onready var items_sprites: Array[Texture] = [
 	preload("res://Assets/Sprites/Ingredients/nyaa_leaf.png"),
@@ -29,16 +34,18 @@ enum items {NYAA_LEAF,
 	
 	preload("res://icon.svg"),
 	preload("res://icon.svg"),
-	preload("res://icon.svg"),
+	preload("res://Assets/Sprites/Processed Ingredient/boiled_oof_rock.png"),
 	preload("res://icon.svg"),
 	
 	preload("res://Assets/Sprites/ForRubbish.png"),
 	
-	preload("res://icon.svg"),
-	preload("res://icon.svg"),
-	preload("res://icon.svg"),
+	preload("res://Assets/Sprites/Antidote/De-meower.png"),
+	preload("res://Assets/Sprites/Antidote/De-nnerbone.png"),
+	preload("res://Assets/Sprites/Antidote/Watery Woofer.png"),
 	preload("res://Assets/Sprites/Antidote/sack-of-onions.png"),
-	preload("res://icon.svg"),
+	preload("res://Assets/Sprites/Antidote/Unmeowing De-nnerbone.png"),
+	preload("res://Assets/Sprites/Antidote/Honey, it's a rock.png"),
+	preload("res://Assets/Sprites/Antidote/Unmewing Penicillin.png")
 ]
 
 # PLAYER_INVENTORY
@@ -64,7 +71,8 @@ enum symptoms {
 }
 
 @onready var symptom_sprites: Array[Texture] = [
-	
+	preload("res://Assets/Sprites/Sickness Icons/BuffCat.tres"),
+	preload("res://Assets/Sprites/Sickness Icons/Fire Eyes.tres"),
 ]
 
 var symptoms_combo = [
