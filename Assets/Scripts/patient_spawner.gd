@@ -1,17 +1,18 @@
 extends Node2D
 @onready var timer: Timer = $Timer
 @export var patient_prefab : PackedScene
-@export var maximum_amount_of_patient = 5
-var amount_of_patient_in_scene = 0
+@export var maximum_amount_of_patient = 1
+
+
 
 
 func _on_timer_timeout() -> void:
 	var patient = patient_prefab.instantiate()
 	patient.global_position.y = 1500;
-	if(amount_of_patient_in_scene < maximum_amount_of_patient):
+	if(GameManager.amount_of_patient_on_screen < maximum_amount_of_patient ):
 		timer.start()
 		print("Time out patient spawn")
 		add_child(patient)
-		amount_of_patient_in_scene += 1
-	elif(amount_of_patient_in_scene == maximum_amount_of_patient):
-		timer.stop()
+		GameManager.amount_of_patient_on_screen += 1
+	elif(GameManager.amount_of_patient_on_screen == maximum_amount_of_patient):
+		pass

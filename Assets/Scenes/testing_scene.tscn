@@ -163,26 +163,6 @@ position = Vector2(88, 876.65625)
 rotation = -3.1415925
 shape = SubResource("RectangleShape2D_vapop")
 
-[node name="Kitchen" type="Label" parent="Shop Layout" unique_id=1328294645]
-texture_filter = 5
-offset_left = 864.0
-offset_top = 1495.0001
-offset_right = 923.0
-offset_bottom = 1518.0001
-scale = Vector2(5.185214, 5.23937)
-text = "Kitchen"
-metadata/_edit_use_anchors_ = true
-
-[node name="Serving" type="Label" parent="Shop Layout" unique_id=976498840]
-texture_filter = 5
-offset_left = 801.0
-offset_top = 471.0
-offset_right = 860.0
-offset_bottom = 494.0
-scale = Vector2(4.322967, 4.512289)
-text = "Serving"
-metadata/_edit_use_anchors_ = true
-
 [node name="ServingArea" type="Area2D" parent="Shop Layout" unique_id=1463895568 node_paths=PackedStringArray("camera_2d")]
 position = Vector2(905, 501)
 script = ExtResource("2_7tmfp")

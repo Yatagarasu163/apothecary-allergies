@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://duuei02ys6c5y"]
 
 [ext_resource type="Script" uid="uid://ca0vyx3h88fio" path="res://Assets/Scripts/table.gd" id="1_j7ovb"]
-[ext_resource type="Texture2D" uid="uid://c53wg8pq2wx7k" path="res://icon.svg" id="2_sd4tx"]
+[ext_resource type="Texture2D" uid="uid://cmd5hdqx527sx" path="res://Assets/Sprites/Table.png" id="2_j7ovb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wmwsv"]
 size = Vector2(188, 170)
@@ -14,7 +14,8 @@ texture_filter = 5
 script = ExtResource("1_j7ovb")
 
 [node name="Table Sprite" type="Sprite2D" parent="." unique_id=1626858534]
-texture = ExtResource("2_sd4tx")
+scale = Vector2(3.8496704, 4.428683)
+texture = ExtResource("2_j7ovb")
 
 [node name="Collision Detector" type="Area2D" parent="." unique_id=85105121]
 
