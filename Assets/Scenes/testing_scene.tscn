@@ -2,14 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://crw08vlyljkh7" path="res://Assets/Prefabs/player.tscn" id="1_k6s54"]
 [ext_resource type="Script" uid="uid://c47eytvl5xbe0" path="res://Assets/Scripts/roomCamTrigger.gd" id="2_7tmfp"]
-[ext_resource type="PackedScene" uid="uid://b40l382tqoc3" path="res://Assets/Prefabs/Pestle.tscn" id="4_oceud"]
+[ext_resource type="PackedScene" uid="uid://b40l382tqoc3" path="res://Assets/Prefabs/Stations/Pestle.tscn" id="4_oceud"]
 [ext_resource type="Texture2D" uid="uid://dt312itx5pv75" path="res://Assets/Sprites/Tileset/floor tile.png" id="5_4h7gu"]
 [ext_resource type="PackedScene" uid="uid://d2oj4bhdh1lim" path="res://Assets/Prefabs/Stations/Rubbish.tscn" id="5_mepfo"]
 [ext_resource type="PackedScene" uid="uid://c8g1k6fsab7t8" path="res://Assets/Prefabs/Camera.tscn" id="5_rpgfy"]
 [ext_resource type="PackedScene" uid="uid://cvvf61erirt5j" path="res://Assets/Prefabs/Stations/Crate.tscn" id="6_03ung"]
 [ext_resource type="PackedScene" uid="uid://b7yo08pgjog3l" path="res://Assets/Prefabs/Stations/Boiler.tscn" id="8_mepfo"]
 [ext_resource type="PackedScene" uid="uid://dvrksvj06ahdt" path="res://Assets/Prefabs/patient_spawner.tscn" id="8_p7uqy"]
-[ext_resource type="PackedScene" uid="uid://lku2iex7kybq" path="res://Assets/Prefabs/Recipe Book.tscn" id="10_35qsv"]
+[ext_resource type="PackedScene" uid="uid://lku2iex7kybq" path="res://Assets/Prefabs/Stations/Recipe Book.tscn" id="10_35qsv"]
 [ext_resource type="Texture2D" uid="uid://b5wpd8gidikdk" path="res://Assets/Sprites/Tileset/walls.png" id="10_yem8g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eegtx"]

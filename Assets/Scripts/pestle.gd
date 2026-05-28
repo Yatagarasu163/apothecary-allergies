@@ -63,7 +63,6 @@ func grind_items() -> void:
 		print("Not enough items to grind!")
 		return
 	
-	
 	var key = get_recipe_key(items_to_grind);
 
 	print("Interacting with the grinder!");

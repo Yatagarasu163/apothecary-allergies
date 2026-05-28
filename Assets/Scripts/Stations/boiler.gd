@@ -65,8 +65,6 @@ func check_item_visibility() -> void:
 		0: 
 			item.visible = false;
 		1:
-			item.position.x = 0;
-			item.position.y = -75;
 			item.visible = true;
 
 func check_player_interaction() -> void: 
