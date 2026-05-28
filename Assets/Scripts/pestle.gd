@@ -41,7 +41,7 @@ func body_entered(body) -> void:
 func body_exited(body) -> void:
 	if body.is_in_group("Player"):
 		is_player_inside = false;
-	
+
 func add_item() -> void:
 	if GameManager.player_inventory == null:
 		print("No item to add to the pestle!");
