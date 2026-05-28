@@ -32,6 +32,7 @@ func _process(_delta: float) -> void:
 				await get_tree().create_timer(2.0).timeout
 				chat_bubble.visible = false
 				waiting_for_cure = true
+				GameManager.current_sickness = current_sickness;
 			else:
 				serve_medicine();
 

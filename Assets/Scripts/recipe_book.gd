@@ -3,17 +3,23 @@ extends Node2D
 @export var recipePages: Array[Control]
 @export var currentPage: int
 
-@onready var recipeUI = $RecipeBookUI;
+@export var recipeUI: Node
 
 var is_player_inside: bool = false;
 var newPage: int
 
 func _ready() -> void:
 	recipeUI.visible = false;
+	for page in recipePages:
+		page.visible = false;
+	recipePages[3].visible = true;
+	currentPage = 3;
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if is_player_inside && Input.is_action_just_pressed("Add"):
+		GameManager.ui_mode = !GameManager.ui_mode;
 		recipeUI.global_position = Vector2(0, 0);
 		recipeUI.visible = !recipeUI.visible;
 		print("Showing the recipe!");

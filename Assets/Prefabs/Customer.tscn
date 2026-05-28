@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bu4pjenr8s5e3"]
+
+[ext_resource type="Texture2D" uid="uid://duy45k6wlbf4p" path="res://Assets/Sprites/Sickness Icons/UpsideDownHead.tres" id="1_8x27q"]
+[ext_resource type="Texture2D" uid="uid://br21cpwh845fh" path="res://Assets/Sprites/Sickness Icons/UpsideDownBody.tres" id="2_uu552"]
+
+[node name="Customer" type="Node2D" unique_id=1244990900]
+
+[node name="Head" type="Sprite2D" parent="." unique_id=610021852]
+texture = ExtResource("1_8x27q")
+
+[node name="Body" type="Sprite2D" parent="Head" unique_id=1892828404]
+texture = ExtResource("2_uu552")

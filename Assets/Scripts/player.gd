@@ -7,6 +7,7 @@ extends CharacterBody2D;
 var current_dash_cooldown: float = 0.0;
 
 @onready var anim := $"Player Sprite"
+@onready var light := $PointLight2D;
 
 
 var walkedRight: bool = true
@@ -46,3 +47,9 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	if current_dash_cooldown > 0:
 		current_dash_cooldown -= delta;
+
+func _process(_delta: float) -> void:
+	if GameManager.ui_mode:
+		light.visible = false;
+	else:
+		light.visible = true;
