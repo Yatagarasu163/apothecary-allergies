@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://dv2c4e5nvt2ck"]
 
-[ext_resource type="Texture2D" uid="uid://c4mxu2o31qkvn" path="res://Assets/Sprites/Sprite Sheets/paper.png" id="1_qo24s"]
+[ext_resource type="Script" uid="uid://bb1k6702w80f6" path="res://Assets/Prefabs/order_paper.gd" id="1_prai2"]
+[ext_resource type="Texture2D" uid="uid://c4mxu2o31qkvn" path="res://Assets/Sprites/paper.png" id="1_qo24s"]
 [ext_resource type="Texture2D" uid="uid://c53wg8pq2wx7k" path="res://icon.svg" id="2_prai2"]
 
 [node name="OrderPaper" type="Control" unique_id=832149662]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_prai2")
 
 [node name="Papir" type="TextureRect" parent="." unique_id=1904680325]
 layout_mode = 0

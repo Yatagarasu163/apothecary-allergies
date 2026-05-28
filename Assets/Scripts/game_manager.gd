@@ -19,7 +19,6 @@ enum items {NYAA_LEAF,
 			A_SACK_O_ONIONS,
 			UNMEOWING_DE_NNERBONE
 			};
-enum antidotes {}
 @onready var items_sprites: Array[Texture] = [
 	preload("res://Assets/Sprites/Ingredients/nyaa_leaf.png"),
 	preload("res://Assets/Sprites/Ingredients/star_flower.png"),
@@ -53,6 +52,22 @@ var recipes = {
 	sort_recipe_key([items.BOILED_STAR_FLOWER, 
 	items.BOILED_DRAGON_SCALE, items.BOILED_NYAA_LEAF]): items.UNMEOWING_DE_NNERBONE
 };
+
+# SYMPTOMS
+enum symptoms {
+	BUFF_CAT,
+	FIRE_EYES,
+	UPSIDE_DOWN,
+	STARRY_COUGH
+}
+
+@onready var symptom_sprites: Array[Texture] = [
+	
+]
+
+var symptoms_combo = [[symptoms.BUFF_CAT], [symptoms.UPSIDE_DOWN], [symptoms.FIRE_EYES, 
+symptoms.BUFF_CAT], [symptoms.FIRE_EYES], [symptoms.UPSIDE_DOWN, symptoms.BUFF_CAT],
+[symptoms.STARRY_COUGH]];
 
 func sort_recipe_key(recipe: Array) -> Array:
 	var sorted = recipe.duplicate();

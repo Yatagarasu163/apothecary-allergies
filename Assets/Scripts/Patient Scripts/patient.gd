@@ -8,9 +8,12 @@ var interactable : bool = false
 var queueing : bool = false
 var waiting_for_cure : bool = false
 @export var queue_point:Vector2 = Vector2(530, 600);
+var current_sickness = null;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	current_sickness = GameManager.symptoms_combo.pick_random();
+	print("Patient Sickness: ", current_sickness);
 	chat_bubble.visible = false
 	label.visible = false
 	position.x = queue_point.x
