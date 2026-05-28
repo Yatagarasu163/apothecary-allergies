@@ -26,10 +26,10 @@ func _process(_delta: float) -> void:
 		if(position.y > queue_point.y):
 			position.y -= speed
 	if interactable == true:
-		label.text = "Press F to take order"
-		label.visible = true;
 		if Input.is_action_just_pressed("Interact"):
 			if(!waiting_for_cure):
+				label.text = "Press F to take order"
+				label.visible = true;
 				print("Player took customer's order")
 				label.visible = false
 				chat_bubble.play_symptom_anim();
