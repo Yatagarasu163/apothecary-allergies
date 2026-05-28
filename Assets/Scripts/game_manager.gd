@@ -81,7 +81,7 @@ enum symptoms {
 @onready var symptom_sprites: Array[Texture] = [
 	preload("res://Assets/Sprites/Sickness Icons/BuffCat.tres"),
 	preload("res://Assets/Sprites/Sickness Icons/Fire Eyes.tres"),
-	preload("res://Assets/Sprites/Sickness Icons/Fire Eyes.tres"),
+	preload("res://Assets/Sprites/Sickness Icons/UpsideDownIcon.png"),
 	preload("res://Assets/Sprites/Sickness Icons/Fire Eyes.tres"),
 ]
 

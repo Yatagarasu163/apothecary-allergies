@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://ba0ckvfiwashl" path="res://Assets/Sprites/Ingredients/oof_rock.png" id="8_e34go"]
 [ext_resource type="Texture2D" uid="uid://b4vb8ty457ep3" path="res://Assets/Sprites/Ingredients/star_flower.png" id="9_jyr5k"]
 [ext_resource type="Texture2D" uid="uid://d1ux8fs45cbk0" path="res://Assets/Sprites/Ingredients/dragon_scale.png" id="10_kfm4u"]
+[ext_resource type="Texture2D" uid="uid://8lsqbakhd1yg" path="res://Assets/Sprites/Processed Ingredient/boiled_oof_rock.png" id="16_kfm4u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hj8ig"]
 size = Vector2(164, 165)
@@ -720,7 +721,6 @@ layout_mode = 2
 texture = ExtResource("5_7eswm")
 
 [node name="Page 7" type="Control" parent="CanvasLayer/RecipeBookUI" unique_id=331701039]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -774,7 +774,7 @@ offset_left = 35.0
 offset_top = 150.0
 offset_right = 110.0
 offset_bottom = 225.0
-texture = ExtResource("6_lnltm")
+texture = ExtResource("16_kfm4u")
 
 [node name="Grinder" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 7/Watery Woofer" unique_id=1541798142]
 layout_mode = 1
@@ -802,7 +802,7 @@ alignment = 1
 [node name="Ingerdient" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 7/Watery Woofer/Grinder/HBoxContainer" unique_id=701699018]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("6_lnltm")
+texture = ExtResource("16_kfm4u")
 
 [node name="Ingerdient2" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 7/Watery Woofer/Grinder/HBoxContainer" unique_id=740547422]
 custom_minimum_size = Vector2(100, 100)
@@ -928,6 +928,7 @@ layout_mode = 2
 texture = ExtResource("5_7eswm")
 
 [node name="Page 8" type="Control" parent="CanvasLayer/RecipeBookUI" unique_id=519390063]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0

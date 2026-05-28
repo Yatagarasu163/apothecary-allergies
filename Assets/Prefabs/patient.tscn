@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cw81w0syjwqdd" path="res://Assets/Sprites/Sprite Sheets/CustomerVarients.png" id="2_tkxci"]
 [ext_resource type="Texture2D" uid="uid://danr6lhqx2m" path="res://Assets/Sprites/Sprite Sheets/Sickness.png" id="3_hr5m6"]
 [ext_resource type="PackedScene" uid="uid://bp0yuboa6xdef" path="res://Assets/Prefabs/chat_bubble.tscn" id="4_tkxci"]
+[ext_resource type="Texture2D" uid="uid://b2so8rffbk8pu" path="res://Assets/Sprites/Patience_Bar_Empty.png" id="5_mfah6"]
+[ext_resource type="Texture2D" uid="uid://bg5pe0ffld4bv" path="res://Assets/Sprites/Patience_Bar_Full.png" id="6_x3cs4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hr5m6"]
 
@@ -167,11 +169,18 @@ offset_bottom = -86.0
 [node name="ChatBubble" parent="." unique_id=629623447 instance=ExtResource("4_tkxci")]
 position = Vector2(95, -100)
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1483023181]
-offset_left = -127.0
-offset_top = -13.0
-offset_right = -87.0
-offset_bottom = 27.0
+[node name="Patience Bar" type="TextureProgressBar" parent="." unique_id=1483023181]
+offset_left = -143.0
+offset_top = -58.000008
+offset_right = -103.0
+offset_bottom = -18.000008
+scale = Vector2(3.8595023, 3.8595023)
+fill_mode = 2
+texture_under = ExtResource("6_x3cs4")
+texture_progress = ExtResource("5_mfah6")
+
+[node name="Patience Timer" type="Timer" parent="." unique_id=873031726]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Patience Timer" to="." method="_on_patience_timer_timeout"]

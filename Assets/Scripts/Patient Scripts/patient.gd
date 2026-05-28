@@ -1,6 +1,8 @@
 extends Node2D
 @onready var chat_bubble: Node2D = $ChatBubble
 @onready var label: Label = $Label
+@onready var patience_bar: TextureProgressBar = $"Patience Bar"
+@onready var patience_timer: Timer = $"Patience Timer"
 @export var speed = 10
 # patien_status change after player cure them, false mean not cure yet, true mean cured
 @export var patien_status = false
@@ -23,6 +25,9 @@ var current_sickness = null;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	patience_bar.max_value = 100
+	patience_timer.wait_time = 5.0
+	patience_timer.start()
 	RandomizePatientType()
 	
 	current_sickness = GameManager.symptoms_combo.pick_random();
@@ -38,20 +43,27 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	check_patient_status();
 	if interactable == true:
-		if Input.is_action_just_pressed("Interact"):
-			if(!waiting_for_cure):
-				label.visible = false
-				chat_bubble.play_symptom_anim();
-				await get_tree().create_timer(2.0).timeout
-				chat_bubble.visible = false
-				waiting_for_cure = true
-				get_new_sickness();
-			else:
-				serve_medicine();
+		PatientInteractSystem();
+	if(patience_bar.value >= patience_bar.max_value):
+		patient_leave();
 
 func get_new_sickness():
 	GameManager.current_sickness = current_sickness;
 
+func PatientInteractSystem():
+	if Input.is_action_just_pressed("Interact"):
+		if(!waiting_for_cure):
+			label.visible = false
+			patience_bar.value = 0
+			patience_timer.wait_time = 3
+			chat_bubble.play_symptom_anim();
+			await get_tree().create_timer(2.0).timeout
+			chat_bubble.visible = false
+			waiting_for_cure = true
+			get_new_sickness();
+		else:
+			serve_medicine();
+			patience_timer.stop();
 
 func CheckSymptoms(symptoms: int):
 	match symptoms:
@@ -118,10 +130,21 @@ func check_patient_status() -> void:
 		if(position.y > queue_point.y):
 			position.y -= speed
 	else:
-		if(position.x < yeepee_point.x):
-			position.x += speed
-		elif(position.y > yeepee_point.y):
-			position.y -= speed
-		else:
-			queue_free();
-			GameManager.amount_of_patient_on_screen -= 1
+		patient_leave();
+
+func patient_leave()->void:
+	if(position.x < yeepee_point.x):
+		position.x += speed
+	elif(position.y > yeepee_point.y):
+		position.y -= speed
+	else:
+		queue_free();
+		GameManager.amount_of_patient_on_screen -= 1
+
+#Link to patience timer
+func _on_patience_timer_timeout() -> void:
+	if(!queueing && !waiting_for_cure):
+		print("The patient patience is decreasing")
+		patience_bar.value += 10;
+	elif(waiting_for_cure):
+		patience_bar.value += 6
