@@ -19,10 +19,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if is_player_inside && Input.is_action_just_pressed("Add"):
-		GameManager.ui_mode = !GameManager.ui_mode;
 		recipeUI.global_position = Vector2(0, 0);
 		recipeUI.visible = !recipeUI.visible;
-		print("Showing the recipe!");
 
 func updatePage():
 	recipePages[currentPage].visible = false
