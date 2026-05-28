@@ -52,6 +52,7 @@ enum items {NYAA_LEAF,
 var player_inventory = null;
 var player_inventory_sprite = null;
 
+
 # RECIPES
 var recipes = {
 	sort_recipe_key([items.BOILED_NYAA_LEAF, items.OOF_ROCK]): items.DE_MEOWER,
