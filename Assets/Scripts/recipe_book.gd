@@ -33,7 +33,7 @@ func body_exited(body: Node2D) -> void:
 
 
 func _on_next_page_pressed() -> void:
-	if (currentPage + 1 > recipePages.size()): return
+	if (currentPage + 1 > recipePages.size() - 1): return
 	newPage = currentPage + 1
 	updatePage()
 
