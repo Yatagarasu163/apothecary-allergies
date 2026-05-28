@@ -89,8 +89,6 @@ sprite_frames = SubResource("SpriteFrames_35dvj")
 animation = &"grinding"
 
 [node name="Collision Detector" type="Area2D" parent="." unique_id=867185578]
-position = Vector2(0, -2.5)
-scale = Vector2(0.36300698, 0.65395916)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collision Detector" unique_id=506269802]
 shape = SubResource("RectangleShape2D_68iyi")
@@ -101,15 +99,18 @@ scale = Vector2(0.5, 0.5)
 
 [node name="Item 1" type="Sprite2D" parent="Items" unique_id=498833994]
 light_mask = 0
+z_index = -1
 texture = ExtResource("3_1e3v2")
 
 [node name="Item 2" type="Sprite2D" parent="Items" unique_id=1207497301]
 light_mask = 0
+z_index = -1
 position = Vector2(-25, 0)
 texture = ExtResource("3_1e3v2")
 
 [node name="Item 3" type="Sprite2D" parent="Items" unique_id=928852486]
 light_mask = 0
+z_index = -1
 position = Vector2(25, 0)
 texture = ExtResource("3_1e3v2")
 

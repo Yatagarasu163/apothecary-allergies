@@ -73,13 +73,12 @@ script = ExtResource("1_c5sqm")
 
 [node name="Boiler Sprite" type="AnimatedSprite2D" parent="." unique_id=548914325]
 light_mask = 2
+z_index = -1
 sprite_frames = SubResource("SpriteFrames_q0oec")
 animation = &"Using"
 frame_progress = 0.08486358
 
 [node name="Collision Detector" type="Area2D" parent="." unique_id=1292967573]
-position = Vector2(0, 14)
-scale = Vector2(0.2647859, 0.338662)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collision Detector" unique_id=501262757]
 shape = SubResource("RectangleShape2D_c5sqm")

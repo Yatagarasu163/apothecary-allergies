@@ -64,7 +64,6 @@ size = Vector2(75, 140.5)
 size = Vector2(128, 128)
 
 [node name="Rubbish" type="Node2D" unique_id=55351558]
-texture_filter = 5
 script = ExtResource("1_1w3i3")
 
 [node name="Rubbish Sprite" type="AnimatedSprite2D" parent="." unique_id=2046360247]
