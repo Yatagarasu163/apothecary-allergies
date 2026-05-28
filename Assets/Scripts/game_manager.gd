@@ -4,7 +4,8 @@ extends Node2D;
 enum items {NYAA_LEAF, 
 			STAR_FLOWER, 
 			OOF_ROCK, 
-			DRAGON_SCALE, 
+			DRAGON_SCALE,
+			OOF_POWDER, 
 			
 			BOILED_NYAA_LEAF, 
 			BOILED_STAR_FLOWER, 
@@ -24,6 +25,7 @@ enum items {NYAA_LEAF,
 	preload("res://Assets/Sprites/Ingredients/star_flower.png"),
 	preload("res://Assets/Sprites/Ingredients/oof_rock.png"),
 	preload("res://Assets/Sprites/Ingredients/dragon_scale.png"),
+	preload("res://Assets/Sprites/Ingredients/oof_rock.png"),
 	
 	preload("res://icon.svg"),
 	preload("res://icon.svg"),
@@ -71,7 +73,8 @@ var symptoms_combo = [
 	[symptoms.FIRE_EYES, symptoms.BUFF_CAT], 
 	[symptoms.FIRE_EYES], 
 	[symptoms.UPSIDE_DOWN, symptoms.BUFF_CAT],
-	[symptoms.STARRY_COUGH]
+	[symptoms.STARRY_COUGH],
+	[symptoms.BUFF_CAT, symptoms.STARRY_COUGH]
 ];
 
 var antidote_combo = {
@@ -81,6 +84,7 @@ var antidote_combo = {
 	[symptoms.FIRE_EYES]: items.A_SACK_O_ONIONS, 
 	[symptoms.UPSIDE_DOWN, symptoms.BUFF_CAT]: items.UNMEOWING_DE_NNERBONE,
 	[symptoms.STARRY_COUGH]: null,
+	[symptoms.BUFF_CAT, symptoms.STARRY_COUGH]: null,
 }
 
 func sort_recipe_key(recipe: Array) -> Array:

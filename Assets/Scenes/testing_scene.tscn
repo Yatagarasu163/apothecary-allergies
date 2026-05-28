@@ -252,11 +252,13 @@ position = Vector2(839, -158)
 scale = Vector2(0.795, 0.795)
 
 [node name="Pestle" parent="Shop Layout" unique_id=205812332 instance=ExtResource("4_oceud")]
-position = Vector2(1483, 563)
+position = Vector2(1467, 493)
+scale = Vector2(2.984983, 2.984983)
 interaction_range = 1.5
 
 [node name="Boiler" parent="Shop Layout" unique_id=1355668019 instance=ExtResource("8_mepfo")]
-position = Vector2(1127, 560)
+position = Vector2(1470.0001, 615.00006)
+scale = Vector2(3.037748, 3.037748)
 
 [node name="RecipeBook" parent="Shop Layout" unique_id=1057398287 instance=ExtResource("10_35qsv")]
 position = Vector2(395, 356)
