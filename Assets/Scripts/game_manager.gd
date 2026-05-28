@@ -52,7 +52,8 @@ var recipes = {
 	sort_recipe_key([items.NYAA_LEAF, items.BOILED_OOF_ROCK, items.STAR_FLOWER]): items.WATERY_WOOFER,
 	sort_recipe_key([items.DRAGON_SCALE]): items.A_SACK_O_ONIONS,
 	sort_recipe_key([items.BOILED_STAR_FLOWER, 
-	items.BOILED_DRAGON_SCALE, items.BOILED_NYAA_LEAF]): items.UNMEOWING_DE_NNERBONE
+	items.BOILED_DRAGON_SCALE, items.BOILED_NYAA_LEAF]): items.UNMEOWING_DE_NNERBONE,
+	sort_recipe_key([items.OOF_ROCK, items.OOF_ROCK]): items.OOF_POWDER,
 };
 
 # SYMPTOMS
@@ -63,8 +64,9 @@ enum symptoms {
 	STARRY_COUGH
 }
 
-@onready var symptom_sprites: Array[Texture] = [
-	
+@onready var symptom_sprites = [
+	preload("res://Assets/Sprites/Sickness Icons/BuffCat.tres"),
+	preload("res://Assets/Sprites/Sickness Icons/Fire Eyes.tres"),
 ]
 
 var symptoms_combo = [
@@ -86,6 +88,10 @@ var antidote_combo = {
 	[symptoms.STARRY_COUGH]: null,
 	[symptoms.BUFF_CAT, symptoms.STARRY_COUGH]: null,
 }
+
+var ui_mode = false;
+
+var current_sickness = [];
 
 func sort_recipe_key(recipe: Array) -> Array:
 	var sorted = recipe.duplicate();

@@ -10,6 +10,8 @@ var total_visible_items: int = 0;
 var has_grinded_item: bool = false;
 var items_to_grind = [];
 
+@onready var light: PointLight2D= $PointLight2D;
+
 # INTERACTION AREA
 @onready var interactable_area = $"Collision Detector/CollisionShape2D";
 @onready var anim = $PestleSprite;
@@ -31,7 +33,13 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	check_item_visibility();
 	check_player_interaction();
-	
+	check_ui_mode();
+
+func check_ui_mode() -> void:
+	if GameManager.ui_mode:
+		light.visible = false;
+	else:
+		light.visible = true;
 
 func body_entered(body) -> void:
 	if body.is_in_group("Player"):

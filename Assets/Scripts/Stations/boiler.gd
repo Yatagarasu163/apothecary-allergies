@@ -10,6 +10,8 @@ var total_visible_items: int = 0;
 var item_to_boil = null;
 var has_boiled = false;
 
+@onready var light: PointLight2D = $PointLight2D;
+
 var boiled_versions = {
 	GameManager.items.NYAA_LEAF: GameManager.items.BOILED_NYAA_LEAF,
 	GameManager.items.STAR_FLOWER: GameManager.items.BOILED_STAR_FLOWER,
@@ -35,7 +37,15 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	check_item_visibility();
 	check_player_interaction();
+	check_ui_mode();
 	
+	
+func check_ui_mode() -> void:
+	if GameManager.ui_mode:
+		light.visible = false;
+	else:
+		light.visible = true;
+
 func body_entered(body) -> void:
 	if body.is_in_group("Player"):
 		is_player_inside = true;
