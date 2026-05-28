@@ -26,9 +26,10 @@ func _process(_delta: float) -> void:
 		if(position.y > queue_point.y):
 			position.y -= speed
 	if interactable == true:
+		label.text = "Press F to take order"
+		label.visible = true;
 		if Input.is_action_just_pressed("Interact"):
 			if(!waiting_for_cure):
-				label.text = "Press F to take order"
 				print("Player took customer's order")
 				label.visible = false
 				chat_bubble.play_symptom_anim();
@@ -58,4 +59,15 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		speed = 10
 
 func serve_medicine() -> void:
-	pass
+	var given_medicine = GameManager.player_inventory;
+	var key = GameManager.antidote_combo[current_sickness];
+	print(key);
+	if(given_medicine == key):
+		print("Taken the right cure!");
+		GameManager.player_inventory = null;
+		GameManager.player_inventory_sprite = null;
+	else:
+		label.text = "That's not my allergy!";
+		label.visible = true;
+		await get_tree().create_timer(2.0).timeout;
+		label.visible = false;

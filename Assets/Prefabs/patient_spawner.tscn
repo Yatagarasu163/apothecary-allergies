@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dvrksvj06ahdt"]
 
-[ext_resource type="Script" uid="uid://4a7ig6yf676i" path="res://Assets/Scripts/Patient Scripts/patient_spawner.gd" id="1_vv4vc"]
+[ext_resource type="Script" uid="uid://4a7ig6yf676i" path="res://Assets/Scripts/patient_spawner.gd" id="1_vv4vc"]
 [ext_resource type="PackedScene" uid="uid://3wnufx1ygrxs" path="res://Assets/Prefabs/patient.tscn" id="2_lssc4"]
 
 [node name="Patient_Spawner" type="Node2D" unique_id=187455173]

@@ -65,9 +65,23 @@ enum symptoms {
 	
 ]
 
-var symptoms_combo = [[symptoms.BUFF_CAT], [symptoms.UPSIDE_DOWN], [symptoms.FIRE_EYES, 
-symptoms.BUFF_CAT], [symptoms.FIRE_EYES], [symptoms.UPSIDE_DOWN, symptoms.BUFF_CAT],
-[symptoms.STARRY_COUGH]];
+var symptoms_combo = [
+	[symptoms.BUFF_CAT], 
+	[symptoms.UPSIDE_DOWN], 
+	[symptoms.FIRE_EYES, symptoms.BUFF_CAT], 
+	[symptoms.FIRE_EYES], 
+	[symptoms.UPSIDE_DOWN, symptoms.BUFF_CAT],
+	[symptoms.STARRY_COUGH]
+];
+
+var antidote_combo = {
+	[symptoms.BUFF_CAT]: items.DE_MEOWER, 
+	[symptoms.UPSIDE_DOWN]: items.DE_NNERBONE, 
+	[symptoms.FIRE_EYES, symptoms.BUFF_CAT]: items.WATERY_WOOFER, 
+	[symptoms.FIRE_EYES]: items.A_SACK_O_ONIONS, 
+	[symptoms.UPSIDE_DOWN, symptoms.BUFF_CAT]: items.UNMEOWING_DE_NNERBONE,
+	[symptoms.STARRY_COUGH]: null,
+}
 
 func sort_recipe_key(recipe: Array) -> Array:
 	var sorted = recipe.duplicate();
