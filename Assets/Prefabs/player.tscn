@@ -367,3 +367,9 @@ shadow_enabled = true
 shadow_item_cull_mask = 2
 texture = SubResource("GradientTexture2D_64e7q")
 texture_scale = 4.0
+
+[node name="NextDayText" type="Label" parent="." unique_id=1016413962]
+offset_left = -35.0
+offset_top = -79.0
+offset_right = 5.0
+offset_bottom = -56.0

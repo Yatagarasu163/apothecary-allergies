@@ -1,7 +1,14 @@
 extends Node2D;
 
+#THESE VAR IS USE FOR PATIENT SPAWNER
 # DETECT THE AMOUNT OF PATIENT ON SCREEN (FOR PATIENT_SPAWNER)
 var amount_of_patient_on_screen = 0;
+#TO LIMIT HOW MANY PATIENTS WE HAVE IN ONE DAY
+var maximum_amount_of_patient = 0;
+#TO DETECT HOW MANY PATIENT HAS SPAWN ON THAT DAY
+var amount_of_patient_spawn = 0;
+# DAY COUNTER
+var day = 1
 
 # ITEM ENUMS AND SPRITES
 enum items {NYAA_LEAF, 
