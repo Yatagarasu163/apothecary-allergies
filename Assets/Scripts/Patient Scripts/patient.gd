@@ -11,15 +11,28 @@ var waiting_for_cure : bool = false
 @export var yeepee_point:Vector2 = Vector2(1399.0, 300.0)
 var current_sickness = null;
 
+
+@export var CharacterSprite: Node2D
+@export var HeadSprite: Sprite2D
+@export var BodySprite: Sprite2D
+@export var BuffMiawSprite: AnimatedSprite2D
+@export var FireEyesSprite: AnimatedSprite2D
+@export var CoughinStarsSprite: AnimatedSprite2D
+
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	RandomizePatientType()
+	
 	current_sickness = GameManager.symptoms_combo.pick_random();
 	print("Patient Sickness: ", current_sickness);
+	for symptom in current_sickness:
+		CheckSymptoms(symptom)
+	
 	chat_bubble.visible = false
 	label.visible = false
 	position.x = queue_point.x
-
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -32,9 +45,33 @@ func _process(_delta: float) -> void:
 				await get_tree().create_timer(2.0).timeout
 				chat_bubble.visible = false
 				waiting_for_cure = true
-				GameManager.current_sickness = current_sickness;
+				#GameManager.current_sickness = current_sickness;
 			else:
 				serve_medicine();
+
+
+func CheckSymptoms(symptoms: int):
+	match symptoms:
+		GameManager.symptoms.BUFF_CAT:
+			BuffMiawSprite.visible = true
+			BuffMiawSprite.play("active")
+		GameManager.symptoms.FIRE_EYES:
+			FireEyesSprite.visible = true
+			FireEyesSprite.play("active")
+		GameManager.symptoms.UPSIDE_DOWN:
+			CharacterSprite.rotation = deg_to_rad(180)
+		GameManager.symptoms.STARRY_COUGH:
+			CoughinStarsSprite.visible = true
+			CoughinStarsSprite.play("active")
+
+
+func RandomizePatientType():
+	var frame_x: int = randi() % 4
+	var frame_coord: Vector2 = Vector2(frame_x, 0)
+	HeadSprite.frame_coords = frame_coord
+	frame_x = randi() % 4
+	frame_coord = Vector2(frame_x, 1)
+	BodySprite.frame_coords = frame_coord
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

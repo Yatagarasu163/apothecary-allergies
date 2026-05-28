@@ -75,12 +75,40 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_pocpw"]
+atlas = ExtResource("3_hr5m6")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utfjr"]
+atlas = ExtResource("3_hr5m6")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_prkx0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pocpw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utfjr")
+}],
+"loop": true,
+"name": &"active",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tkxci"]
 size = Vector2(19.904455, 11.876862)
 
-[node name="Patient" type="Node2D" unique_id=1386610887]
+[node name="Patient" type="Node2D" unique_id=1386610887 node_paths=PackedStringArray("CharacterSprite", "HeadSprite", "BodySprite", "BuffMiawSprite", "FireEyesSprite", "CoughinStarsSprite")]
 texture_filter = 3
 script = ExtResource("1_3c0vk")
+CharacterSprite = NodePath("CharacterBody2D/Character Sprite")
+HeadSprite = NodePath("CharacterBody2D/Character Sprite/Head")
+BodySprite = NodePath("CharacterBody2D/Character Sprite/Body")
+BuffMiawSprite = NodePath("CharacterBody2D/Character Sprite/Buff Miaw")
+FireEyesSprite = NodePath("CharacterBody2D/Character Sprite/Fire Eyes")
+CoughinStarsSprite = NodePath("CharacterBody2D/Character Sprite/Starry Cough")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=390868079 groups=["Patient"]]
 
@@ -88,29 +116,40 @@ script = ExtResource("1_3c0vk")
 scale = Vector2(6.402699, 6.402699)
 shape = SubResource("RectangleShape2D_hr5m6")
 
-[node name="Body" type="Sprite2D" parent="CharacterBody2D" unique_id=1002828061]
+[node name="Character Sprite" type="Node2D" parent="CharacterBody2D" unique_id=343797911]
+
+[node name="Body" type="Sprite2D" parent="CharacterBody2D/Character Sprite" unique_id=1002828061]
 scale = Vector2(4, 4)
 texture = ExtResource("2_tkxci")
 hframes = 4
 vframes = 2
 frame = 3
 
-[node name="Head" type="Sprite2D" parent="CharacterBody2D" unique_id=342883244]
+[node name="Head" type="Sprite2D" parent="CharacterBody2D/Character Sprite" unique_id=342883244]
 scale = Vector2(4, 4)
 texture = ExtResource("2_tkxci")
 hframes = 4
 vframes = 2
 frame = 7
 
-[node name="Buff Miaw" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=590828283]
+[node name="Buff Miaw" type="AnimatedSprite2D" parent="CharacterBody2D/Character Sprite" unique_id=590828283]
+visible = false
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_pocpw")
-animation = &"none"
+animation = &"active"
 
-[node name="Fire Eyes" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=996449405]
+[node name="Fire Eyes" type="AnimatedSprite2D" parent="CharacterBody2D/Character Sprite" unique_id=996449405]
+visible = false
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_utfjr")
-animation = &"none"
+animation = &"active"
+
+[node name="Starry Cough" type="AnimatedSprite2D" parent="CharacterBody2D/Character Sprite" unique_id=62289191]
+visible = false
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_prkx0")
+animation = &"active"
+frame_progress = 0.85459214
 
 [node name="Area2D" type="Area2D" parent="." unique_id=624450733]
 
