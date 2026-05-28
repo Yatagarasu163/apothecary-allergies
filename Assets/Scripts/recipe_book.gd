@@ -3,7 +3,7 @@ extends Node2D
 @export var recipePages: Array[Control]
 @export var currentPage: int
 
-@onready var recipeUI = $RecipeBookUI;
+@export var recipeUI: Node
 
 var is_player_inside: bool = false;
 var newPage: int
