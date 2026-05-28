@@ -30,7 +30,7 @@ enum items {NYAA_LEAF,
 	preload("res://icon.svg"),
 	preload("res://icon.svg"),
 	
-	preload("res://icon.svg"),
+	preload("res://Assets/Sprites/ForRubbish.png"),
 	
 	preload("res://icon.svg"),
 	preload("res://icon.svg"),

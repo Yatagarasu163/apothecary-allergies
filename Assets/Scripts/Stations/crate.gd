@@ -2,13 +2,16 @@ extends Node2D
 
 @export var interaction_range: float = 100.0;
 @export var item_provider: GameManager.items;
+@export var item_sprite: Texture
 
 @onready var interactable_area = $"Collision Detector/CollisionShape2D"
+@onready var itemSprite := $"Crate Sprite/Item Sprite"
 
 var is_player_inside: bool = false;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	itemSprite.texture = item_sprite
 	pass;
 
 

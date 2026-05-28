@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://cvvf61erirt5j"]
 
 [ext_resource type="Script" uid="uid://mflco1iy01y5" path="res://Assets/Scripts/Stations/crate.gd" id="1_qk6a2"]
-[ext_resource type="Texture2D" uid="uid://c53wg8pq2wx7k" path="res://icon.svg" id="2_kkbt5"]
+[ext_resource type="Texture2D" uid="uid://cxbqakm6o3crs" path="res://Assets/Sprites/Crate.png" id="2_sh1v2"]
+[ext_resource type="Texture2D" uid="uid://ck6j0qdapwccg" path="res://Assets/Sprites/Ingredients/nyaa_leaf.png" id="3_uapt4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mooop"]
 size = Vector2(104, 94)
@@ -12,9 +13,15 @@ size = Vector2(128, 128)
 [node name="Crate" type="Node2D" unique_id=103595422]
 script = ExtResource("1_qk6a2")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1049951571]
-texture_filter = 5
-texture = ExtResource("2_kkbt5")
+[node name="Crate Sprite" type="Sprite2D" parent="." unique_id=1049951571]
+z_index = -1
+scale = Vector2(4, 4)
+texture = ExtResource("2_sh1v2")
+
+[node name="Item Sprite" type="Sprite2D" parent="Crate Sprite" unique_id=2098364588]
+position = Vector2(0, 5)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_uapt4")
 
 [node name="Collision Detector" type="Area2D" parent="." unique_id=148557739]
 
