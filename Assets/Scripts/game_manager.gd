@@ -18,7 +18,9 @@ enum items {NYAA_LEAF,
 			DE_NNERBONE, 
 			WATERY_WOOFER, 
 			A_SACK_O_ONIONS,
-			UNMEOWING_DE_NNERBONE
+			UNMEOWING_DE_NNERBONE,
+			HONEY_ITS_A_ROCK,
+			UNMEWING_PENICILLIN
 			};
 @onready var items_sprites: Array[Texture] = [
 	preload("res://Assets/Sprites/Ingredients/nyaa_leaf.png"),
@@ -53,7 +55,9 @@ var recipes = {
 	sort_recipe_key([items.DRAGON_SCALE]): items.A_SACK_O_ONIONS,
 	sort_recipe_key([items.BOILED_STAR_FLOWER, 
 	items.BOILED_DRAGON_SCALE, items.BOILED_NYAA_LEAF]): items.UNMEOWING_DE_NNERBONE,
+	sort_recipe_key([items.DRAGON_SCALE, items.OOF_ROCK, items.BOILED_NYAA_LEAF]): items.HONEY_ITS_A_ROCK,
 	sort_recipe_key([items.OOF_ROCK, items.OOF_ROCK]): items.OOF_POWDER,
+	sort_recipe_key([items.OOF_POWDER, items.BOILED_NYAA_LEAF, items.DRAGON_SCALE]): items.UNMEWING_PENICILLIN,
 };
 
 # SYMPTOMS
@@ -85,8 +89,8 @@ var antidote_combo = {
 	[symptoms.FIRE_EYES, symptoms.BUFF_CAT]: items.WATERY_WOOFER, 
 	[symptoms.FIRE_EYES]: items.A_SACK_O_ONIONS, 
 	[symptoms.UPSIDE_DOWN, symptoms.BUFF_CAT]: items.UNMEOWING_DE_NNERBONE,
-	[symptoms.STARRY_COUGH]: null,
-	[symptoms.BUFF_CAT, symptoms.STARRY_COUGH]: null,
+	[symptoms.STARRY_COUGH]: items.HONEY_ITS_A_ROCK,
+	[symptoms.BUFF_CAT, symptoms.STARRY_COUGH]: items.UNMEWING_PENICILLIN,
 }
 
 var ui_mode = false;
