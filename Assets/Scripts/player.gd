@@ -49,7 +49,4 @@ func _physics_process(delta: float) -> void:
 		current_dash_cooldown -= delta;
 
 func _process(_delta: float) -> void:
-	if GameManager.ui_mode:
-		light.visible = false;
-	else:
-		light.visible = true;
+	pass
