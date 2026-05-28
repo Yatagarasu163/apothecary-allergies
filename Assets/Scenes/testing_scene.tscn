@@ -1,16 +1,20 @@
 [gd_scene format=4 uid="uid://coobctfje2xa4"]
 
-[ext_resource type="PackedScene" uid="uid://crw08vlyljkh7" path="res://Assets/Prefabs/player.tscn" id="1_k6s54"]
+[ext_resource type="PackedScene" path="res://Assets/Prefabs/Player.tscn" id="1_k6s54"]
 [ext_resource type="Script" uid="uid://c47eytvl5xbe0" path="res://Assets/Scripts/roomCamTrigger.gd" id="2_7tmfp"]
 [ext_resource type="PackedScene" uid="uid://b40l382tqoc3" path="res://Assets/Prefabs/Stations/Pestle.tscn" id="4_oceud"]
 [ext_resource type="Texture2D" uid="uid://dt312itx5pv75" path="res://Assets/Sprites/Tileset/floor tile.png" id="5_4h7gu"]
 [ext_resource type="PackedScene" uid="uid://d2oj4bhdh1lim" path="res://Assets/Prefabs/Stations/Rubbish.tscn" id="5_mepfo"]
 [ext_resource type="PackedScene" uid="uid://c8g1k6fsab7t8" path="res://Assets/Prefabs/Camera.tscn" id="5_rpgfy"]
 [ext_resource type="PackedScene" uid="uid://cvvf61erirt5j" path="res://Assets/Prefabs/Stations/Crate.tscn" id="6_03ung"]
+[ext_resource type="Texture2D" uid="uid://ck6j0qdapwccg" path="res://Assets/Sprites/Ingredients/nyaa_leaf.png" id="8_eegtx"]
 [ext_resource type="PackedScene" uid="uid://b7yo08pgjog3l" path="res://Assets/Prefabs/Stations/Boiler.tscn" id="8_mepfo"]
 [ext_resource type="PackedScene" uid="uid://dvrksvj06ahdt" path="res://Assets/Prefabs/patient_spawner.tscn" id="8_p7uqy"]
+[ext_resource type="Texture2D" uid="uid://b4vb8ty457ep3" path="res://Assets/Sprites/Ingredients/star_flower.png" id="9_vapop"]
 [ext_resource type="PackedScene" uid="uid://lku2iex7kybq" path="res://Assets/Prefabs/Stations/Recipe Book.tscn" id="10_35qsv"]
+[ext_resource type="Texture2D" uid="uid://ba0ckvfiwashl" path="res://Assets/Sprites/Ingredients/oof_rock.png" id="10_lpbfe"]
 [ext_resource type="Texture2D" uid="uid://b5wpd8gidikdk" path="res://Assets/Sprites/Tileset/walls.png" id="10_yem8g"]
+[ext_resource type="Texture2D" uid="uid://d1ux8fs45cbk0" path="res://Assets/Sprites/Ingredients/dragon_scale.png" id="11_4odsj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eegtx"]
 size = Vector2(32.025, 54.857132)
@@ -206,24 +210,28 @@ position = Vector2(877, 331)
 position = Vector2(310, -150)
 scale = Vector2(0.72, 0.72)
 interaction_range = 1.0
+item_sprite = ExtResource("8_eegtx")
 
 [node name="Crate2" parent="Shop Layout/Crates" unique_id=2037876390 instance=ExtResource("6_03ung")]
 position = Vector2(440, -150)
 scale = Vector2(0.72, 0.72)
 interaction_range = 1.0
 item_provider = 1
+item_sprite = ExtResource("9_vapop")
 
 [node name="Crate3" parent="Shop Layout/Crates" unique_id=1039800816 instance=ExtResource("6_03ung")]
 position = Vector2(565.99976, -150)
 scale = Vector2(0.72, 0.72)
 interaction_range = 1.0
 item_provider = 2
+item_sprite = ExtResource("10_lpbfe")
 
 [node name="Crate4" parent="Shop Layout/Crates" unique_id=288333584 instance=ExtResource("6_03ung")]
 position = Vector2(700, -150)
 scale = Vector2(0.72, 0.72)
 interaction_range = 1.0
 item_provider = 3
+item_sprite = ExtResource("11_4odsj")
 
 [node name="Rubbish" parent="Shop Layout/Crates" unique_id=55351558 instance=ExtResource("5_mepfo")]
 position = Vector2(839, -145)
