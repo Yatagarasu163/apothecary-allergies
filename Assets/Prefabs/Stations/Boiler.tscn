@@ -58,11 +58,21 @@ size = Vector2(52.5, 50.375)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i2c3m"]
 size = Vector2(32, 19.75)
 
+[sub_resource type="Gradient" id="Gradient_1tygn"]
+offsets = PackedFloat32Array(0.11405835, 0.6100796)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_i2c3m"]
+gradient = SubResource("Gradient_1tygn")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="Boiler" type="Node2D" unique_id=1355668019]
 scale = Vector2(4, 4)
 script = ExtResource("1_c5sqm")
 
 [node name="Boiler Sprite" type="AnimatedSprite2D" parent="." unique_id=548914325]
+light_mask = 2
 sprite_frames = SubResource("SpriteFrames_q0oec")
 animation = &"Using"
 frame_progress = 0.08486358
@@ -77,6 +87,7 @@ position = Vector2(0, -15)
 scale = Vector2(0.5, 0.5)
 
 [node name="Item" type="Sprite2D" parent="Items" unique_id=900082432]
+light_mask = 2
 texture = ExtResource("3_i2c3m")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=635866809]
@@ -84,6 +95,13 @@ texture = ExtResource("3_i2c3m")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1949838909]
 position = Vector2(0, 6.125)
 shape = SubResource("RectangleShape2D_i2c3m")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=581472478]
+color = Color(0.7342442, 0.31472227, 0, 1)
+energy = 2.0
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_i2c3m")
+texture_scale = 4.0
 
 [connection signal="body_entered" from="Collision Detector" to="." method="body_entered"]
 [connection signal="body_exited" from="Collision Detector" to="." method="body_exited"]

@@ -1,7 +1,10 @@
-[gd_scene format=3 uid="uid://c7w103s6lfl6f"]
+[gd_scene format=3 uid="uid://d0alovu730j6u"]
 
 [ext_resource type="Script" uid="uid://c7khxiw0w0l7f" path="res://Assets/Scripts/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://k0p637tmcmpp" path="res://Assets/Sprites/Sprite Sheets/witch.png" id="2_tgki7"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_tgki7"]
+polygon = PackedVector2Array(-35, -11, 28, -11, 28, 33, 22, 39, 22, 51, 31, 51, 31, 61, -27, 61, -27, 55, -23, 55, -23, 37, -27, 36, -35, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tgki7"]
 atlas = ExtResource("2_tgki7")
@@ -329,10 +332,22 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tgki7"]
 size = Vector2(7.588865, 12.385159)
 
+[sub_resource type="Gradient" id="Gradient_1tygn"]
+offsets = PackedFloat32Array(0.11405835, 0.6100796)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_64e7q"]
+gradient = SubResource("Gradient_1tygn")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="Player" type="CharacterBody2D" unique_id=2026092582 groups=["Player"]]
 script = ExtResource("1_onrkg")
 base_speed = 50
 dash_cooldown = 0.5
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=2120983590]
+occluder = SubResource("OccluderPolygon2D_tgki7")
 
 [node name="Player Sprite" type="AnimatedSprite2D" parent="." unique_id=1286987361]
 position = Vector2(-1.0000019, -2.000002)
@@ -345,3 +360,10 @@ frame_progress = 0.4146237
 position = Vector2(7.1525574e-07, 23.5)
 scale = Vector2(6.5886, 6.217118)
 shape = SubResource("RectangleShape2D_tgki7")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=668070844]
+color = Color(0.4716732, 0.001644339, 0.6872385, 1)
+shadow_enabled = true
+shadow_item_cull_mask = 2
+texture = SubResource("GradientTexture2D_64e7q")
+texture_scale = 4.0
