@@ -70,15 +70,27 @@ size = Vector2(52.5, 50.375)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1e3v2"]
 size = Vector2(32, 19.75)
 
+[sub_resource type="Gradient" id="Gradient_1tygn"]
+offsets = PackedFloat32Array(0.11405835, 0.6100796)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1tygn"]
+gradient = SubResource("Gradient_1tygn")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="Pestle" type="Node2D" unique_id=205812332]
 scale = Vector2(4, 4)
 script = ExtResource("1_dc2rc")
 
 [node name="PestleSprite" type="AnimatedSprite2D" parent="." unique_id=1287281234]
+light_mask = 0
 sprite_frames = SubResource("SpriteFrames_35dvj")
 animation = &"grinding"
 
 [node name="Collision Detector" type="Area2D" parent="." unique_id=867185578]
+position = Vector2(0, -2.5)
+scale = Vector2(0.36300698, 0.65395916)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collision Detector" unique_id=506269802]
 shape = SubResource("RectangleShape2D_68iyi")
@@ -88,13 +100,16 @@ position = Vector2(0, -15)
 scale = Vector2(0.5, 0.5)
 
 [node name="Item 1" type="Sprite2D" parent="Items" unique_id=498833994]
+light_mask = 0
 texture = ExtResource("3_1e3v2")
 
 [node name="Item 2" type="Sprite2D" parent="Items" unique_id=1207497301]
+light_mask = 0
 position = Vector2(-25, 0)
 texture = ExtResource("3_1e3v2")
 
 [node name="Item 3" type="Sprite2D" parent="Items" unique_id=928852486]
+light_mask = 0
 position = Vector2(25, 0)
 texture = ExtResource("3_1e3v2")
 
@@ -103,6 +118,12 @@ texture = ExtResource("3_1e3v2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=158530280]
 position = Vector2(0, 6.125)
 shape = SubResource("RectangleShape2D_1e3v2")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1067463906]
+color = Color(0.7342442, 0.31472227, 0, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_1tygn")
+texture_scale = 4.0
 
 [connection signal="body_entered" from="Collision Detector" to="." method="body_entered"]
 [connection signal="body_exited" from="Collision Detector" to="." method="body_exited"]
