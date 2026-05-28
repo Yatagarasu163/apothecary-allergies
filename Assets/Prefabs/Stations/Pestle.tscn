@@ -84,6 +84,7 @@ scale = Vector2(4, 4)
 script = ExtResource("1_dc2rc")
 
 [node name="PestleSprite" type="AnimatedSprite2D" parent="." unique_id=1287281234]
+light_mask = 0
 sprite_frames = SubResource("SpriteFrames_35dvj")
 animation = &"grinding"
 
@@ -99,13 +100,16 @@ position = Vector2(0, -15)
 scale = Vector2(0.5, 0.5)
 
 [node name="Item 1" type="Sprite2D" parent="Items" unique_id=498833994]
+light_mask = 0
 texture = ExtResource("3_1e3v2")
 
 [node name="Item 2" type="Sprite2D" parent="Items" unique_id=1207497301]
+light_mask = 0
 position = Vector2(-25, 0)
 texture = ExtResource("3_1e3v2")
 
 [node name="Item 3" type="Sprite2D" parent="Items" unique_id=928852486]
+light_mask = 0
 position = Vector2(25, 0)
 texture = ExtResource("3_1e3v2")
 
