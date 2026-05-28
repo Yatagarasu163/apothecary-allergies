@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://ba0ckvfiwashl" path="res://Assets/Sprites/Ingredients/oof_rock.png" id="10_lpbfe"]
 [ext_resource type="Texture2D" uid="uid://b5wpd8gidikdk" path="res://Assets/Sprites/Tileset/walls.png" id="10_yem8g"]
 [ext_resource type="Texture2D" uid="uid://d1ux8fs45cbk0" path="res://Assets/Sprites/Ingredients/dragon_scale.png" id="11_4odsj"]
+[ext_resource type="PackedScene" uid="uid://duuei02ys6c5y" path="res://Assets/Prefabs/Table.tscn" id="16_vapop"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eegtx"]
 size = Vector2(32.025, 54.857132)
@@ -259,6 +260,9 @@ position = Vector2(1127, 560)
 
 [node name="RecipeBook" parent="Shop Layout" unique_id=1057398287 instance=ExtResource("10_35qsv")]
 position = Vector2(395, 356)
+
+[node name="Table" parent="Shop Layout" unique_id=1914519163 instance=ExtResource("16_vapop")]
+position = Vector2(828, 359)
 
 [connection signal="body_entered" from="Shop Layout/ServingArea" to="Shop Layout/ServingArea" method="_on_body_entered"]
 [connection signal="body_entered" from="Shop Layout/KitchenArea" to="Shop Layout/KitchenArea" method="_on_body_entered"]
