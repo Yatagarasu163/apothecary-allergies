@@ -52,9 +52,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_i2c3m"]
-polygon = PackedVector2Array(-10.75, -4.5, -11.5, 0, -8.5, 7, 0, 8.75, 9.25, 7, 12, 0, 11.5, -4.5, 9.25, -8.5, 0, -9.5, -9.5, -8.5)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c5sqm"]
 size = Vector2(52.5, 50.375)
 
@@ -79,10 +76,6 @@ light_mask = 2
 sprite_frames = SubResource("SpriteFrames_q0oec")
 animation = &"Using"
 frame_progress = 0.08486358
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Boiler Sprite" unique_id=1796192273]
-occluder = SubResource("OccluderPolygon2D_i2c3m")
-occluder_light_mask = 2
 
 [node name="Collision Detector" type="Area2D" parent="." unique_id=1292967573]
 
