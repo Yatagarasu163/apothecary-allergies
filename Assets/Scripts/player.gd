@@ -47,6 +47,3 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	if current_dash_cooldown > 0:
 		current_dash_cooldown -= delta;
-
-func _process(_delta: float) -> void:
-	pass

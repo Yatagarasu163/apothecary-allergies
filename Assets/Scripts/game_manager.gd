@@ -52,6 +52,7 @@ enum items {NYAA_LEAF,
 var player_inventory = null;
 var player_inventory_sprite = null;
 
+
 # RECIPES
 var recipes = {
 	sort_recipe_key([items.BOILED_NYAA_LEAF, items.OOF_ROCK]): items.DE_MEOWER,
@@ -72,6 +73,8 @@ enum symptoms {
 
 @onready var symptom_sprites: Array[Texture] = [
 	preload("res://Assets/Sprites/Sickness Icons/BuffCat.tres"),
+	preload("res://Assets/Sprites/Sickness Icons/Fire Eyes.tres"),
+	preload("res://Assets/Sprites/Sickness Icons/Fire Eyes.tres"),
 	preload("res://Assets/Sprites/Sickness Icons/Fire Eyes.tres"),
 ]
 
@@ -94,6 +97,8 @@ var antidote_combo = {
 	[symptoms.STARRY_COUGH]: null,
 	[symptoms.BUFF_CAT, symptoms.STARRY_COUGH]: null,
 }
+
+var current_sickness = [];
 
 func sort_recipe_key(recipe: Array) -> Array:
 	var sorted = recipe.duplicate();

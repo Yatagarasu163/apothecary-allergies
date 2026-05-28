@@ -143,6 +143,7 @@ func check_player_interaction() -> void:
 						items_to_grind = [];
 					else:
 						print("Player already has an item!");
+						return;
 					has_grinded_item = false;
 				# Else, then it is just the player adding another item to the grinder.
 				else:
