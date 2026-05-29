@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dv2c4e5nvt2ck" path="res://Assets/Prefabs/OrderPaper.tscn" id="3_qg7nf"]
 [ext_resource type="Texture2D" uid="uid://ck6j0qdapwccg" path="res://Assets/Sprites/Ingredients/nyaa_leaf.png" id="4_7fvhq"]
 [ext_resource type="FontFile" uid="uid://sa0jbshwh31s" path="res://Assets/Fonts/LowresPixel-Regular.otf" id="7_ay8xc"]
-[ext_resource type="Script" uid="uid://0x5e5go2jdne" path="res://Assets/Prefabs/tutorial_shi.gd" id="8_3rdkw"]
+[ext_resource type="Script" path="res://Assets/Prefabs/tutorial_shi.gd" id="8_3rdkw"]
 [ext_resource type="Texture2D" uid="uid://bnmann2w1r118" path="res://Assets/Sprites/big_paper.png" id="9_0sw3j"]
 [ext_resource type="Texture2D" uid="uid://dhq5hokvelp3m" path="res://Assets/Sprites/Start_Menu_Button.png" id="10_0sw3j"]
 [ext_resource type="Texture2D" uid="uid://dmrv40xncx1l5" path="res://Assets/Sprites/Next_Button.png" id="10_sipgs"]
@@ -210,15 +210,21 @@ offset_bottom = 770.0
 z_index = 19
 z_as_relative = false
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="UI Banner" type="TextureRect" parent="CanvasLayer/Control" unique_id=1402184454]
-layout_mode = 0
-offset_right = 128.0
-offset_bottom = 40.0
-scale = Vector2(15, 4.5)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -900.0
+offset_bottom = -900.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_rem6g")
 
 [node name="ItemBoxIcon" type="TextureRect" parent="CanvasLayer/Control" unique_id=2091628048]
