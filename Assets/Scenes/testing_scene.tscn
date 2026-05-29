@@ -232,10 +232,17 @@ texture = SubResource("GradientTexture2D_vapop")
 texture_scale = 20.0
 
 [node name="PointLight2D3" type="PointLight2D" parent="Shop Layout/TileMapLayer" unique_id=789400234]
-position = Vector2(130, 270)
+position = Vector2(100, 270)
 scale = Vector2(0.25, 0.25)
 color = Color(0.5108301, 0.40777045, 9.62615e-08, 1)
-energy = 2.0
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_vapop")
+texture_scale = 10.0
+
+[node name="PointLight2D4" type="PointLight2D" parent="Shop Layout/TileMapLayer" unique_id=108663762]
+position = Vector2(155, 270)
+scale = Vector2(0.25, 0.25)
+color = Color(0.5108301, 0.40777045, 9.62615e-08, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_vapop")
 texture_scale = 10.0
