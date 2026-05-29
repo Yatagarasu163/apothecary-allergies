@@ -1,6 +1,7 @@
 extends Node2D;
 
 var player_score: int
+var nextDaying: bool
 
 #THESE VAR IS USE FOR PATIENT SPAWNER
 # DETECT THE AMOUNT OF PATIENT ON SCREEN (FOR PATIENT_SPAWNER)

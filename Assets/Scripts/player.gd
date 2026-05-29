@@ -1,5 +1,7 @@
 extends CharacterBody2D;
 
+@export var start_day_position: Vector2
+
 @export var base_speed: int = 35;
 @export var dash_speed: int = 750
 @export var dash_cooldown: float = 1;
@@ -77,6 +79,10 @@ func goToNextDay()->void:
 			next_day_text.visible = false
 			print("Max amnt of patient: ",GameManager.maximum_amount_of_patient)
 			print("Amnt of patient spawn: ",GameManager.amount_of_patient_spawn)
+			GameManager.nextDaying = true
+			await get_tree().create_timer(3).timeout;
+			position = start_day_position
+			GameManager.nextDaying = false
 			patient_spawner.start_next_day()
 	else:
 		next_day_text.visible = false
