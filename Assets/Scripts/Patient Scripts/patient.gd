@@ -26,7 +26,7 @@ var current_sickness = null;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	patience_bar.max_value = 100
-	patience_timer.wait_time = 5.0
+	patience_timer.wait_time = 10.0
 	patience_timer.start()
 	RandomizePatientType()
 	
@@ -55,7 +55,7 @@ func PatientInteractSystem():
 		if(!waiting_for_cure):
 			label.visible = false
 			patience_bar.value = 0
-			patience_timer.wait_time = 3
+			patience_timer.wait_time = 7.0
 			chat_bubble.play_symptom_anim();
 			await get_tree().create_timer(2.0).timeout
 			chat_bubble.visible = false

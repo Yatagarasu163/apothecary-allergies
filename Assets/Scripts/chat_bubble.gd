@@ -22,6 +22,7 @@ func play_symptom_anim() -> void:
 	print("PLAYING SYMPTOM ANIM")
 	visible = true;
 	for symptom in symptom_list:
+		symptom_sprite.texture = GameManager.symptom_sprites[symptom];
 		symptom_sprite.visible = true;
 		match symptom:
 			symptoms.BUFF_CAT:

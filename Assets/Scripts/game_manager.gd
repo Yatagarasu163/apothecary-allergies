@@ -37,12 +37,12 @@ enum items {NYAA_LEAF,
 	preload("res://Assets/Sprites/Ingredients/star_flower.png"),
 	preload("res://Assets/Sprites/Ingredients/oof_rock.png"),
 	preload("res://Assets/Sprites/Ingredients/dragon_scale.png"),
-	preload("res://Assets/Sprites/Ingredients/oof_rock.png"),
+	preload("res://Assets/Sprites/Processed Ingredient/oof_powder.png"),
 	
-	preload("res://icon.svg"),
-	preload("res://icon.svg"),
+	preload("res://Assets/Sprites/Processed Ingredient/boiled_nyaa_leaf.png"),
+	preload("res://Assets/Sprites/Processed Ingredient/boiled_star_flower.png"),
 	preload("res://Assets/Sprites/Processed Ingredient/boiled_oof_rock.png"),
-	preload("res://icon.svg"),
+	preload("res://Assets/Sprites/Processed Ingredient/boiled_dragon_scale.png"),
 	
 	preload("res://Assets/Sprites/ForRubbish.png"),
 	
@@ -67,7 +67,10 @@ var recipes = {
 	sort_recipe_key([items.NYAA_LEAF, items.BOILED_OOF_ROCK, items.STAR_FLOWER]): items.WATERY_WOOFER,
 	sort_recipe_key([items.DRAGON_SCALE]): items.A_SACK_O_ONIONS,
 	sort_recipe_key([items.BOILED_STAR_FLOWER, 
-	items.BOILED_DRAGON_SCALE, items.BOILED_NYAA_LEAF]): items.UNMEOWING_DE_NNERBONE
+	items.BOILED_DRAGON_SCALE, items.BOILED_NYAA_LEAF]): items.UNMEOWING_DE_NNERBONE,
+	sort_recipe_key([items.BOILED_NYAA_LEAF, items.OOF_ROCK, items.DRAGON_SCALE]): items.HONEY_ITS_A_ROCK,
+	sort_recipe_key([items.OOF_ROCK, items.OOF_ROCK]): items.OOF_POWDER,
+	sort_recipe_key([items.OOF_POWDER, items.BOILED_NYAA_LEAF, items.DRAGON_SCALE]): items.UNMEWING_PENICILLIN,	
 };
 
 # SYMPTOMS
@@ -82,7 +85,7 @@ enum symptoms {
 	preload("res://Assets/Sprites/Sickness Icons/BuffCat.tres"),
 	preload("res://Assets/Sprites/Sickness Icons/Fire Eyes.tres"),
 	preload("res://Assets/Sprites/Sickness Icons/UpsideDownIcon.png"),
-	preload("res://Assets/Sprites/Sickness Icons/Fire Eyes.tres"),
+	preload("res://Assets/Sprites/Sickness Icons/StarryCough.tres"),
 ]
 
 var symptoms_combo = [
@@ -101,8 +104,8 @@ var antidote_combo = {
 	[symptoms.FIRE_EYES, symptoms.BUFF_CAT]: items.WATERY_WOOFER, 
 	[symptoms.FIRE_EYES]: items.A_SACK_O_ONIONS, 
 	[symptoms.UPSIDE_DOWN, symptoms.BUFF_CAT]: items.UNMEOWING_DE_NNERBONE,
-	[symptoms.STARRY_COUGH]: null,
-	[symptoms.BUFF_CAT, symptoms.STARRY_COUGH]: null,
+	[symptoms.STARRY_COUGH]: items.HONEY_ITS_A_ROCK,
+	[symptoms.BUFF_CAT, symptoms.STARRY_COUGH]: items.UNMEWING_PENICILLIN,
 }
 
 var current_sickness = [];

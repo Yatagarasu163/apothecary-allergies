@@ -15,7 +15,18 @@
 [ext_resource type="Texture2D" uid="uid://ba0ckvfiwashl" path="res://Assets/Sprites/Ingredients/oof_rock.png" id="8_e34go"]
 [ext_resource type="Texture2D" uid="uid://b4vb8ty457ep3" path="res://Assets/Sprites/Ingredients/star_flower.png" id="9_jyr5k"]
 [ext_resource type="Texture2D" uid="uid://d1ux8fs45cbk0" path="res://Assets/Sprites/Ingredients/dragon_scale.png" id="10_kfm4u"]
+[ext_resource type="Texture2D" uid="uid://df1jptb64kers" path="res://Assets/Sprites/Processed Ingredient/boiled_nyaa_leaf.png" id="11_18wqi"]
+[ext_resource type="Texture2D" uid="uid://d07xxiv532qeh" path="res://Assets/Sprites/Antidote/De-meower.png" id="14_pynol"]
+[ext_resource type="Texture2D" uid="uid://c50od3wk565km" path="res://Assets/Sprites/Processed Ingredient/boiled_star_flower.png" id="15_2yhjo"]
 [ext_resource type="Texture2D" uid="uid://8lsqbakhd1yg" path="res://Assets/Sprites/Processed Ingredient/boiled_oof_rock.png" id="16_kfm4u"]
+[ext_resource type="Texture2D" uid="uid://53vykoxoh1q8" path="res://Assets/Sprites/Processed Ingredient/boiled_dragon_scale.png" id="17_pynol"]
+[ext_resource type="Texture2D" uid="uid://bmg04no2li8dp" path="res://Assets/Sprites/Antidote/De-nnerbone.png" id="19_mc417"]
+[ext_resource type="Texture2D" uid="uid://cxy1w2yhnb7sr" path="res://Assets/Sprites/Processed Ingredient/oof_powder.png" id="20_mc417"]
+[ext_resource type="Texture2D" uid="uid://dxn41sk6gbnf7" path="res://Assets/Sprites/Antidote/Watery Woofer.png" id="21_ky31r"]
+[ext_resource type="Texture2D" uid="uid://babxqucdjmyg7" path="res://Assets/Sprites/Antidote/sack-of-onions.png" id="23_pe647"]
+[ext_resource type="Texture2D" uid="uid://bw8h7r3hchtbn" path="res://Assets/Sprites/Antidote/Unmeowing De-nnerbone.png" id="24_ln562"]
+[ext_resource type="Texture2D" uid="uid://bv82ot6afbk1" path="res://Assets/Sprites/Antidote/Honey, it's a rock.png" id="25_adsdl"]
+[ext_resource type="Texture2D" uid="uid://dpmpp3663p7k2" path="res://Assets/Sprites/Antidote/Unmewing Penicillin.png" id="27_rfv3o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hj8ig"]
 size = Vector2(164, 165)
@@ -42,7 +53,7 @@ atlas = ExtResource("8_1p8i2")
 
 [node name="RecipeBook" type="Node2D" unique_id=1057398287 node_paths=PackedStringArray("recipePages", "recipeUI")]
 script = ExtResource("1_l5iqb")
-recipePages = [NodePath("CanvasLayer/RecipeBookUI/Page 1"), NodePath("CanvasLayer/RecipeBookUI/Page 2"), NodePath("CanvasLayer/RecipeBookUI/Page 3"), NodePath("CanvasLayer/RecipeBookUI/Page 5"), NodePath("CanvasLayer/RecipeBookUI/Page 6"), NodePath("CanvasLayer/RecipeBookUI/Page 7"), NodePath("CanvasLayer/RecipeBookUI/Page 8")]
+recipePages = [NodePath("CanvasLayer/RecipeBookUI/Page 1"), NodePath("CanvasLayer/RecipeBookUI/Page 2"), NodePath("CanvasLayer/RecipeBookUI/Page 3"), NodePath("CanvasLayer/RecipeBookUI/Page 5"), NodePath("CanvasLayer/RecipeBookUI/Page 6"), NodePath("CanvasLayer/RecipeBookUI/Page 7"), NodePath("CanvasLayer/RecipeBookUI/Page 8"), NodePath("CanvasLayer/RecipeBookUI/Page 9")]
 recipeUI = NodePath("CanvasLayer/RecipeBookUI")
 
 [node name="Book Sprite" type="Sprite2D" parent="." unique_id=1955881859]
@@ -568,7 +579,7 @@ offset_left = 35.0
 offset_top = 150.0
 offset_right = 110.0
 offset_bottom = 225.0
-texture = ExtResource("6_lnltm")
+texture = ExtResource("11_18wqi")
 
 [node name="Grinder" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 6/De-Meower" unique_id=33589233]
 layout_mode = 1
@@ -596,7 +607,7 @@ alignment = 1
 [node name="Ingerdient" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 6/De-Meower/Grinder/HBoxContainer" unique_id=1342074366]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("6_lnltm")
+texture = ExtResource("11_18wqi")
 
 [node name="Ingerdient2" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 6/De-Meower/Grinder/HBoxContainer" unique_id=1029102745]
 custom_minimum_size = Vector2(100, 100)
@@ -608,6 +619,15 @@ visible = false
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture = ExtResource("5_7eswm")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 6/De-Meower" unique_id=1480017958]
+layout_mode = 0
+offset_left = 523.0
+offset_top = 589.0
+offset_right = 563.0
+offset_bottom = 629.0
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("14_pynol")
 
 [node name="De-nnerbone" type="Control" parent="CanvasLayer/RecipeBookUI/Page 6" unique_id=1292533184]
 anchors_preset = 0
@@ -658,7 +678,7 @@ offset_left = 35.0
 offset_top = 150.0
 offset_right = 110.0
 offset_bottom = 225.0
-texture = ExtResource("6_lnltm")
+texture = ExtResource("15_2yhjo")
 
 [node name="Boiler2" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 6/De-nnerbone/Ingredient Steps" unique_id=1047093851]
 custom_minimum_size = Vector2(150, 150)
@@ -679,7 +699,7 @@ offset_left = 35.0
 offset_top = 150.0
 offset_right = 110.0
 offset_bottom = 225.0
-texture = ExtResource("6_lnltm")
+texture = ExtResource("17_pynol")
 
 [node name="Grinder" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 6/De-nnerbone" unique_id=191015871]
 layout_mode = 1
@@ -707,12 +727,12 @@ alignment = 1
 [node name="Ingerdient" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 6/De-nnerbone/Grinder/HBoxContainer" unique_id=1240882156]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("6_lnltm")
+texture = ExtResource("15_2yhjo")
 
 [node name="Ingerdient2" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 6/De-nnerbone/Grinder/HBoxContainer" unique_id=1296331864]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("6_lnltm")
+texture = ExtResource("17_pynol")
 
 [node name="Ingerdient3" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 6/De-nnerbone/Grinder/HBoxContainer" unique_id=716083044]
 visible = false
@@ -720,7 +740,17 @@ custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture = ExtResource("5_7eswm")
 
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 6/De-nnerbone" unique_id=1988583878]
+layout_mode = 0
+offset_left = 523.0
+offset_top = 589.0
+offset_right = 563.0
+offset_bottom = 629.0
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("19_mc417")
+
 [node name="Page 7" type="Control" parent="CanvasLayer/RecipeBookUI" unique_id=331701039]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -814,6 +844,15 @@ custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture = ExtResource("9_jyr5k")
 
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 7/Watery Woofer" unique_id=2022015677]
+layout_mode = 0
+offset_left = 523.0
+offset_top = 589.0
+offset_right = 563.0
+offset_bottom = 629.0
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("21_ky31r")
+
 [node name="Sack of Onions" type="Control" parent="CanvasLayer/RecipeBookUI/Page 7" unique_id=1155875538]
 anchors_preset = 0
 offset_left = 1045.0
@@ -895,8 +934,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -100.0
-offset_top = -200.0
+offset_top = -445.0
 offset_right = 100.0
+offset_bottom = -245.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("7_dv6cf")
@@ -926,6 +966,15 @@ visible = false
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture = ExtResource("5_7eswm")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 7/Sack of Onions" unique_id=1004886605]
+layout_mode = 0
+offset_left = 523.0
+offset_top = 344.0
+offset_right = 563.0
+offset_bottom = 384.0
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("23_pe647")
 
 [node name="Page 8" type="Control" parent="CanvasLayer/RecipeBookUI" unique_id=519390063]
 visible = false
@@ -984,7 +1033,7 @@ offset_left = 35.0
 offset_top = 150.0
 offset_right = 110.0
 offset_bottom = 225.0
-texture = ExtResource("6_lnltm")
+texture = ExtResource("15_2yhjo")
 
 [node name="Boiler2" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 8/Unmeowing De-nnerbone/Ingredient Steps" unique_id=1652609694]
 custom_minimum_size = Vector2(150, 150)
@@ -1005,7 +1054,7 @@ offset_left = 35.0
 offset_top = 150.0
 offset_right = 110.0
 offset_bottom = 225.0
-texture = ExtResource("6_lnltm")
+texture = ExtResource("17_pynol")
 
 [node name="Boiler3" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 8/Unmeowing De-nnerbone/Ingredient Steps" unique_id=362813513]
 custom_minimum_size = Vector2(150, 150)
@@ -1026,7 +1075,7 @@ offset_left = 35.0
 offset_top = 150.0
 offset_right = 110.0
 offset_bottom = 225.0
-texture = ExtResource("6_lnltm")
+texture = ExtResource("11_18wqi")
 
 [node name="Grinder" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 8/Unmeowing De-nnerbone" unique_id=1878177210]
 layout_mode = 1
@@ -1054,17 +1103,26 @@ alignment = 1
 [node name="Ingerdient" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 8/Unmeowing De-nnerbone/Grinder/HBoxContainer" unique_id=890133841]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("6_lnltm")
+texture = ExtResource("15_2yhjo")
 
 [node name="Ingerdient2" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 8/Unmeowing De-nnerbone/Grinder/HBoxContainer" unique_id=984978477]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("6_lnltm")
+texture = ExtResource("17_pynol")
 
 [node name="Ingerdient3" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 8/Unmeowing De-nnerbone/Grinder/HBoxContainer" unique_id=191006025]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("6_lnltm")
+texture = ExtResource("11_18wqi")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 8/Unmeowing De-nnerbone" unique_id=410423766]
+layout_mode = 0
+offset_left = 523.0
+offset_top = 589.0
+offset_right = 563.0
+offset_bottom = 629.0
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("24_ln562")
 
 [node name="Honey, It’s a Rock!" type="Control" parent="CanvasLayer/RecipeBookUI/Page 8" unique_id=624716155]
 anchors_preset = 0
@@ -1117,7 +1175,7 @@ offset_left = 35.0
 offset_top = 150.0
 offset_right = 110.0
 offset_bottom = 225.0
-texture = ExtResource("6_lnltm")
+texture = ExtResource("11_18wqi")
 
 [node name="Grinder" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 8/Honey, It’s a Rock!" unique_id=284748666]
 layout_mode = 1
@@ -1145,7 +1203,7 @@ alignment = 1
 [node name="Ingerdient" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 8/Honey, It’s a Rock!/Grinder/HBoxContainer" unique_id=1732177645]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("6_lnltm")
+texture = ExtResource("11_18wqi")
 
 [node name="Ingerdient2" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 8/Honey, It’s a Rock!/Grinder/HBoxContainer" unique_id=1611676599]
 custom_minimum_size = Vector2(100, 100)
@@ -1156,6 +1214,168 @@ texture = ExtResource("10_kfm4u")
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture = ExtResource("8_e34go")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 8/Honey, It’s a Rock!" unique_id=1763039109]
+layout_mode = 0
+offset_left = 523.0
+offset_top = 589.0
+offset_right = 563.0
+offset_bottom = 629.0
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("25_adsdl")
+
+[node name="Page 9" type="Control" parent="CanvasLayer/RecipeBookUI" unique_id=642609205]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Unmewing Penicillin" type="Control" parent="CanvasLayer/RecipeBookUI/Page 9" unique_id=2000417362]
+anchors_preset = 0
+offset_left = 190.0
+offset_top = 120.0
+offset_right = 890.0
+offset_bottom = 870.0
+
+[node name="Label" type="Label" parent="CanvasLayer/RecipeBookUI/Page 9/Unmewing Penicillin" unique_id=1462860565]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 100.0
+grow_horizontal = 2
+text = "UNMEOWING
+
+DE-NNERBONE"
+label_settings = SubResource("LabelSettings_1p8i2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ingredient Steps" type="HBoxContainer" parent="CanvasLayer/RecipeBookUI/Page 9/Unmewing Penicillin" unique_id=1909423557]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = 127.0
+offset_right = 6.0
+offset_bottom = 277.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Boiler" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 9/Unmewing Penicillin/Ingredient Steps" unique_id=108014440]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+texture = ExtResource("4_706vf")
+
+[node name="Ingerdient" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 9/Unmewing Penicillin/Ingredient Steps/Boiler" unique_id=2102846571]
+layout_mode = 0
+offset_left = 35.0
+offset_top = -50.0
+offset_right = 110.0
+offset_bottom = 25.0
+texture = ExtResource("5_7eswm")
+
+[node name="Output Ingredient" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 9/Unmewing Penicillin/Ingredient Steps/Boiler" unique_id=926761642]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 150.0
+offset_right = 110.0
+offset_bottom = 225.0
+texture = ExtResource("11_18wqi")
+
+[node name="Grinder" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 9/Unmewing Penicillin" unique_id=1383065996]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 752.0
+offset_top = -472.0
+offset_right = 952.0
+offset_bottom = -272.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_dv6cf")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/RecipeBookUI/Page 9/Unmewing Penicillin/Grinder" unique_id=373180648]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = -50.0
+offset_top = -75.0
+offset_right = 250.0
+offset_bottom = 25.0
+alignment = 1
+
+[node name="Ingerdient" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 9/Unmewing Penicillin/Grinder/HBoxContainer" unique_id=1132374986]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("11_18wqi")
+
+[node name="Ingerdient2" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 9/Unmewing Penicillin/Grinder/HBoxContainer" unique_id=2068040945]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("20_mc417")
+
+[node name="Ingerdient3" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 9/Unmewing Penicillin/Grinder/HBoxContainer" unique_id=1763628062]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("10_kfm4u")
+
+[node name="Grinder2" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 9/Unmewing Penicillin" unique_id=1863316340]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -78.0
+offset_top = -549.0
+offset_right = 122.0
+offset_bottom = -349.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_dv6cf")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/RecipeBookUI/Page 9/Unmewing Penicillin/Grinder2" unique_id=1792742745]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = -50.0
+offset_top = -75.0
+offset_right = 250.0
+offset_bottom = 25.0
+alignment = 1
+
+[node name="Ingerdient" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 9/Unmewing Penicillin/Grinder2/HBoxContainer" unique_id=174019418]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("8_e34go")
+
+[node name="Ingerdient2" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 9/Unmewing Penicillin/Grinder2/HBoxContainer" unique_id=1863881583]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("8_e34go")
+
+[node name="Ingerdient3" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 9/Unmewing Penicillin/Grinder2" unique_id=168713401]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 53.0
+offset_top = 195.0
+offset_right = 153.0
+offset_bottom = 295.0
+texture = ExtResource("20_mc417")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 9/Unmewing Penicillin" unique_id=1524233679]
+layout_mode = 0
+offset_left = 1381.0
+offset_top = 316.0
+offset_right = 1421.0
+offset_bottom = 356.0
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("27_rfv3o")
 
 [node name="Next Page" type="Button" parent="CanvasLayer/RecipeBookUI" unique_id=1619816314]
 self_modulate = Color(1, 1, 1, 0)

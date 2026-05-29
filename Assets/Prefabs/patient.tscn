@@ -100,7 +100,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tkxci"]
-size = Vector2(19.904455, 11.876862)
+size = Vector2(19.904455, 28.4558)
 
 [node name="Patient" type="Node2D" unique_id=1386610887 node_paths=PackedStringArray("CharacterSprite", "HeadSprite", "BodySprite", "BuffMiawSprite", "FireEyesSprite", "CoughinStarsSprite")]
 texture_filter = 3
@@ -156,7 +156,7 @@ frame_progress = 0.85459214
 [node name="Area2D" type="Area2D" parent="." unique_id=624450733]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=44697536]
-position = Vector2(-0.75, -105.03174)
+position = Vector2(-0.75, -158.03174)
 scale = Vector2(6.5060806, 6.393654)
 shape = SubResource("RectangleShape2D_tkxci")
 
