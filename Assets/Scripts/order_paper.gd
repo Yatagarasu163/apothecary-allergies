@@ -13,8 +13,8 @@ func _process(_delta: float) -> void:
 		if (GameManager.current_sickness.size() == 1):
 			if GameManager.current_sickness.has(GameManager.symptoms.FIRE_EYES):
 				symptom_1_sprite = GameManager.symptom_sprites[GameManager.symptoms.FIRE_EYES];
-				symptom_1_sprite.position.y = 135;
-				symptom_1_sprite.visible = true;
+				#symptom_1_sprite.position.y = 135;
+				#symptom_1_sprite.visible = true;
 				symptom_2_sprite = GameManager.symptom_sprites[GameManager.symptoms.UPSIDE_DOWN];
 				symptom_2_sprite.rotation = 180;
 				symptom_2_sprite.position.y = 135;
@@ -27,7 +27,7 @@ func _process(_delta: float) -> void:
 		else:
 			if GameManager.current_sickness.has(GameManager.symptoms.UPSIDE_DOWN) && GameManager.current_sickness.has(GameManager.symptoms.BUFF_CAT):
 				symptom_1_sprite.position.y = 135;
-				symptom_1_sprite.texture = GameManager.symptom_sprites[GameManager.BUFF_CAT];
+				symptom_1_sprite.texture = GameManager.symptom_sprites[GameManager.symptoms.BUFF_CAT];
 				symptom_1_sprite.rotation = 180;
 				symptom_1_sprite.visible = true;
 			elif GameManager.current_sickness.has(GameManager.symptoms.FIRE_EYES) && GameManager.current_sickness.has(GameManager.symptoms.BUFF_CAT):
