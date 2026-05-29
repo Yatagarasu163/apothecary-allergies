@@ -21,6 +21,9 @@ var current_sickness = null;
 @export var FireEyesSprite: AnimatedSprite2D
 @export var CoughinStarsSprite: AnimatedSprite2D
 
+@export var askingCure: AudioStreamPlayer
+@export var gettingCure: AudioStreamPlayer
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -54,6 +57,7 @@ func get_new_sickness():
 func PatientInteractSystem():
 	if Input.is_action_just_pressed("Interact"):
 		if(!waiting_for_cure):
+			askingCure.play()
 			patience_bar.visible = true
 			label.visible = false
 			patience_bar.value = 0
@@ -64,6 +68,7 @@ func PatientInteractSystem():
 			waiting_for_cure = true
 			get_new_sickness();
 		else:
+			gettingCure.play()
 			serve_medicine();
 			patience_timer.stop();
 

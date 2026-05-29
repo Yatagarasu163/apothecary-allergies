@@ -25,6 +25,7 @@ texture = ExtResource("2_0t875")
 
 [node name="OrderPaper" parent="." unique_id=832149662 instance=ExtResource("3_qg7nf")]
 visible = false
+z_index = 4096
 offset_left = 1610.0
 offset_top = 770.0
 offset_right = 1610.0

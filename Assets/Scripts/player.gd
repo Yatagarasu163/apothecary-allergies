@@ -25,7 +25,11 @@ func handleInput():
 	
 	moveDirection = Input.get_vector("WalkLeft","WalkRight","WalkUp","WalkDown")
 	velocity += moveDirection * base_speed;
-	walkingSound.playing = moveDirection != Vector2.ZERO
+	if moveDirection != Vector2.ZERO:
+		if (!walkingSound.playing):
+			walkingSound.play(2)
+	else:
+		walkingSound.stop()
 	
 	if Input.is_action_just_pressed("Dash") && current_dash_cooldown <= 0:
 		current_dash_cooldown = dash_cooldown;

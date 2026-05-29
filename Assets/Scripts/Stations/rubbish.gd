@@ -1,6 +1,6 @@
 extends Node2D
 
-
+@export var audio: AudioStreamPlayer
 var is_player_inside: bool = false;
 @onready var anim: AnimatedSprite2D = $"Rubbish Sprite"
 
@@ -11,6 +11,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if is_player_inside:
 		if Input.is_action_just_pressed("Add"):
+			audio.play()
 			GameManager.player_inventory = null;
 			GameManager.player_inventory_sprite = null;
 			anim.play("burning");
