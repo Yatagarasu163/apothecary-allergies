@@ -1,19 +1,11 @@
 extends Node2D
 @onready var timer: Timer = $Timer
 @export var patient_prefab : PackedScene
-var current_day = GameManager.day;
 
 
 func _ready() -> void:
 	if(GameManager.day <= 3):
 		GameManager.maximum_amount_of_patient = randi_range(3, 5)
-
-func _process(_delta: float) -> void:
-	if GameManager.day != current_day:
-		print("Current day: ", current_day)
-		print("GameManager day: ", GameManager.day)
-		current_day = GameManager.day;
-		start_next_day();
 
 func start_next_day() -> void:
 	if(GameManager.day <= 3):

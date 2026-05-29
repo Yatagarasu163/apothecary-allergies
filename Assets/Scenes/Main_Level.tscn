@@ -6,10 +6,18 @@
 [ext_resource type="Texture2D" uid="uid://dhq5hokvelp3m" path="res://Assets/Sprites/Start_Menu_Button.png" id="4_ji5u7"]
 [ext_resource type="Texture2D" uid="uid://dwu0webnm2f6m" path="res://Assets/Sprites/Start_Menu_Button_Pressed.png" id="5_ni0wm"]
 [ext_resource type="Script" uid="uid://50v207knuh1x" path="res://exit_button.gd" id="6_7gyyy"]
+[ext_resource type="Texture2D" uid="uid://k0p637tmcmpp" path="res://Assets/Sprites/Sprite Sheets/witch.png" id="7_ft0oo"]
+[ext_resource type="Texture2D" uid="uid://danr6lhqx2m" path="res://Assets/Sprites/Sprite Sheets/Sickness.png" id="8_ji5u7"]
+[ext_resource type="Script" uid="uid://brybv4skrsmeh" path="res://Assets/Scenes/buff_cat_rotation.gd" id="9_7gyyy"]
+[ext_resource type="Texture2D" uid="uid://bv82ot6afbk1" path="res://Assets/Sprites/Antidote/Honey, it's a rock.png" id="9_ni0wm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_c2ltq"]
 font = ExtResource("1_0e75d")
 font_size = 128
+
+[sub_resource type="LabelSettings" id="LabelSettings_7gyyy"]
+font = ExtResource("1_0e75d")
+font_size = 50
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oqbe1"]
 atlas = ExtResource("3_xhncm")
@@ -89,17 +97,120 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebihn"]
+atlas = ExtResource("7_ft0oo")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4ukv"]
+atlas = ExtResource("7_ft0oo")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0ojv"]
+atlas = ExtResource("7_ft0oo")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kvxw"]
+atlas = ExtResource("7_ft0oo")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31k2i"]
+atlas = ExtResource("7_ft0oo")
+region = Rect2(0, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydfdc"]
+atlas = ExtResource("7_ft0oo")
+region = Rect2(32, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0i3at"]
+atlas = ExtResource("7_ft0oo")
+region = Rect2(64, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b60ru"]
+atlas = ExtResource("7_ft0oo")
+region = Rect2(96, 256, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xhncm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebihn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4ukv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0ojv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kvxw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31k2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydfdc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0i3at")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b60ru")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2ltq"]
+atlas = ExtResource("8_ji5u7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rh74t"]
+atlas = ExtResource("8_ji5u7")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nvtyf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2ltq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rh74t")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
 [node name="MainLevel" type="Node2D" unique_id=1153300467]
 
-[node name="Label" type="Label" parent="." unique_id=14352704]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=356989229]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(50.798237, 50.798237)
+color = Color(0.6008988, 0.0020854091, 0.817791, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=379069116]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=14352704]
 offset_left = 273.0
 offset_top = 109.0
-offset_right = 1544.0
+offset_right = 1624.0
 offset_bottom = 284.0
 text = "Apothecary Allergies"
 label_settings = SubResource("LabelSettings_c2ltq")
 
-[node name="Start_Button" type="Button" parent="." unique_id=325110178]
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=202304824]
+offset_left = 1208.0
+offset_top = 940.0
+offset_right = 2559.0
+offset_bottom = 1115.0
+text = "Made by: 
+Ape Shied the Slave Machine"
+label_settings = SubResource("LabelSettings_7gyyy")
+
+[node name="Start_Button" type="Button" parent="CanvasLayer" unique_id=325110178]
 offset_left = 588.0
 offset_top = 415.0
 offset_right = 1126.0
@@ -110,14 +221,14 @@ icon_alignment = 1
 expand_icon = true
 script = ExtResource("2_ft0oo")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Start_Button" unique_id=1716166605]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Start_Button" unique_id=1716166605]
 position = Vector2(73, -6.9999995)
 scale = Vector2(6.880952, 6.8809524)
 sprite_frames = SubResource("SpriteFrames_rh74t")
 animation = &"pressed"
 centered = false
 
-[node name="Exit_Button" type="Button" parent="." unique_id=1743094352]
+[node name="Exit_Button" type="Button" parent="CanvasLayer" unique_id=1743094352]
 offset_left = 668.0
 offset_top = 653.0
 offset_right = 1200.0
@@ -125,16 +236,48 @@ offset_bottom = 799.0
 flat = true
 script = ExtResource("6_7gyyy")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Exit_Button" unique_id=290307984]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Exit_Button" unique_id=290307984]
 position = Vector2(-3.9999957, 1.0000006)
 scale = Vector2(6.785714, 6.785714)
 sprite_frames = SubResource("SpriteFrames_hky6v")
 animation = &"pressed"
 centered = false
 
-[connection signal="mouse_entered" from="Start_Button" to="Start_Button" method="mouse_entered"]
-[connection signal="mouse_exited" from="Start_Button" to="Start_Button" method="mouse_exited"]
-[connection signal="pressed" from="Start_Button" to="Start_Button" method="mouse_pressed"]
-[connection signal="mouse_entered" from="Exit_Button" to="Exit_Button" method="mouse_entered"]
-[connection signal="mouse_exited" from="Exit_Button" to="Exit_Button" method="mouse_exited"]
-[connection signal="pressed" from="Exit_Button" to="Exit_Button" method="mouse_pressed"]
+[node name="Player Sprite" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=130508451]
+position = Vector2(309.00003, 609)
+scale = Vector2(10.128604, 10.107741)
+sprite_frames = SubResource("SpriteFrames_xhncm")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Buff Cat" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=980916206]
+position = Vector2(135.99998, 164.00012)
+rotation = -0.5234459
+scale = Vector2(6.265935, 6.265935)
+sprite_frames = SubResource("SpriteFrames_nvtyf")
+animation = &"idle"
+autoplay = "idle"
+script = ExtResource("9_7gyyy")
+
+[node name="Buff Cat2" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=955501857]
+position = Vector2(1759, 164.00017)
+rotation = 0.5235988
+scale = Vector2(6.265935, 6.265935)
+sprite_frames = SubResource("SpriteFrames_nvtyf")
+animation = &"idle"
+autoplay = "idle"
+script = ExtResource("9_7gyyy")
+clockwise = true
+rotation_speed = 10.0
+
+[node name="Potion" type="Sprite2D" parent="CanvasLayer" unique_id=1031334060]
+position = Vector2(1450, 600)
+scale = Vector2(11.752222, 11.728015)
+texture = ExtResource("9_ni0wm")
+
+[connection signal="mouse_entered" from="CanvasLayer/Start_Button" to="CanvasLayer/Start_Button" method="mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Start_Button" to="CanvasLayer/Start_Button" method="mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Start_Button" to="CanvasLayer/Start_Button" method="mouse_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Exit_Button" to="CanvasLayer/Exit_Button" method="mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Exit_Button" to="CanvasLayer/Exit_Button" method="mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Exit_Button" to="CanvasLayer/Exit_Button" method="mouse_pressed"]

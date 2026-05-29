@@ -5,10 +5,20 @@ class_name CameraControl
 @onready var current_item_gui = $"CanvasLayer/Control/ItemBoxIcon/Item Icon";
 @onready var coin_label = $"CanvasLayer/Coin Score/Coin Count";
 @onready var coin_anim = $"CanvasLayer/Coin Score/Coin";
+@onready var canvas_layer = $CanvasLayer2;
+@onready var ui_layer = $CanvasLayer;
+@onready var start_anim = $CanvasLayer2/Control/Start/AnimatedSprite2D;
 var currentTargetPosition: Vector2
 
 func _ready() -> void:
+	if GameManager.day < 2:
+		ui_layer.visible = false;
+		canvas_layer.visible = true;
+	else:
+		ui_layer.visible = true;
+		canvas_layer.visible = false;
 	coin_anim.play("spin");
+	
 
 func _process(_delta: float) -> void:
 	if GameManager.player_inventory == null:
@@ -21,3 +31,9 @@ func _process(_delta: float) -> void:
 
 func setNewPosition(newPosition: Vector2):
 	currentTargetPosition = newPosition
+
+func _on_start_mouse_entered() -> void:
+	start_anim.play("hover");
+
+func _on_start_mouse_exited() -> void:
+	start_anim.play("idle");

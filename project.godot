@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Apothecary Allergies"
-run/main_scene="uid://coobctfje2xa4"
+run/main_scene="uid://cjhhn3uwnoqc3"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -24,6 +24,7 @@ AudioManager="*uid://bvskgbh6e0ohe"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/stretch/mode="viewport"
 
 [global_group]
 

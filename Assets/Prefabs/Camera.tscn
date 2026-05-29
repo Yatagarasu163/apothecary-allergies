@@ -7,6 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://dv2c4e5nvt2ck" path="res://Assets/Prefabs/OrderPaper.tscn" id="3_qg7nf"]
 [ext_resource type="Texture2D" uid="uid://ck6j0qdapwccg" path="res://Assets/Sprites/Ingredients/nyaa_leaf.png" id="4_7fvhq"]
 [ext_resource type="FontFile" uid="uid://sa0jbshwh31s" path="res://Assets/Fonts/LowresPixel-Regular.otf" id="7_ay8xc"]
+[ext_resource type="Script" uid="uid://0x5e5go2jdne" path="res://Assets/Prefabs/tutorial_shi.gd" id="8_3rdkw"]
+[ext_resource type="Texture2D" uid="uid://bnmann2w1r118" path="res://Assets/Sprites/big_paper.png" id="9_0sw3j"]
+[ext_resource type="Texture2D" uid="uid://dhq5hokvelp3m" path="res://Assets/Sprites/Start_Menu_Button.png" id="10_0sw3j"]
+[ext_resource type="Texture2D" uid="uid://dmrv40xncx1l5" path="res://Assets/Sprites/Next_Button.png" id="10_sipgs"]
+[ext_resource type="Texture2D" uid="uid://dxliud4lyim8a" path="res://Assets/Sprites/Back_button.png" id="11_1t4mh"]
+[ext_resource type="Texture2D" uid="uid://xxyjqsa2qtf" path="res://Assets/Sprites/Start_Menu_Button_Highlighted.png" id="11_i27j8"]
+[ext_resource type="Texture2D" uid="uid://dwu0webnm2f6m" path="res://Assets/Sprites/Start_Menu_Button_Pressed.png" id="13_okspa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ay8xc"]
 atlas = ExtResource("3_nkoql")
@@ -62,11 +69,134 @@ animations = [{
 font = ExtResource("7_ay8xc")
 font_size = 60
 
+[sub_resource type="LabelSettings" id="LabelSettings_1t4mh"]
+font = ExtResource("7_ay8xc")
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41not"]
+atlas = ExtResource("10_sipgs")
+region = Rect2(4, 22, 63, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odx58"]
+atlas = ExtResource("10_sipgs")
+region = Rect2(4, 3, 63, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8utw"]
+atlas = ExtResource("10_sipgs")
+region = Rect2(4, 41, 63, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0sa4y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41not")
+}],
+"loop": false,
+"name": &"hover",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odx58")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8utw")
+}],
+"loop": false,
+"name": &"pressed",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0sa4y"]
+atlas = ExtResource("11_i27j8")
+region = Rect2(10, 2, 77, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i86m3"]
+atlas = ExtResource("10_0sw3j")
+region = Rect2(10, 2, 77, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apt58"]
+atlas = ExtResource("13_okspa")
+region = Rect2(10, 2, 77, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sipgs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0sa4y")
+}],
+"loop": true,
+"name": &"hover",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i86m3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apt58")
+}],
+"loop": true,
+"name": &"pressed",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i27j8"]
+atlas = ExtResource("11_1t4mh")
+region = Rect2(4, 22, 63, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_okspa"]
+atlas = ExtResource("11_1t4mh")
+region = Rect2(4, 3, 63, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7rmn"]
+atlas = ExtResource("11_1t4mh")
+region = Rect2(4, 41, 63, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_41not"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i27j8")
+}],
+"loop": false,
+"name": &"hover",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_okspa")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7rmn")
+}],
+"loop": false,
+"name": &"pressed",
+"speed": 5.0
+}]
+
 [node name="Camera2D" type="Camera2D" unique_id=1833252064]
 anchor_mode = 0
 script = ExtResource("1_l7rmy")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=446290443]
+visible = false
 
 [node name="OrderPaper" parent="CanvasLayer" unique_id=832149662 instance=ExtResource("3_qg7nf")]
 visible = false
@@ -130,3 +260,120 @@ offset_right = 1795.0
 offset_bottom = 101.0
 text = "0"
 label_settings = SubResource("LabelSettings_upunc")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1487651034]
+
+[node name="Control" type="Control" parent="CanvasLayer2" unique_id=1739168212]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("8_3rdkw")
+
+[node name="Paper" type="Sprite2D" parent="CanvasLayer2/Control" unique_id=857232157]
+position = Vector2(1033, 544)
+scale = Vector2(17.139395, 17.139395)
+texture = ExtResource("9_0sw3j")
+
+[node name="Label" type="Label" parent="CanvasLayer2/Control" unique_id=1471091441]
+layout_mode = 0
+offset_left = 730.0
+offset_top = 113.0
+offset_right = 1330.0
+offset_bottom = 884.0
+text = "Dear Alice,
+
+Thank you for taking over the
+apothecary for me. I know it is 
+your first day. 
+
+Read the book. (Press J)
+
+It'll tell you what you 
+need to know.
+
+Many are getting sick.
+The magic isn't working right.
+You need to fix them. 
+I believe in you. 
+
+Signed,
+Grandpappy"
+label_settings = SubResource("LabelSettings_1t4mh")
+
+[node name="Label2" type="Label" parent="CanvasLayer2/Control" unique_id=633784408]
+visible = false
+layout_mode = 0
+offset_left = 686.0
+offset_top = 113.0
+offset_right = 1378.0
+offset_bottom = 884.0
+text = "Controls:
+
+J = Read recipe book/Take item
+       from crates, boiler or pestle/
+       Add items to boiler or pestle/
+       Dispose of rubbish.
+
+K = Take patient order/Give patient
+        antidote/Boil or grind items/
+
+Enter = Advance to next day."
+label_settings = SubResource("LabelSettings_1t4mh")
+
+[node name="Next" type="Button" parent="CanvasLayer2/Control" unique_id=1155348382]
+layout_mode = 0
+offset_left = 1132.0001
+offset_top = 862.0
+offset_right = 1194.8575
+offset_bottom = 880.53485
+scale = Vector2(3.623303, 3.623303)
+flat = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/Control/Next" unique_id=1332389574]
+sprite_frames = SubResource("SpriteFrames_0sa4y")
+animation = &"hover"
+autoplay = "idle"
+centered = false
+
+[node name="Start" type="Button" parent="CanvasLayer2/Control" unique_id=302648897]
+visible = false
+layout_mode = 0
+offset_left = 1103.0
+offset_top = 862.0
+offset_right = 1179.96
+offset_bottom = 880.13196
+scale = Vector2(3.7149315, 3.7149315)
+flat = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/Control/Start" unique_id=1288260712]
+sprite_frames = SubResource("SpriteFrames_sipgs")
+animation = &"pressed"
+centered = false
+
+[node name="back" type="Button" parent="CanvasLayer2/Control" unique_id=2020763762]
+visible = false
+layout_mode = 0
+offset_left = 690.0
+offset_top = 862.0
+offset_right = 752.8573
+offset_bottom = 880.13196
+scale = Vector2(3.6865144, 3.6865144)
+flat = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/Control/back" unique_id=59553414]
+sprite_frames = SubResource("SpriteFrames_41not")
+animation = &"idle"
+autoplay = "idle"
+centered = false
+
+[connection signal="mouse_entered" from="CanvasLayer2/Control/Next" to="CanvasLayer2/Control" method="_on_next_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/Control/Next" to="CanvasLayer2/Control" method="_on_next_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/Control/Next" to="CanvasLayer2/Control" method="_on_next_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/Control/Start" to="." method="_on_start_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/Control/Start" to="." method="_on_start_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/Control/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CanvasLayer2/Control/Start" to="CanvasLayer2/Control" method="_on_start_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/Control/back" to="CanvasLayer2/Control" method="_on_back_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/Control/back" to="CanvasLayer2/Control" method="_on_back_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/Control/back" to="CanvasLayer2/Control" method="_on_back_pressed"]
