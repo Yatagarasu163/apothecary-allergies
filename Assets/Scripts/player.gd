@@ -10,7 +10,6 @@ var current_dash_cooldown: float = 0.0;
 
 @export_category("Sound")
 @export var walkingSound: AudioStreamPlayer
-@export var dashingSound: AudioStreamPlayer
 
 @onready var anim := $"Player Sprite"
 @onready var light := $PointLight2D;
@@ -21,7 +20,6 @@ var current_dash_cooldown: float = 0.0;
 
 var walkedRight: bool = true
 var walkedDown: bool = true
-var isDashing: bool = false
 var moveDirection: Vector2
 
 func handleInput():
@@ -29,7 +27,7 @@ func handleInput():
 	
 	moveDirection = Input.get_vector("WalkLeft","WalkRight","WalkUp","WalkDown")
 	velocity += moveDirection * base_speed;
-	if moveDirection != Vector2.ZERO and not isDashing:
+	if moveDirection != Vector2.ZERO:
 		if (!walkingSound.playing):
 			walkingSound.pitch_scale = randf_range(0.5, 2.0);
 			walkingSound.play(2)
@@ -37,12 +35,9 @@ func handleInput():
 		walkingSound.stop()
 	
 	if Input.is_action_just_pressed("Dash") && current_dash_cooldown <= 0:
-		dashingSound.play(0.3)
-		isDashing = true
 		current_dash_cooldown = dash_cooldown;
 		velocity += moveDirection * dash_speed;
 		await get_tree().create_timer(dash_cooldown).timeout;
-		isDashing = false
 
 func handleSpriteAnim() -> void:
 	z_index = position.y
@@ -53,11 +48,8 @@ func handleSpriteAnim() -> void:
 	if Input.is_action_just_pressed("WalkUp"): walkedDown = false
 	
 	var animName: String = ""
-	
 	if moveDirection != Vector2.ZERO: animName = "Walk_"
-	if isDashing: animName = "Dash_"
-	if moveDirection == Vector2.ZERO: animName = "Idle_"
-	
+	else: animName = "Idle_" 
 	if walkedRight: animName += "Right"
 	else: animName += "Left"
 	if walkedDown: animName += "Front"
@@ -71,6 +63,8 @@ func goToNextDay()->void:
 		next_day_text.text = "Press enter to go to next day";
 		next_day_text.visible = true
 		if(Input.is_action_just_pressed("Enter")):
+			next_day_text.visible = false;
+			get_tree().change_scene_to_file("res://Assets/Scenes/Upgrade_scene.tscn");
 			print("Tomorrow will be another day")
 			GameManager.day += 1;
 			if(GameManager.day <= 3):

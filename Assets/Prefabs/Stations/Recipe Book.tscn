@@ -29,7 +29,6 @@
 [ext_resource type="Texture2D" uid="uid://bw8h7r3hchtbn" path="res://Assets/Sprites/Antidote/Unmeowing De-nnerbone.png" id="24_ln562"]
 [ext_resource type="Texture2D" uid="uid://bv82ot6afbk1" path="res://Assets/Sprites/Antidote/Honey, it's a rock.png" id="25_adsdl"]
 [ext_resource type="Texture2D" uid="uid://dpmpp3663p7k2" path="res://Assets/Sprites/Antidote/Unmewing Penicillin.png" id="27_rfv3o"]
-[ext_resource type="AudioStream" uid="uid://dvttqu5d58rjo" path="res://Assets/Audio/freesound_community-page-flip-47177.mp3" id="30_adsdl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hj8ig"]
 size = Vector2(164, 165)
@@ -48,11 +47,10 @@ atlas = ExtResource("5_dv6cf")
 [sub_resource type="AtlasTexture" id="AtlasTexture_ptueu"]
 atlas = ExtResource("8_1p8i2")
 
-[node name="RecipeBook" type="Node2D" unique_id=1057398287 node_paths=PackedStringArray("recipePages", "recipeUI", "audio")]
+[node name="RecipeBook" type="Node2D" unique_id=1057398287 node_paths=PackedStringArray("recipePages", "recipeUI")]
 script = ExtResource("1_l5iqb")
 recipePages = [NodePath("CanvasLayer/RecipeBookUI/Page 1"), NodePath("CanvasLayer/RecipeBookUI/Page 2"), NodePath("CanvasLayer/RecipeBookUI/Page 3"), NodePath("CanvasLayer/RecipeBookUI/Page 4"), NodePath("CanvasLayer/RecipeBookUI/Page 5"), NodePath("CanvasLayer/RecipeBookUI/Page 6"), NodePath("CanvasLayer/RecipeBookUI/Page 7"), NodePath("CanvasLayer/RecipeBookUI/Page 8"), NodePath("CanvasLayer/RecipeBookUI/Page 9")]
 recipeUI = NodePath("CanvasLayer/RecipeBookUI")
-audio = NodePath("AudioStreamPlayer")
 
 [node name="Table" type="Sprite2D" parent="." unique_id=958087477]
 scale = Vector2(4, 4)
@@ -1465,9 +1463,6 @@ offset_left = 190.0
 offset_top = 120.0
 offset_right = 890.0
 offset_bottom = 870.0
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1322494784]
-stream = ExtResource("30_adsdl")
 
 [connection signal="body_entered" from="Collision Detector" to="." method="body_entered"]
 [connection signal="body_exited" from="Collision Detector" to="." method="body_exited"]

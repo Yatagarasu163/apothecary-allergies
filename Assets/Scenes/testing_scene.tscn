@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://lku2iex7kybq" path="res://Assets/Prefabs/Stations/Recipe Book.tscn" id="10_35qsv"]
 [ext_resource type="Texture2D" uid="uid://ba0ckvfiwashl" path="res://Assets/Sprites/Ingredients/oof_rock.png" id="10_lpbfe"]
 [ext_resource type="Texture2D" uid="uid://d1ux8fs45cbk0" path="res://Assets/Sprites/Ingredients/dragon_scale.png" id="11_4odsj"]
-[ext_resource type="Script" path="res://Assets/Scenes/table_manager.gd" id="16_lpbfe"]
+[ext_resource type="Script" uid="uid://cbhbvodiqlf0f" path="res://Assets/Scripts/table_manager.gd" id="16_lpbfe"]
 [ext_resource type="PackedScene" uid="uid://duuei02ys6c5y" path="res://Assets/Prefabs/Stations/Table.tscn" id="16_vapop"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eegtx"]
@@ -276,8 +276,6 @@ fill_to = Vector2(0, 1)
 
 [node name="Camera2D" parent="." unique_id=1833252064 instance=ExtResource("5_rpgfy")]
 position = Vector2(0, -65)
-
-[node name="PauseMenu" parent="Camera2D" unique_id=1185432531 instance=ExtResource("2_4odsj")]
 
 [node name="Player" parent="." unique_id=2026092582 instance=ExtResource("1_eegtx")]
 position = Vector2(619, 574)

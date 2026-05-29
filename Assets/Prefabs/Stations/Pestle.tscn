@@ -65,11 +65,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_uviup"]
-radius = 25.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_68iyi"]
+size = Vector2(18, 43)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_bxbsk"]
-radius = 13.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1e3v2"]
+size = Vector2(32, 36)
 
 [sub_resource type="Gradient" id="Gradient_1tygn"]
 offsets = PackedFloat32Array(0.11405835, 0.6100796)
@@ -83,6 +83,7 @@ fill_from = Vector2(0.5, 0.5)
 [node name="Pestle" type="Node2D" unique_id=205812332 node_paths=PackedStringArray("audio")]
 scale = Vector2(4, 4)
 script = ExtResource("1_dc2rc")
+grinding_timer = 5.0
 audio = NodePath("AudioStreamPlayer")
 
 [node name="PestleSprite" type="AnimatedSprite2D" parent="." unique_id=1287281234]
@@ -93,8 +94,8 @@ animation = &"grinding"
 [node name="Collision Detector" type="Area2D" parent="." unique_id=867185578]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collision Detector" unique_id=506269802]
-position = Vector2(0, 10)
-shape = SubResource("CircleShape2D_uviup")
+position = Vector2(0, 7.25)
+shape = SubResource("RectangleShape2D_68iyi")
 
 [node name="Items" type="Node2D" parent="." unique_id=850293869]
 z_index = 2
@@ -121,8 +122,8 @@ texture = ExtResource("3_1e3v2")
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=165950386]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=158530280]
-position = Vector2(0, 5)
-shape = SubResource("CircleShape2D_bxbsk")
+position = Vector2(0, -1.75)
+shape = SubResource("RectangleShape2D_1e3v2")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1067463906]
 color = Color(0.7342442, 0.31472227, 0, 1)
