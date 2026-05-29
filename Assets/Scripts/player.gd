@@ -1,5 +1,6 @@
 extends CharacterBody2D;
 
+@export var startPosition: Vector2
 @export var base_speed: int = 35;
 @export var dash_speed: int = 750
 @export var dash_cooldown: float = 1;
@@ -64,6 +65,10 @@ func goToNextDay()->void:
 			next_day_text.visible = false;
 			get_tree().change_scene_to_file("res://Assets/Scenes/Upgrade_scene.tscn");
 			print("Tomorrow will be another day")
+			GameManager.newDaying = true
+			await get_tree().create_timer(2).timeout;
+			GameManager.newDaying = false
+			position = startPosition
 			patient_spawner.start_next_day()
 	else:
 		next_day_text.visible = false

@@ -53,11 +53,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c5sqm"]
-size = Vector2(11.25, 50.375)
+[sub_resource type="CircleShape2D" id="CircleShape2D_jqcmu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2c3m"]
-size = Vector2(32, 31.5)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ubyl7"]
 
 [sub_resource type="Gradient" id="Gradient_i2c3m"]
 offsets = PackedFloat32Array(0.11405835, 0.6100796)
@@ -71,7 +69,6 @@ fill_from = Vector2(0.5, 0.5)
 [node name="Boiler" type="Node2D" unique_id=1355668019 node_paths=PackedStringArray("audio")]
 scale = Vector2(4, 4)
 script = ExtResource("1_c5sqm")
-boiling_timer = 5.0
 audio = NodePath("AudioStreamPlayer")
 
 [node name="Boiler Sprite" type="AnimatedSprite2D" parent="." unique_id=548914325]
@@ -85,7 +82,8 @@ frame_progress = 0.08486358
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collision Detector" unique_id=501262757]
 position = Vector2(0.125, 0)
-shape = SubResource("RectangleShape2D_c5sqm")
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_jqcmu")
 
 [node name="Items" type="Node2D" parent="." unique_id=762423721]
 position = Vector2(0, -15)
@@ -98,8 +96,9 @@ texture = ExtResource("3_i2c3m")
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=635866809]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1949838909]
-position = Vector2(0, 0.25)
-shape = SubResource("RectangleShape2D_i2c3m")
+position = Vector2(0, 5)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CircleShape2D_ubyl7")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=581472478]
 color = Color(0.7342442, 0.31472227, 0, 1)
