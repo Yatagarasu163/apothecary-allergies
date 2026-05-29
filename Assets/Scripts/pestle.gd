@@ -3,6 +3,7 @@ extends Node2D
 # EDITABLE VARIABLES
 @export var grinding_timer: float = 3.0; 
 @export var interaction_range: float = 2.0;
+@export var audio: AudioStreamPlayer
 
 # VARIABLES
 var is_player_inside: bool = false;
@@ -94,7 +95,9 @@ func grind_items() -> void:
 		current_item = GameManager.items.RUBBISH;
 	
 	anim.play("grinding"); 
+	audio.play(3)
 	await get_tree().create_timer(grinding_timer).timeout;
+	audio.stop()
 	anim.play("idle");
 	total_visible_items = 1;
 	has_grinded_item = true;

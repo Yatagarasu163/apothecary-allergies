@@ -8,10 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://om8oh72t3or1" path="res://Assets/Sprites/Recipe Book/Boiler_Atlas.tres" id="4_706vf"]
 [ext_resource type="Texture2D" uid="uid://ck6j0qdapwccg" path="res://Assets/Sprites/Ingredients/nyaa_leaf.png" id="5_7eswm"]
 [ext_resource type="Texture2D" uid="uid://m4myva56yh22" path="res://Assets/Sprites/Sickness Icons/BuffCat.tres" id="5_dv6cf"]
-[ext_resource type="Texture2D" uid="uid://duy45k6wlbf4p" path="res://Assets/Sprites/Sickness Icons/UpsideDownHead.tres" id="6_jyr5k"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Sickness Icons/UpsideDownHead.tres" id="6_jyr5k"]
 [ext_resource type="Texture2D" uid="uid://c4mxu2o31qkvn" path="res://Assets/Sprites/paper.png" id="6_lnltm"]
 [ext_resource type="Texture2D" uid="uid://dtxhpjux25t4r" path="res://Assets/Sprites/Recipe Book/Grinder_Atlas.tres" id="7_dv6cf"]
-[ext_resource type="Texture2D" uid="uid://br21cpwh845fh" path="res://Assets/Sprites/Sickness Icons/UpsideDownBody.tres" id="7_kfm4u"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Sickness Icons/UpsideDownBody.tres" id="7_kfm4u"]
 [ext_resource type="Texture2D" uid="uid://bpevjar0hb78i" path="res://Assets/Sprites/Sickness Icons/Fire Eyes.tres" id="8_1p8i2"]
 [ext_resource type="Texture2D" uid="uid://ba0ckvfiwashl" path="res://Assets/Sprites/Ingredients/oof_rock.png" id="8_e34go"]
 [ext_resource type="Texture2D" uid="uid://b4vb8ty457ep3" path="res://Assets/Sprites/Ingredients/star_flower.png" id="9_jyr5k"]
@@ -43,12 +43,6 @@ font_size = 64
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jyr5k"]
 atlas = ExtResource("5_dv6cf")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kfm4u"]
-atlas = ExtResource("6_jyr5k")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v66ku"]
-atlas = ExtResource("7_kfm4u")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ptueu"]
 atlas = ExtResource("8_1p8i2")
@@ -98,7 +92,6 @@ offset_bottom = 1088.0
 texture = ExtResource("3_3u5pv")
 
 [node name="Page 1" type="Control" parent="CanvasLayer/RecipeBookUI" unique_id=1053974689]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -202,14 +195,14 @@ alignment = 1
 [node name="Head" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 1/Upside Down/Ingredient Steps" unique_id=1391388505]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
-texture = SubResource("AtlasTexture_kfm4u")
+texture = ExtResource("6_jyr5k")
 
 [node name="Body" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 1/Upside Down/Ingredient Steps/Head" unique_id=1779673218]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 0
 offset_right = 150.0
 offset_bottom = 150.0
-texture = SubResource("AtlasTexture_v66ku")
+texture = ExtResource("7_kfm4u")
 
 [node name="Page 2" type="Control" parent="CanvasLayer/RecipeBookUI" unique_id=899971853]
 visible = false
@@ -330,14 +323,14 @@ alignment = 1
 [node name="Head" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 2/Fire Eyes/Ingredient Steps" unique_id=1705731148]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
-texture = SubResource("AtlasTexture_kfm4u")
+texture = ExtResource("6_jyr5k")
 
 [node name="Body" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 2/Fire Eyes/Ingredient Steps/Head" unique_id=685587724]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 0
 offset_right = 150.0
 offset_bottom = 150.0
-texture = SubResource("AtlasTexture_v66ku")
+texture = ExtResource("7_kfm4u")
 
 [node name="Body2" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 2/Fire Eyes/Ingredient Steps/Head" unique_id=1181516540]
 custom_minimum_size = Vector2(150, 150)
@@ -475,14 +468,14 @@ alignment = 1
 [node name="Head" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 3/Starry Cough/Ingredient Steps" unique_id=1443405645]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
-texture = SubResource("AtlasTexture_kfm4u")
+texture = ExtResource("6_jyr5k")
 
 [node name="Body" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 3/Starry Cough/Ingredient Steps/Head" unique_id=540325030]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 0
 offset_right = 150.0
 offset_bottom = 150.0
-texture = SubResource("AtlasTexture_v66ku")
+texture = ExtResource("7_kfm4u")
 
 [node name="Body2" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 3/Starry Cough/Ingredient Steps/Head" unique_id=1179641280]
 custom_minimum_size = Vector2(150, 150)

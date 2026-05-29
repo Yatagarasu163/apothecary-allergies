@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cbmg4xm5osml1"
+path="res://.godot/imported/Servere Mental Anguish.mp3-4766fcae88c8ee239f82bd2a98eb4172.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Servere Mental Anguish.mp3"
+dest_files=["res://.godot/imported/Servere Mental Anguish.mp3-4766fcae88c8ee239f82bd2a98eb4172.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

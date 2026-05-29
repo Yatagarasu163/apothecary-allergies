@@ -13,11 +13,6 @@ var symptom_list_textures: Array[Texture] = [
 func _ready() -> void:
 	play_symptom_anim();
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func play_symptom_anim() -> void:
 	print("PLAYING SYMPTOM ANIM")
 	visible = true;

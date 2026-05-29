@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c7khxiw0w0l7f" path="res://Assets/Scripts/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://k0p637tmcmpp" path="res://Assets/Sprites/Sprite Sheets/witch.png" id="2_tgki7"]
+[ext_resource type="AudioStream" uid="uid://dobf8qad4tg17" path="res://Assets/Audio/Walking.mp3" id="3_ebihn"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_tgki7"]
 polygon = PackedVector2Array(-35, -11, 28, -11, 28, 33, 22, 39, 22, 51, 31, 51, 31, 61, -27, 61, -27, 55, -23, 55, -23, 37, -27, 36, -35, 16)
@@ -341,10 +342,11 @@ gradient = SubResource("Gradient_1tygn")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[node name="Player" type="CharacterBody2D" unique_id=2026092582 groups=["Player"]]
+[node name="Player" type="CharacterBody2D" unique_id=2026092582 node_paths=PackedStringArray("walkingSound") groups=["Player"]]
 script = ExtResource("1_onrkg")
 base_speed = 50
 dash_cooldown = 0.5
+walkingSound = NodePath("AudioStreamPlayer")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=2120983590]
 occluder = SubResource("OccluderPolygon2D_tgki7")
@@ -373,3 +375,6 @@ offset_left = -35.0
 offset_top = -79.0
 offset_right = 5.0
 offset_bottom = -56.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1175455003]
+stream = ExtResource("3_ebihn")
