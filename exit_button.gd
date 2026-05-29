@@ -14,6 +14,4 @@ func mouse_exited() -> void:
 	
 func mouse_pressed() -> void:
 	anim.play("pressed");
-
-func _on_exit_button_pressed():
 	get_tree().quit()
