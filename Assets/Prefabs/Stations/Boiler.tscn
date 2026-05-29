@@ -110,7 +110,7 @@ texture_scale = 4.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1940141575]
 stream = ExtResource("4_jqcmu")
-volume_db = 5.0
+volume_db = -5.0
 
 [connection signal="body_entered" from="Collision Detector" to="." method="body_entered"]
 [connection signal="body_exited" from="Collision Detector" to="." method="body_exited"]

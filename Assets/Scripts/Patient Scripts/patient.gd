@@ -58,6 +58,7 @@ func get_new_sickness():
 func PatientInteractSystem():
 	if Input.is_action_just_pressed("Interact"):
 		if(!waiting_for_cure):
+			askingCure.pitch_scale = randf_range(0.5, 2.0);
 			askingCure.play()
 			patience_bar.visible = true
 			label.visible = false
@@ -67,6 +68,9 @@ func PatientInteractSystem():
 			chat_bubble.play_symptom_anim(); 
 			waiting_for_cure = true
 		else:
+
+			gettingCure.pitch_scale = randf_range(0.5, 2.0);
+			gettingCure.play()
 			serve_medicine();
 
 func CheckSymptoms(symptoms: int):
@@ -97,10 +101,10 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if(body.is_in_group("Player") && queueing == false):
 		interactable = true
 		if(!waiting_for_cure):
-			label.text = "Press F to take order"
+			label.text = "Press K to take order"
 			label.visible = true
 		else:
-			label.text = "Press F to give medicine"
+			label.text = "Press K to give medicine"
 	elif(body.is_in_group("Patient")):
 		speed = 0
 		queueing = true

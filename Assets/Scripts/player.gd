@@ -27,6 +27,7 @@ func handleInput():
 	velocity += moveDirection * base_speed;
 	if moveDirection != Vector2.ZERO:
 		if (!walkingSound.playing):
+			walkingSound.pitch_scale = randf_range(0.5, 2.0);
 			walkingSound.play(2)
 	else:
 		walkingSound.stop()

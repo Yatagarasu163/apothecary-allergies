@@ -1,7 +1,8 @@
 extends Node2D
 
 # EDITABLE VARIABLES
-@export var grinding_timer: float = 3.0; 
+var grinding_timer: float = 3.0; 
+@export var base_grinding_timer: float = 5.0;
 @export var interaction_range: float = 2.0;
 @export var audio: AudioStreamPlayer
 
@@ -35,6 +36,8 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	check_item_visibility();
 	check_player_interaction();
+	grinding_timer = base_grinding_timer - (0.5 * GameManager.upgrades[GameManager.upgrade_category.PESTLE]);
+	
 
 func body_entered(body) -> void:
 	if body.is_in_group("Player"):
@@ -95,6 +98,7 @@ func grind_items() -> void:
 		current_item = GameManager.items.RUBBISH;
 	
 	anim.play("grinding"); 
+	audio.pitch_scale = randf_range(0.5, 1.5);
 	audio.play(3)
 	await get_tree().create_timer(grinding_timer).timeout;
 	audio.stop()
