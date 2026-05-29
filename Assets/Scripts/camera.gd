@@ -5,13 +5,14 @@ class_name CameraControl
 @export var curtainSpeed: float = 5
 @export var openCurtainY: float = -1050
 
-@onready var current_item_gui = $"CanvasLayer/Control/ItemBoxIcon/Item Icon";
-@onready var curtain = $"CanvasLayer/Control/UI Banner"
-@onready var coin_label = $"CanvasLayer/Coin Score/Coin Count";
-@onready var coin_anim = $"CanvasLayer/Coin Score/Coin";
-@onready var canvas_layer = $CanvasLayer2;
-@onready var ui_layer = $CanvasLayer;
-@onready var start_anim = $CanvasLayer2/Control/Start/AnimatedSprite2D;
+@onready var current_item_gui = $"Book/Control/ItemBoxIcon/Item Icon";
+@onready var curtain = $"Book/Control/UI Banner"
+@onready var coin_label = $"Book/Coin Score/Coin Count";
+@onready var coin_anim = $"Book/Coin Score/Coin";
+@onready var canvas_layer = $Letter;
+@onready var ui_layer = $Book;
+@onready var start_anim = $Letter/Control/Start/AnimatedSprite2D;
+@onready var pause_menu := $"Pause Menu"
 var currentTargetPosition: Vector2
 
 func _ready() -> void:
@@ -25,6 +26,9 @@ func _ready() -> void:
 	
 
 func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("Pause"):
+		pause_menu.TogglePause()
+	
 	if GameManager.player_inventory == null:
 		current_item_gui.visible = false;
 	else:

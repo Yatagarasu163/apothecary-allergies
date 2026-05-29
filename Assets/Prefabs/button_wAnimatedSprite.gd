@@ -11,7 +11,3 @@ func mouse_entered() -> void:
 
 func mouse_exited() -> void:
 	anim.play("idle");
-	
-func mouse_pressed() -> void:
-	anim.play("pressed");
-	get_tree().change_scene_to_file("res://Assets/Scenes/testing_scene.tscn");

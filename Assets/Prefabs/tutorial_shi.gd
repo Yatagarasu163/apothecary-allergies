@@ -9,7 +9,7 @@ extends Control
 @onready var back_anim = $back/AnimatedSprite2D;
 @onready var start_anim = $Start/AnimatedSprite2D;
 @onready var canvas_layer = $"..";
-@onready var ui_layer = $"../../CanvasLayer";
+@onready var ui_layer = $"../../Book";
 
 func _ready() -> void:
 	back_button.visible = false;

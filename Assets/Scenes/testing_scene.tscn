@@ -15,14 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://lku2iex7kybq" path="res://Assets/Prefabs/Stations/Recipe Book.tscn" id="10_35qsv"]
 [ext_resource type="Texture2D" uid="uid://ba0ckvfiwashl" path="res://Assets/Sprites/Ingredients/oof_rock.png" id="10_lpbfe"]
 [ext_resource type="Texture2D" uid="uid://d1ux8fs45cbk0" path="res://Assets/Sprites/Ingredients/dragon_scale.png" id="11_4odsj"]
-[ext_resource type="Script" uid="uid://cbhbvodiqlf0f" path="res://Assets/Scripts/table_manager.gd" id="16_lpbfe"]
+[ext_resource type="Script" path="res://Assets/Scripts/table_manager.gd" id="16_lpbfe"]
 [ext_resource type="PackedScene" uid="uid://duuei02ys6c5y" path="res://Assets/Prefabs/Stations/Table.tscn" id="16_vapop"]
-[ext_resource type="Script" uid="uid://d3443i00hwm6l" path="res://Assets/Scenes/pause_menu.gd" id="18_iic2c"]
-[ext_resource type="FontFile" uid="uid://sa0jbshwh31s" path="res://Assets/Fonts/LowresPixel-Regular.otf" id="19_1frvq"]
-[ext_resource type="Script" uid="uid://c84bi2d743dw8" path="res://Assets/Scenes/resume_button.gd" id="20_lug3g"]
-[ext_resource type="Texture2D" uid="uid://di7ca8djr7lth" path="res://Assets/Sprites/Resume_Buttons.png" id="21_78bv2"]
-[ext_resource type="Script" uid="uid://ooyyxal4u0gv" path="res://Assets/Scenes/main_menu_button.gd" id="22_2sdo4"]
-[ext_resource type="Texture2D" uid="uid://f14ruoakm8fl" path="res://Assets/Sprites/Main_Menu_Buttons.png" id="23_kmhs2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eegtx"]
 size = Vector2(32.025, 54.857132)
@@ -277,99 +271,15 @@ colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
 gradient = SubResource("Gradient_lug3g")
 fill_to = Vector2(0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_yv1s7"]
-font = ExtResource("19_1frvq")
-font_size = 128
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_05mfs"]
-atlas = ExtResource("21_78bv2")
-region = Rect2(0, 20, 96, 19)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vtc3s"]
-atlas = ExtResource("21_78bv2")
-region = Rect2(0, 1, 96, 19)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_icbto"]
-atlas = ExtResource("21_78bv2")
-region = Rect2(0, 39, 96, 19)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_k2jrt"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_05mfs")
-}],
-"loop": true,
-"name": &"hover",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vtc3s")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_icbto")
-}],
-"loop": true,
-"name": &"pressed",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nb130"]
-atlas = ExtResource("23_kmhs2")
-region = Rect2(0, 21, 128, 19)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6weyt"]
-atlas = ExtResource("23_kmhs2")
-region = Rect2(0, 2, 128, 19)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nwywx"]
-atlas = ExtResource("23_kmhs2")
-region = Rect2(0, 40, 128, 19)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_8t74x"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nb130")
-}],
-"loop": true,
-"name": &"hover",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6weyt")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nwywx")
-}],
-"loop": true,
-"name": &"pressed",
-"speed": 5.0
-}]
-
 [node name="Testing Scene" type="Node2D" unique_id=1542158696]
 
 [node name="Camera2D" parent="." unique_id=1833252064 instance=ExtResource("5_rpgfy")]
 position = Vector2(0, -65)
 
 [node name="Player" parent="." unique_id=2026092582 instance=ExtResource("1_eegtx")]
-visible = false
 position = Vector2(619, 574)
 
 [node name="Shop Layout" type="Node2D" parent="." unique_id=1616522250]
-visible = false
 
 [node name="Walls" type="StaticBody2D" parent="Shop Layout" unique_id=1447757167]
 position = Vector2(905, 501)
@@ -474,7 +384,6 @@ texture = SubResource("GradientTexture2D_78bv2")
 texture_scale = 10.0
 
 [node name="Shop Stuff" type="Node2D" parent="." unique_id=1180051680]
-visible = false
 
 [node name="Crates" type="Node2D" parent="Shop Stuff" unique_id=568900682]
 
@@ -541,54 +450,6 @@ position = Vector2(1471, 514)
 
 [node name="Table8" parent="Shop Stuff/Tables" unique_id=906227180 instance=ExtResource("16_vapop")]
 position = Vector2(1470, 638)
-
-[node name="Pause Menu" type="CanvasLayer" parent="." unique_id=157955130]
-script = ExtResource("18_iic2c")
-
-[node name="ColorRect" type="ColorRect" parent="Pause Menu" unique_id=2081929504]
-offset_right = 1920.0
-offset_bottom = 1075.0
-color = Color(0, 0, 0, 0.8352941)
-
-[node name="Label" type="Label" parent="Pause Menu/ColorRect" unique_id=1828442000]
-layout_mode = 0
-offset_left = 330.0
-offset_top = 178.0
-offset_right = 1556.0
-offset_bottom = 375.0
-text = "Paused"
-label_settings = SubResource("LabelSettings_yv1s7")
-horizontal_alignment = 1
-
-[node name="resume_button" type="Button" parent="Pause Menu/ColorRect" unique_id=1068865718]
-layout_mode = 0
-offset_left = 608.0
-offset_top = 409.0
-offset_right = 1274.0
-offset_bottom = 558.0
-script = ExtResource("20_lug3g")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pause Menu/ColorRect/resume_button" unique_id=972864602]
-position = Vector2(-50.00002, -4.2915344e-06)
-scale = Vector2(7.6842103, 7.6842103)
-sprite_frames = SubResource("SpriteFrames_k2jrt")
-animation = &"pressed"
-centered = false
-
-[node name="main_menu_button" type="Button" parent="Pause Menu/ColorRect" unique_id=1630041529]
-layout_mode = 0
-offset_left = 493.0
-offset_top = 634.0
-offset_right = 1396.0
-offset_bottom = 782.0
-script = ExtResource("22_2sdo4")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pause Menu/ColorRect/main_menu_button" unique_id=313113707]
-position = Vector2(-41, -10)
-scale = Vector2(7.760061, 7.7368393)
-sprite_frames = SubResource("SpriteFrames_8t74x")
-animation = &"pressed"
-centered = false
 
 [connection signal="body_entered" from="Shop Layout/ServingArea" to="Shop Layout/ServingArea" method="_on_body_entered"]
 [connection signal="body_entered" from="Shop Layout/KitchenArea" to="Shop Layout/KitchenArea" method="_on_body_entered"]

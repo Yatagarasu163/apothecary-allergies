@@ -7,13 +7,17 @@
 [ext_resource type="PackedScene" uid="uid://dv2c4e5nvt2ck" path="res://Assets/Prefabs/OrderPaper.tscn" id="3_qg7nf"]
 [ext_resource type="Texture2D" uid="uid://ck6j0qdapwccg" path="res://Assets/Sprites/Ingredients/nyaa_leaf.png" id="4_7fvhq"]
 [ext_resource type="FontFile" uid="uid://sa0jbshwh31s" path="res://Assets/Fonts/LowresPixel-Regular.otf" id="7_ay8xc"]
-[ext_resource type="Script" path="res://Assets/Prefabs/tutorial_shi.gd" id="8_3rdkw"]
+[ext_resource type="Script" uid="uid://0x5e5go2jdne" path="res://Assets/Prefabs/tutorial_shi.gd" id="8_3rdkw"]
 [ext_resource type="Texture2D" uid="uid://bnmann2w1r118" path="res://Assets/Sprites/big_paper.png" id="9_0sw3j"]
 [ext_resource type="Texture2D" uid="uid://dhq5hokvelp3m" path="res://Assets/Sprites/Start_Menu_Button.png" id="10_0sw3j"]
 [ext_resource type="Texture2D" uid="uid://dmrv40xncx1l5" path="res://Assets/Sprites/Next_Button.png" id="10_sipgs"]
 [ext_resource type="Texture2D" uid="uid://dxliud4lyim8a" path="res://Assets/Sprites/Back_button.png" id="11_1t4mh"]
 [ext_resource type="Texture2D" uid="uid://xxyjqsa2qtf" path="res://Assets/Sprites/Start_Menu_Button_Highlighted.png" id="11_i27j8"]
 [ext_resource type="Texture2D" uid="uid://dwu0webnm2f6m" path="res://Assets/Sprites/Start_Menu_Button_Pressed.png" id="13_okspa"]
+[ext_resource type="Script" uid="uid://d3443i00hwm6l" path="res://Assets/Scenes/pause_menu.gd" id="15_41not"]
+[ext_resource type="Texture2D" uid="uid://di7ca8djr7lth" path="res://Assets/Sprites/Resume_Buttons.png" id="16_odx58"]
+[ext_resource type="Script" uid="uid://cooaymck3f0l5" path="res://Assets/Prefabs/button_wAnimatedSprite.gd" id="16_s8utw"]
+[ext_resource type="Texture2D" uid="uid://f14ruoakm8fl" path="res://Assets/Sprites/Main_Menu_Buttons.png" id="17_s8utw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ay8xc"]
 atlas = ExtResource("3_nkoql")
@@ -191,15 +195,97 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_0sa4y"]
+font = ExtResource("7_ay8xc")
+font_size = 128
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05mfs"]
+atlas = ExtResource("16_odx58")
+region = Rect2(0, 20, 96, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtc3s"]
+atlas = ExtResource("16_odx58")
+region = Rect2(0, 1, 96, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_icbto"]
+atlas = ExtResource("16_odx58")
+region = Rect2(0, 39, 96, 19)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_apt58"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05mfs")
+}],
+"loop": true,
+"name": &"hover",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtc3s")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_icbto")
+}],
+"loop": true,
+"name": &"pressed",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nb130"]
+atlas = ExtResource("17_s8utw")
+region = Rect2(0, 21, 128, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6weyt"]
+atlas = ExtResource("17_s8utw")
+region = Rect2(0, 2, 128, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwywx"]
+atlas = ExtResource("17_s8utw")
+region = Rect2(0, 40, 128, 19)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yf21v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nb130")
+}],
+"loop": true,
+"name": &"hover",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6weyt")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwywx")
+}],
+"loop": true,
+"name": &"pressed",
+"speed": 5.0
+}]
+
 [node name="Camera2D" type="Camera2D" unique_id=1833252064]
 anchor_mode = 0
 script = ExtResource("1_l7rmy")
 openCurtainY = -900.0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=446290443]
+[node name="Book" type="CanvasLayer" parent="." unique_id=446290443]
 visible = false
 
-[node name="OrderPaper" parent="CanvasLayer" unique_id=832149662 instance=ExtResource("3_qg7nf")]
+[node name="OrderPaper" parent="Book" unique_id=832149662 instance=ExtResource("3_qg7nf")]
 visible = false
 z_index = 4096
 offset_left = 1610.0
@@ -207,7 +293,7 @@ offset_top = 770.0
 offset_right = 1610.0
 offset_bottom = 770.0
 
-[node name="Control" type="Control" parent="CanvasLayer" unique_id=1753305994]
+[node name="Control" type="Control" parent="Book" unique_id=1753305994]
 z_index = 19
 z_as_relative = false
 layout_mode = 3
@@ -217,7 +303,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="UI Banner" type="TextureRect" parent="CanvasLayer/Control" unique_id=1402184454]
+[node name="UI Banner" type="TextureRect" parent="Book/Control" unique_id=1402184454]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -228,7 +314,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_rem6g")
 
-[node name="ItemBoxIcon" type="TextureRect" parent="CanvasLayer/Control" unique_id=2091628048]
+[node name="ItemBoxIcon" type="TextureRect" parent="Book/Control" unique_id=2091628048]
 layout_mode = 0
 offset_left = 76.0
 offset_top = 26.0
@@ -237,7 +323,7 @@ offset_bottom = 154.0
 scale = Vector2(0.8530843, 0.8530843)
 texture = ExtResource("3_7fvhq")
 
-[node name="Item Icon" type="TextureRect" parent="CanvasLayer/Control/ItemBoxIcon" unique_id=36056525]
+[node name="Item Icon" type="TextureRect" parent="Book/Control/ItemBoxIcon" unique_id=36056525]
 layout_mode = 0
 offset_left = 12.894387
 offset_top = 14.066605
@@ -246,20 +332,20 @@ offset_bottom = 54.066605
 scale = Vector2(2.4344766, 2.4344766)
 texture = ExtResource("4_7fvhq")
 
-[node name="Coin Score" type="Control" parent="CanvasLayer" unique_id=244089595]
+[node name="Coin Score" type="Control" parent="Book" unique_id=244089595]
 z_index = 20
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Coin" type="AnimatedSprite2D" parent="CanvasLayer/Coin Score" unique_id=1166746721]
+[node name="Coin" type="AnimatedSprite2D" parent="Book/Coin Score" unique_id=1166746721]
 position = Vector2(1684, 67.99999)
 scale = Vector2(4.5859313, 4.5859313)
 sprite_frames = SubResource("SpriteFrames_i86m3")
 animation = &"spin"
 
-[node name="Coin Count" type="Label" parent="CanvasLayer/Coin Score" unique_id=1963435283]
+[node name="Coin Count" type="Label" parent="Book/Coin Score" unique_id=1963435283]
 layout_mode = 0
 offset_left = 1755.0
 offset_top = 41.0
@@ -268,21 +354,21 @@ offset_bottom = 101.0
 text = "0"
 label_settings = SubResource("LabelSettings_upunc")
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1487651034]
+[node name="Letter" type="CanvasLayer" parent="." unique_id=1487651034]
 
-[node name="Control" type="Control" parent="CanvasLayer2" unique_id=1739168212]
+[node name="Control" type="Control" parent="Letter" unique_id=1739168212]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("8_3rdkw")
 
-[node name="Paper" type="Sprite2D" parent="CanvasLayer2/Control" unique_id=857232157]
+[node name="Paper" type="Sprite2D" parent="Letter/Control" unique_id=857232157]
 position = Vector2(1033, 544)
 scale = Vector2(17.139395, 17.139395)
 texture = ExtResource("9_0sw3j")
 
-[node name="Label" type="Label" parent="CanvasLayer2/Control" unique_id=1471091441]
+[node name="Label" type="Label" parent="Letter/Control" unique_id=1471091441]
 layout_mode = 0
 offset_left = 730.0
 offset_top = 113.0
@@ -308,7 +394,7 @@ Signed,
 Grandpappy"
 label_settings = SubResource("LabelSettings_1t4mh")
 
-[node name="Label2" type="Label" parent="CanvasLayer2/Control" unique_id=633784408]
+[node name="Label2" type="Label" parent="Letter/Control" unique_id=633784408]
 visible = false
 layout_mode = 0
 offset_left = 686.0
@@ -328,7 +414,7 @@ K = Take patient order/Give patient
 Enter = Advance to next day."
 label_settings = SubResource("LabelSettings_1t4mh")
 
-[node name="Next" type="Button" parent="CanvasLayer2/Control" unique_id=1155348382]
+[node name="Next" type="Button" parent="Letter/Control" unique_id=1155348382]
 layout_mode = 0
 offset_left = 1132.0001
 offset_top = 862.0
@@ -337,13 +423,13 @@ offset_bottom = 880.53485
 scale = Vector2(3.623303, 3.623303)
 flat = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/Control/Next" unique_id=1332389574]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Letter/Control/Next" unique_id=1332389574]
 sprite_frames = SubResource("SpriteFrames_0sa4y")
 animation = &"hover"
 autoplay = "idle"
 centered = false
 
-[node name="Start" type="Button" parent="CanvasLayer2/Control" unique_id=302648897]
+[node name="Start" type="Button" parent="Letter/Control" unique_id=302648897]
 visible = false
 layout_mode = 0
 offset_left = 1103.0
@@ -353,12 +439,12 @@ offset_bottom = 880.13196
 scale = Vector2(3.7149315, 3.7149315)
 flat = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/Control/Start" unique_id=1288260712]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Letter/Control/Start" unique_id=1288260712]
 sprite_frames = SubResource("SpriteFrames_sipgs")
 animation = &"pressed"
 centered = false
 
-[node name="back" type="Button" parent="CanvasLayer2/Control" unique_id=2020763762]
+[node name="back" type="Button" parent="Letter/Control" unique_id=2020763762]
 visible = false
 layout_mode = 0
 offset_left = 690.0
@@ -368,19 +454,74 @@ offset_bottom = 880.13196
 scale = Vector2(3.6865144, 3.6865144)
 flat = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/Control/back" unique_id=59553414]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Letter/Control/back" unique_id=59553414]
 sprite_frames = SubResource("SpriteFrames_41not")
 animation = &"idle"
 autoplay = "idle"
 centered = false
 
-[connection signal="mouse_entered" from="CanvasLayer2/Control/Next" to="CanvasLayer2/Control" method="_on_next_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer2/Control/Next" to="CanvasLayer2/Control" method="_on_next_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer2/Control/Next" to="CanvasLayer2/Control" method="_on_next_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer2/Control/Start" to="." method="_on_start_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer2/Control/Start" to="." method="_on_start_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer2/Control/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="CanvasLayer2/Control/Start" to="CanvasLayer2/Control" method="_on_start_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer2/Control/back" to="CanvasLayer2/Control" method="_on_back_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer2/Control/back" to="CanvasLayer2/Control" method="_on_back_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer2/Control/back" to="CanvasLayer2/Control" method="_on_back_pressed"]
+[node name="Pause Menu" type="CanvasLayer" parent="." unique_id=1407886510]
+visible = false
+script = ExtResource("15_41not")
+
+[node name="ColorRect" type="ColorRect" parent="Pause Menu" unique_id=1352598774]
+offset_right = 1920.0
+offset_bottom = 1075.0
+color = Color(0, 0, 0, 0.8352941)
+
+[node name="Label" type="Label" parent="Pause Menu/ColorRect" unique_id=2043889637]
+layout_mode = 0
+offset_left = 330.0
+offset_top = 178.0
+offset_right = 1556.0
+offset_bottom = 375.0
+text = "Paused"
+label_settings = SubResource("LabelSettings_0sa4y")
+horizontal_alignment = 1
+
+[node name="resume_button" type="Button" parent="Pause Menu/ColorRect" unique_id=1141724307]
+layout_mode = 0
+offset_left = 608.0
+offset_top = 409.0
+offset_right = 1274.0
+offset_bottom = 558.0
+script = ExtResource("16_s8utw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pause Menu/ColorRect/resume_button" unique_id=2129193324]
+position = Vector2(-50.00002, -4.2915344e-06)
+scale = Vector2(7.6842103, 7.6842103)
+sprite_frames = SubResource("SpriteFrames_apt58")
+animation = &"pressed"
+centered = false
+
+[node name="main_menu_button" type="Button" parent="Pause Menu/ColorRect" unique_id=1142792735]
+layout_mode = 0
+offset_left = 493.0
+offset_top = 634.0
+offset_right = 1396.0
+offset_bottom = 782.0
+script = ExtResource("16_s8utw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pause Menu/ColorRect/main_menu_button" unique_id=422981279]
+position = Vector2(-41, -10)
+scale = Vector2(7.760061, 7.7368393)
+sprite_frames = SubResource("SpriteFrames_yf21v")
+animation = &"pressed"
+centered = false
+
+[connection signal="mouse_entered" from="Letter/Control/Next" to="Letter/Control" method="_on_next_mouse_entered"]
+[connection signal="mouse_exited" from="Letter/Control/Next" to="Letter/Control" method="_on_next_mouse_exited"]
+[connection signal="pressed" from="Letter/Control/Next" to="Letter/Control" method="_on_next_pressed"]
+[connection signal="mouse_entered" from="Letter/Control/Start" to="." method="_on_start_mouse_entered"]
+[connection signal="mouse_exited" from="Letter/Control/Start" to="." method="_on_start_mouse_exited"]
+[connection signal="pressed" from="Letter/Control/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Letter/Control/Start" to="Letter/Control" method="_on_start_pressed"]
+[connection signal="mouse_entered" from="Letter/Control/back" to="Letter/Control" method="_on_back_mouse_entered"]
+[connection signal="mouse_exited" from="Letter/Control/back" to="Letter/Control" method="_on_back_mouse_exited"]
+[connection signal="pressed" from="Letter/Control/back" to="Letter/Control" method="_on_back_pressed"]
+[connection signal="mouse_entered" from="Pause Menu/ColorRect/resume_button" to="Pause Menu/ColorRect/resume_button" method="mouse_entered"]
+[connection signal="mouse_exited" from="Pause Menu/ColorRect/resume_button" to="Pause Menu/ColorRect/resume_button" method="mouse_exited"]
+[connection signal="pressed" from="Pause Menu/ColorRect/resume_button" to="Pause Menu" method="_on_resume_button_pressed"]
+[connection signal="mouse_entered" from="Pause Menu/ColorRect/main_menu_button" to="Pause Menu/ColorRect/main_menu_button" method="mouse_entered"]
+[connection signal="mouse_exited" from="Pause Menu/ColorRect/main_menu_button" to="Pause Menu/ColorRect/main_menu_button" method="mouse_exited"]
+[connection signal="pressed" from="Pause Menu/ColorRect/main_menu_button" to="Pause Menu" method="_on_main_menu_button_pressed"]
