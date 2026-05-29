@@ -8,70 +8,6 @@
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_tgki7"]
 polygon = PackedVector2Array(-35, -11, 28, -11, 28, 33, 22, 39, 22, 51, 31, 51, 31, 61, -27, 61, -27, 55, -23, 55, -23, 37, -27, 36, -35, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_83lp0"]
-atlas = ExtResource("2_tgki7")
-region = Rect2(0, 416, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_onktn"]
-atlas = ExtResource("2_tgki7")
-region = Rect2(32, 416, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mcoha"]
-atlas = ExtResource("2_tgki7")
-region = Rect2(64, 416, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ycl3y"]
-atlas = ExtResource("2_tgki7")
-region = Rect2(96, 416, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bn4bl"]
-atlas = ExtResource("2_tgki7")
-region = Rect2(0, 352, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jfl0m"]
-atlas = ExtResource("2_tgki7")
-region = Rect2(32, 352, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hw4ag"]
-atlas = ExtResource("2_tgki7")
-region = Rect2(64, 352, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_srs7s"]
-atlas = ExtResource("2_tgki7")
-region = Rect2(96, 352, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f762e"]
-atlas = ExtResource("2_tgki7")
-region = Rect2(0, 384, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m1uje"]
-atlas = ExtResource("2_tgki7")
-region = Rect2(32, 384, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iu2ax"]
-atlas = ExtResource("2_tgki7")
-region = Rect2(64, 384, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fmjim"]
-atlas = ExtResource("2_tgki7")
-region = Rect2(96, 384, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rpju7"]
-atlas = ExtResource("2_tgki7")
-region = Rect2(0, 320, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_scalj"]
-atlas = ExtResource("2_tgki7")
-region = Rect2(32, 320, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kk4dl"]
-atlas = ExtResource("2_tgki7")
-region = Rect2(64, 320, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n37xw"]
-atlas = ExtResource("2_tgki7")
-region = Rect2(96, 320, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_tgki7"]
 atlas = ExtResource("2_tgki7")
 region = Rect2(96, 96, 32, 32)
@@ -234,74 +170,6 @@ region = Rect2(96, 128, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eot0c"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_83lp0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_onktn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mcoha")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ycl3y")
-}],
-"loop": true,
-"name": &"Dash_LeftBack",
-"speed": 15.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bn4bl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jfl0m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hw4ag")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_srs7s")
-}],
-"loop": true,
-"name": &"Dash_LeftFront",
-"speed": 15.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f762e")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m1uje")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iu2ax")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fmjim")
-}],
-"loop": true,
-"name": &"Dash_RightBack",
-"speed": 15.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rpju7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_scalj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kk4dl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n37xw")
-}],
-"loop": true,
-"name": &"Dash_RightFront",
-"speed": 15.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tgki7")
@@ -483,8 +351,7 @@ font_size = 32
 script = ExtResource("1_onrkg")
 base_speed = 50
 dash_cooldown = 0.5
-walkingSound = NodePath("Walking")
-dashingSound = NodePath("Dashing")
+walkingSound = NodePath("AudioStreamPlayer")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=2120983590]
 occluder = SubResource("OccluderPolygon2D_tgki7")
@@ -493,7 +360,8 @@ occluder = SubResource("OccluderPolygon2D_tgki7")
 position = Vector2(-1.0000019, -2.000002)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_eot0c")
-animation = &"Dash_RightFront"
+animation = &"Idle_LeftFront"
+frame_progress = 0.4146237
 
 [node name="Player Collider" type="CollisionShape2D" parent="." unique_id=601112474]
 position = Vector2(7.1525574e-07, 23.5)
@@ -514,9 +382,5 @@ offset_right = 5.0
 offset_bottom = -56.0
 label_settings = SubResource("LabelSettings_m0ojv")
 
-[node name="Walking" type="AudioStreamPlayer" parent="." unique_id=1175455003]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1175455003]
 stream = ExtResource("3_ebihn")
-
-[node name="Dashing" type="AudioStreamPlayer" parent="." unique_id=28272536]
-stream = ExtResource("4_x4ukv")
-volume_db = -5.0

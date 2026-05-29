@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://coobctfje2xa4"]
 
 [ext_resource type="PackedScene" uid="uid://d0alovu730j6u" path="res://Assets/Prefabs/player.tscn" id="1_eegtx"]
-[ext_resource type="PackedScene" uid="uid://bqmrilgdkd6vr" path="res://Assets/Scenes/pause_menu.tscn" id="2_4odsj"]
 [ext_resource type="Script" uid="uid://c47eytvl5xbe0" path="res://Assets/Scripts/roomCamTrigger.gd" id="2_7tmfp"]
 [ext_resource type="PackedScene" uid="uid://b40l382tqoc3" path="res://Assets/Prefabs/Stations/Pestle.tscn" id="4_oceud"]
 [ext_resource type="Texture2D" uid="uid://dt312itx5pv75" path="res://Assets/Sprites/Tileset/floor tile.png" id="5_4h7gu"]
@@ -276,8 +275,6 @@ fill_to = Vector2(0, 1)
 
 [node name="Camera2D" parent="." unique_id=1833252064 instance=ExtResource("5_rpgfy")]
 position = Vector2(0, -65)
-
-[node name="PauseMenu" parent="Camera2D" unique_id=1185432531 instance=ExtResource("2_4odsj")]
 
 [node name="Player" parent="." unique_id=2026092582 instance=ExtResource("1_eegtx")]
 position = Vector2(619, 574)
