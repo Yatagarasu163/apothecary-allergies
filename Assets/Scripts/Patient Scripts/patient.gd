@@ -101,10 +101,10 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if(body.is_in_group("Player") && queueing == false):
 		interactable = true
 		if(!waiting_for_cure):
-			label.text = "Press K to take order"
+			label.text = "Press P to take order"
 			label.visible = true
 		else:
-			label.text = "Press K to give medicine"
+			label.text = "Press P to give medicine"
 	elif(body.is_in_group("Patient")):
 		speed = 0
 		queueing = true
