@@ -26,6 +26,9 @@ func _process(_delta: float) -> void:
 		currentPage = 4;
 		recipeUI.global_position = Vector2(0, 0);
 		recipeUI.visible = !recipeUI.visible;
+	if is_player_inside == false:
+		recipeUI.visible = false;
+		
 
 func updatePage():
 	recipePages[currentPage].visible = false
