@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ctywyjqh1b7rl" path="res://Assets/Scripts/chat_bubble.gd" id="1_nragh"]
 [ext_resource type="Texture2D" uid="uid://c53wg8pq2wx7k" path="res://icon.svg" id="2_6lmn4"]
+[ext_resource type="Texture2D" uid="uid://ddc7sxtk62lj4" path="res://Assets/Sprites/SpeechBubble.png" id="2_n1kwa"]
 
 [node name="ChatBubble" type="Node2D" unique_id=629623447]
 script = ExtResource("1_nragh")
@@ -9,8 +10,10 @@ symptom_list = Array[int]([0, 1])
 symptom_display_delay = 1.5
 
 [node name="ChatBubbleSprite" type="Sprite2D" parent="." unique_id=2117035467]
-texture = ExtResource("2_6lmn4")
+scale = Vector2(4, 4)
+texture = ExtResource("2_n1kwa")
 
 [node name="SymptomSprite" type="Sprite2D" parent="." unique_id=1282594428]
+visible = false
 scale = Vector2(3.5, 3.5)
 texture = ExtResource("2_6lmn4")
