@@ -194,6 +194,7 @@ animations = [{
 [node name="Camera2D" type="Camera2D" unique_id=1833252064]
 anchor_mode = 0
 script = ExtResource("1_l7rmy")
+curtainSpeed = 1.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=446290443]
 visible = false
@@ -210,15 +211,22 @@ offset_bottom = 770.0
 z_index = 19
 z_as_relative = false
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="UI Banner" type="TextureRect" parent="CanvasLayer/Control" unique_id=1402184454]
-layout_mode = 0
-offset_right = 128.0
-offset_bottom = 40.0
-scale = Vector2(15, 4.5)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1050.0
+offset_bottom = -210.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.65)
 texture = ExtResource("2_rem6g")
 
 [node name="ItemBoxIcon" type="TextureRect" parent="CanvasLayer/Control" unique_id=2091628048]
