@@ -7,6 +7,10 @@
 [node name="OrderPaper" type="Control" unique_id=832149662]
 layout_mode = 3
 anchors_preset = 0
+offset_left = -20.0
+offset_top = -9.0
+offset_right = -20.0
+offset_bottom = -9.0
 script = ExtResource("1_prai2")
 
 [node name="Papir" type="TextureRect" parent="." unique_id=1904680325]
@@ -16,17 +20,13 @@ offset_bottom = 32.0
 scale = Vector2(10, 10)
 texture = ExtResource("1_qo24s")
 
-[node name="Symptoms" type="Control" parent="." unique_id=1758817511]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
 [node name="Symptom 1" type="Sprite2D" parent="." unique_id=422130930]
-position = Vector2(168, 90)
+z_index = 1
+position = Vector2(168, 135)
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("3_prai2")
 
 [node name="Symptom 2" type="Sprite2D" parent="." unique_id=477441175]
-position = Vector2(168, 180)
+position = Vector2(168, 125)
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("3_prai2")

@@ -4,13 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://cmd5hdqx527sx" path="res://Assets/Sprites/Table.png" id="2_j7ovb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wmwsv"]
-size = Vector2(188, 170)
+size = Vector2(54, 170)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vurco"]
 size = Vector2(128, 128)
 
 [node name="Table" type="Node2D" unique_id=1914519163]
-texture_filter = 5
 script = ExtResource("1_j7ovb")
 
 [node name="Table Sprite" type="Sprite2D" parent="." unique_id=1626858534]
@@ -27,7 +26,9 @@ shape = SubResource("RectangleShape2D_wmwsv")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=850902910]
 shape = SubResource("RectangleShape2D_vurco")
 
-[node name="TextureRect" type="Sprite2D" parent="." unique_id=1793239965]
+[node name="ItemSprite" type="Sprite2D" parent="." unique_id=1793239965]
+position = Vector2(0, -50)
+scale = Vector2(3, 3)
 
 [connection signal="body_entered" from="Collision Detector" to="." method="body_entered"]
 [connection signal="body_exited" from="Collision Detector" to="." method="body_exited"]

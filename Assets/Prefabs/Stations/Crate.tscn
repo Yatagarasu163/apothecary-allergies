@@ -20,7 +20,7 @@ texture = ExtResource("2_sh1v2")
 
 [node name="Item Sprite" type="Sprite2D" parent="Crate Sprite" unique_id=2098364588]
 position = Vector2(0, 5)
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("3_uapt4")
 
 [node name="Collision Detector" type="Area2D" parent="." unique_id=148557739]

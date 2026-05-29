@@ -1,8 +1,10 @@
 extends Node2D
 
 # EDITABLE VARIABLES
-@export var grinding_timer: float = 3.0; 
+var grinding_timer: float = 3.0; 
+@export var base_grinding_timer: float = 5.0;
 @export var interaction_range: float = 2.0;
+@export var audio: AudioStreamPlayer
 
 # VARIABLES
 var is_player_inside: bool = false;
@@ -28,11 +30,14 @@ var items_to_grind = [];
 func _ready() -> void:
 	total_visible_items = 0;
 	pestle_sprite.play("idle");
+	z_index = position.y
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	check_item_visibility();
 	check_player_interaction();
+	grinding_timer = base_grinding_timer - (0.5 * GameManager.upgrades[GameManager.upgrade_category.PESTLE]);
+	
 
 func body_entered(body) -> void:
 	if body.is_in_group("Player"):
@@ -93,7 +98,10 @@ func grind_items() -> void:
 		current_item = GameManager.items.RUBBISH;
 	
 	anim.play("grinding"); 
+	audio.pitch_scale = randf_range(0.5, 1.5);
+	audio.play(3)
 	await get_tree().create_timer(grinding_timer).timeout;
+	audio.stop()
 	anim.play("idle");
 	total_visible_items = 1;
 	has_grinded_item = true;

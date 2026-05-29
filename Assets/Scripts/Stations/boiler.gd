@@ -1,8 +1,10 @@
 extends Node2D
 
 # EDITABLE VARIABLES
-@export var boiling_timer: float = 3.0; 
+var boiling_timer: float = 5.0; 
+@export var base_boiling_timer: float = 5.0;
 @export var interaction_range: float = 2.0;
+@export var audio: AudioStreamPlayer
 
 # VARIABLES
 var is_player_inside: bool = false;
@@ -32,11 +34,13 @@ var boiled_versions = {
 func _ready() -> void:
 	total_visible_items = 0;
 	boiler_sprite.play("Idle");
+	z_index = position.y
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	check_item_visibility();
 	check_player_interaction();
+	boiling_timer = base_boiling_timer - (0.5 * GameManager.upgrades[GameManager.upgrade_category.BOILER]);
 
 func body_entered(body) -> void:
 	if body.is_in_group("Player"):
@@ -51,7 +55,10 @@ func boil_item() -> void:
 		print("Interacting with the boiler!");
 		total_visible_items = 0;
 		boiler_sprite.play("Using");
+		audio.pitch_scale = randf_range(0.5, 1.5);
+		audio.play(2)
 		await get_tree().create_timer(boiling_timer).timeout;
+		audio.stop()
 		boiler_sprite.play("Idle");
 		print("Boiled an item!");
 		item_to_boil = boiled_versions[item_to_boil];

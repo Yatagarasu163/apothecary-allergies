@@ -12,15 +12,23 @@ func _ready() -> void:
 	recipeUI.visible = false;
 	for page in recipePages:
 		page.visible = false;
-	recipePages[3].visible = true;
-	currentPage = 3;
+	recipePages[4].visible = true;
+	currentPage = 4;
+	z_index = position.y
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if is_player_inside && Input.is_action_just_pressed("Add"):
+		for page in recipePages:
+			page.visible = false;
+		recipePages[4].visible = true;
+		currentPage = 4;
 		recipeUI.global_position = Vector2(0, 0);
 		recipeUI.visible = !recipeUI.visible;
+	if is_player_inside == false:
+		recipeUI.visible = false;
+		
 
 func updatePage():
 	recipePages[currentPage].visible = false

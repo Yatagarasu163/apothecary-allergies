@@ -1,5 +1,7 @@
 extends Node2D;
 
+var player_score: int = 0;
+
 #THESE VAR IS USE FOR PATIENT SPAWNER
 # DETECT THE AMOUNT OF PATIENT ON SCREEN (FOR PATIENT_SPAWNER)
 var amount_of_patient_on_screen = 0;
@@ -82,11 +84,12 @@ enum symptoms {
 }
 
 @onready var symptom_sprites: Array[Texture] = [
-	preload("res://Assets/Sprites/Sickness Icons/BuffCat.tres"),
-	preload("res://Assets/Sprites/Sickness Icons/Fire Eyes.tres"),
+	preload("res://Assets/Sprites/Sickness Icons/BuffCat.png"),
+	preload("res://Assets/Sprites/Sickness Icons/Fire Eyes.png"),
 	preload("res://Assets/Sprites/Sickness Icons/UpsideDownIcon.png"),
-	preload("res://Assets/Sprites/Sickness Icons/StarryCough.tres"),
+	preload("res://Assets/Sprites/Sickness Icons/StarryCough.png")
 ]
+
 
 var symptoms_combo = [
 	[symptoms.BUFF_CAT], 
@@ -97,6 +100,8 @@ var symptoms_combo = [
 	[symptoms.STARRY_COUGH],
 	[symptoms.BUFF_CAT, symptoms.STARRY_COUGH]
 ];
+
+@onready var customer: Texture = preload("res://Assets/Sprites/Sickness Icons/UpsideDownIcon.png");
 
 var antidote_combo = {
 	[symptoms.BUFF_CAT]: items.DE_MEOWER, 
@@ -109,6 +114,26 @@ var antidote_combo = {
 }
 
 var current_sickness = [];
+
+enum upgrade_category {TABLE, PESTLE, BOILER}
+
+var max_upgrades = {
+	upgrade_category.TABLE: 8,
+	upgrade_category.PESTLE: 5,
+	upgrade_category.BOILER: 5,
+}
+
+var upgrades = {
+	upgrade_category.TABLE: 0,
+	upgrade_category.PESTLE: 0,
+	upgrade_category.BOILER: 0
+}
+
+var upgrade_prices = {
+	upgrade_category.TABLE: [10, 10, 15, 15, 20, 20, 25, 30],
+	upgrade_category.PESTLE: [20, 40, 60, 80, 100],
+	upgrade_category.BOILER: [30, 50, 70, 90, 110],
+}
 
 func sort_recipe_key(recipe: Array) -> Array:
 	var sorted = recipe.duplicate();

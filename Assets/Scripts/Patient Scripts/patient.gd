@@ -21,6 +21,9 @@ var current_sickness = null;
 @export var FireEyesSprite: AnimatedSprite2D
 @export var CoughinStarsSprite: AnimatedSprite2D
 
+@export var askingCure: AudioStreamPlayer
+@export var gettingCure: AudioStreamPlayer
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -37,6 +40,7 @@ func _ready() -> void:
 	
 	chat_bubble.visible = false
 	label.visible = false
+	patience_bar.visible = false
 	position.x = queue_point.x
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -53,15 +57,18 @@ func get_new_sickness():
 func PatientInteractSystem():
 	if Input.is_action_just_pressed("Interact"):
 		if(!waiting_for_cure):
+			askingCure.pitch_scale = randf_range(0.5, 2.0);
+			askingCure.play()
+			patience_bar.visible = true
 			label.visible = false
 			patience_bar.value = 0
 			patience_timer.wait_time = 7.0
-			chat_bubble.play_symptom_anim();
-			await get_tree().create_timer(2.0).timeout
-			chat_bubble.visible = false
-			waiting_for_cure = true
 			get_new_sickness();
+			chat_bubble.play_symptom_anim(); 
+			waiting_for_cure = true
 		else:
+			gettingCure.pitch_scale = randf_range(0.5, 2.0);
+			gettingCure.play()
 			serve_medicine();
 			patience_timer.stop();
 
@@ -93,10 +100,10 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if(body.is_in_group("Player") && queueing == false):
 		interactable = true
 		if(!waiting_for_cure):
-			label.text = "Press F to take order"
+			label.text = "Press K to take order"
 			label.visible = true
 		else:
-			label.text = "Press F to give medicine"
+			label.text = "Press K to give medicine"
 	elif(body.is_in_group("Patient")):
 		speed = 0
 		queueing = true
@@ -119,6 +126,12 @@ func serve_medicine() -> void:
 		GameManager.player_inventory = null;
 		GameManager.player_inventory_sprite = null;
 		patien_status = true;
+		
+		GameManager.player_score += 1
+		if patience_timer.time_left > 2:
+			GameManager.player_score += 1
+		if patience_timer.time_left > 5:
+			GameManager.player_score += 1
 	else:
 		label.text = "That's not my allergy!";
 		label.visible = true;

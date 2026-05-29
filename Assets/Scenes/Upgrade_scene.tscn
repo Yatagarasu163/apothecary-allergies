@@ -1,0 +1,462 @@
+[gd_scene format=3 uid="uid://ckos54j4if3fw"]
+
+[ext_resource type="FontFile" uid="uid://sa0jbshwh31s" path="res://Assets/Fonts/LowresPixel-Regular.otf" id="1_hycid"]
+[ext_resource type="Texture2D" uid="uid://dtxhpjux25t4r" path="res://Assets/Sprites/Recipe Book/Grinder_Atlas.tres" id="2_1stmj"]
+[ext_resource type="Script" uid="uid://b8ieyttnym2tq" path="res://Assets/Scripts/pestle (2).gd" id="2_8upmy"]
+[ext_resource type="Texture2D" uid="uid://6qwlsn0mevbh" path="res://Assets/Sprites/Upgrades/Upgrade_Step.png" id="3_b0nj8"]
+[ext_resource type="Texture2D" uid="uid://om8oh72t3or1" path="res://Assets/Sprites/Recipe Book/Boiler_Atlas.tres" id="3_kjch3"]
+[ext_resource type="Texture2D" uid="uid://bt1hmpkq2flpk" path="res://Assets/Sprites/Upgrades/Plus_Button.png" id="3_p0fs1"]
+[ext_resource type="Script" uid="uid://baybuxlfycpfa" path="res://Assets/Scripts/add.gd" id="3_rj8er"]
+[ext_resource type="Texture2D" uid="uid://caxwgkvdikwr8" path="res://Assets/Sprites/Table_Upgrade.png" id="4_p0fs1"]
+[ext_resource type="Script" uid="uid://fm34wrx7ifum" path="res://Assets/Scripts/boiler.gd" id="7_n6mhv"]
+[ext_resource type="Texture2D" uid="uid://cbcm7oe162d7o" path="res://Assets/Sprites/Sprite Sheets/Coin_Spin_Animation.png" id="7_rj8er"]
+[ext_resource type="Script" uid="uid://bv6mhy0g468pp" path="res://Assets/Scripts/coin.gd" id="7_ydlsn"]
+[ext_resource type="Script" uid="uid://p01vwsgxn528" path="res://Assets/Scripts/table (2).gd" id="9_iss57"]
+[ext_resource type="Script" uid="uid://c5g3l0x0c6kre" path="res://Assets/Scripts/next_day.gd" id="11_efc27"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gjbyp"]
+font = ExtResource("1_hycid")
+font_size = 100
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdjou"]
+atlas = ExtResource("3_b0nj8")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g35h4"]
+atlas = ExtResource("3_b0nj8")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g2lmr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cdjou")
+}],
+"loop": false,
+"name": &"no_upgrade",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g35h4")
+}],
+"loop": false,
+"name": &"yes_upgrade",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rj8er"]
+atlas = ExtResource("3_p0fs1")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydlsn"]
+atlas = ExtResource("3_p0fs1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0nj8"]
+atlas = ExtResource("3_p0fs1")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8upmy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rj8er")
+}],
+"loop": false,
+"name": &"hover",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydlsn")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0nj8")
+}],
+"loop": false,
+"name": &"pressed",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_efc27"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"hover",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"pressed",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8upmy"]
+atlas = ExtResource("7_rj8er")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6mhv"]
+atlas = ExtResource("7_rj8er")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iss57"]
+atlas = ExtResource("7_rj8er")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efc27"]
+atlas = ExtResource("7_rj8er")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmeyr"]
+atlas = ExtResource("7_rj8er")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r43vx"]
+atlas = ExtResource("7_rj8er")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cdjou"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8upmy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6mhv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iss57")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efc27")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmeyr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r43vx")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="UpgradeScene" type="Node2D" unique_id=1682529555]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1331077060]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1763567806]
+offset_left = 3.0
+offset_right = 43.0
+offset_bottom = 40.0
+scale = Vector2(49.919315, 31.291386)
+mouse_filter = 2
+color = Color(0.8, 0.5411765, 0, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=254554939]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -400.0
+offset_bottom = -400.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Upgrades:"
+label_settings = SubResource("LabelSettings_gjbyp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pestle" type="Control" parent="CanvasLayer" unique_id=1788133313 node_paths=PackedStringArray("upgrades")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 254.0
+offset_top = 322.0
+offset_right = 294.0
+offset_bottom = 362.0
+mouse_filter = 2
+script = ExtResource("2_8upmy")
+upgrades = [NodePath("Upgrade Increments/AnimatedSprite2D"), NodePath("Upgrade Increments/AnimatedSprite2D2"), NodePath("Upgrade Increments/AnimatedSprite2D3"), NodePath("Upgrade Increments/AnimatedSprite2D4"), NodePath("Upgrade Increments/AnimatedSprite2D5")]
+
+[node name="Pestle Sprite" type="TextureRect" parent="CanvasLayer/Pestle" unique_id=2118118887]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(5.877014, 5.877014)
+texture = ExtResource("2_1stmj")
+
+[node name="Upgrade Increments" type="Control" parent="CanvasLayer/Pestle" unique_id=759503707]
+anchors_preset = 0
+offset_left = 11.0
+offset_top = 313.0
+offset_right = 51.0
+offset_bottom = 353.0
+scale = Vector2(3.5734327, 3.5734327)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Pestle/Upgrade Increments" unique_id=506753885]
+sprite_frames = SubResource("SpriteFrames_g2lmr")
+animation = &"yes_upgrade"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CanvasLayer/Pestle/Upgrade Increments" unique_id=53201991]
+position = Vector2(11.193719, 0)
+sprite_frames = SubResource("SpriteFrames_g2lmr")
+animation = &"yes_upgrade"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="CanvasLayer/Pestle/Upgrade Increments" unique_id=1071574792]
+position = Vector2(22.387438, 0)
+sprite_frames = SubResource("SpriteFrames_g2lmr")
+animation = &"yes_upgrade"
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="CanvasLayer/Pestle/Upgrade Increments" unique_id=1828847136]
+position = Vector2(33.581158, 0)
+sprite_frames = SubResource("SpriteFrames_g2lmr")
+animation = &"no_upgrade"
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="CanvasLayer/Pestle/Upgrade Increments" unique_id=245066506]
+position = Vector2(44.495033, 0)
+sprite_frames = SubResource("SpriteFrames_g2lmr")
+animation = &"yes_upgrade"
+
+[node name="Add" type="Button" parent="CanvasLayer/Pestle" unique_id=2139154875]
+z_index = 100
+layout_mode = 0
+offset_left = 221.0
+offset_top = 280.0
+offset_right = 319.0
+offset_bottom = 345.0
+text = "+"
+flat = true
+script = ExtResource("3_rj8er")
+type = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Pestle/Add" unique_id=1757226755]
+position = Vector2(-7, -7)
+scale = Vector2(2.465513, 2.465513)
+sprite_frames = SubResource("SpriteFrames_8upmy")
+animation = &"idle"
+centered = false
+
+[node name="Boiler" type="Control" parent="CanvasLayer" unique_id=1276350966 node_paths=PackedStringArray("upgrades")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 254.0
+offset_top = 322.0
+offset_right = 294.0
+offset_bottom = 362.0
+script = ExtResource("7_n6mhv")
+upgrades = [NodePath("Upgrade Increments2/AnimatedSprite2D"), NodePath("Upgrade Increments2/AnimatedSprite2D2"), NodePath("Upgrade Increments2/AnimatedSprite2D3"), NodePath("Upgrade Increments2/AnimatedSprite2D4"), NodePath("Upgrade Increments2/AnimatedSprite2D5")]
+
+[node name="Boiler" type="TextureRect" parent="CanvasLayer/Boiler" unique_id=2031503274]
+layout_mode = 0
+offset_left = 594.99994
+offset_right = 634.99994
+offset_bottom = 40.0
+scale = Vector2(5.877014, 5.877014)
+texture = ExtResource("3_kjch3")
+
+[node name="Add2" type="Button" parent="CanvasLayer/Boiler" unique_id=1789609956]
+z_index = 100
+layout_mode = 0
+offset_left = 833.0
+offset_top = 280.0
+offset_right = 931.0
+offset_bottom = 345.0
+text = "+"
+flat = true
+script = ExtResource("3_rj8er")
+type = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Boiler/Add2" unique_id=177904130]
+position = Vector2(-7, -7)
+scale = Vector2(2.465513, 2.465513)
+sprite_frames = SubResource("SpriteFrames_8upmy")
+animation = &"idle"
+centered = false
+
+[node name="Upgrade Increments2" type="Control" parent="CanvasLayer/Boiler" unique_id=173954836]
+anchors_preset = 0
+offset_left = 627.0
+offset_top = 313.0
+offset_right = 667.0
+offset_bottom = 353.0
+scale = Vector2(3.5734327, 3.5734327)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Boiler/Upgrade Increments2" unique_id=391645136]
+sprite_frames = SubResource("SpriteFrames_g2lmr")
+animation = &"yes_upgrade"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CanvasLayer/Boiler/Upgrade Increments2" unique_id=425745285]
+position = Vector2(11.193719, 0)
+sprite_frames = SubResource("SpriteFrames_g2lmr")
+animation = &"yes_upgrade"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="CanvasLayer/Boiler/Upgrade Increments2" unique_id=1684932461]
+position = Vector2(22.387438, 0)
+sprite_frames = SubResource("SpriteFrames_g2lmr")
+animation = &"yes_upgrade"
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="CanvasLayer/Boiler/Upgrade Increments2" unique_id=959389206]
+position = Vector2(33.581158, 0)
+sprite_frames = SubResource("SpriteFrames_g2lmr")
+animation = &"yes_upgrade"
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="CanvasLayer/Boiler/Upgrade Increments2" unique_id=224738766]
+position = Vector2(44.495033, 0)
+sprite_frames = SubResource("SpriteFrames_g2lmr")
+animation = &"yes_upgrade"
+
+[node name="Table" type="Control" parent="CanvasLayer" unique_id=1162563595 node_paths=PackedStringArray("upgrades")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1425.0
+offset_top = 329.0
+offset_right = 1465.0
+offset_bottom = 369.0
+script = ExtResource("9_iss57")
+upgrades = [NodePath("Upgrade Increments3/AnimatedSprite2D"), NodePath("Upgrade Increments3/AnimatedSprite2D2"), NodePath("Upgrade Increments3/AnimatedSprite2D3"), NodePath("Upgrade Increments3/AnimatedSprite2D4"), NodePath("Upgrade Increments3/AnimatedSprite2D5"), NodePath("Upgrade Increments3/AnimatedSprite2D6"), NodePath("Upgrade Increments3/AnimatedSprite2D7"), NodePath("Upgrade Increments3/AnimatedSprite2D8")]
+
+[node name="Table" type="TextureRect" parent="CanvasLayer/Table" unique_id=283678743]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(5.877014, 5.877014)
+texture = ExtResource("4_p0fs1")
+
+[node name="Add3" type="Button" parent="CanvasLayer/Table" unique_id=1020873559]
+z_index = 100
+layout_mode = 0
+offset_left = 282.0
+offset_top = 272.0
+offset_right = 380.0
+offset_bottom = 337.0
+text = "+"
+flat = true
+script = ExtResource("3_rj8er")
+type = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Table/Add3" unique_id=1307984840]
+position = Vector2(-7, -7)
+scale = Vector2(2.465513, 2.465513)
+sprite_frames = SubResource("SpriteFrames_8upmy")
+animation = &"idle"
+centered = false
+
+[node name="Upgrade Increments3" type="Control" parent="CanvasLayer/Table" unique_id=259550288]
+anchors_preset = 0
+offset_left = -48.0
+offset_top = 306.0
+offset_right = -8.0
+offset_bottom = 346.0
+scale = Vector2(3.5734327, 3.5734327)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Table/Upgrade Increments3" unique_id=1489261613]
+sprite_frames = SubResource("SpriteFrames_g2lmr")
+animation = &"yes_upgrade"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CanvasLayer/Table/Upgrade Increments3" unique_id=51145146]
+position = Vector2(11.193719, 0)
+sprite_frames = SubResource("SpriteFrames_g2lmr")
+animation = &"yes_upgrade"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="CanvasLayer/Table/Upgrade Increments3" unique_id=1978431905]
+position = Vector2(22.387438, 0)
+sprite_frames = SubResource("SpriteFrames_g2lmr")
+animation = &"yes_upgrade"
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="CanvasLayer/Table/Upgrade Increments3" unique_id=1637754777]
+position = Vector2(33.581158, 0)
+sprite_frames = SubResource("SpriteFrames_g2lmr")
+animation = &"yes_upgrade"
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="CanvasLayer/Table/Upgrade Increments3" unique_id=1775620165]
+position = Vector2(44.495033, 0)
+sprite_frames = SubResource("SpriteFrames_g2lmr")
+animation = &"yes_upgrade"
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="CanvasLayer/Table/Upgrade Increments3" unique_id=830718060]
+position = Vector2(55.40891, 0)
+sprite_frames = SubResource("SpriteFrames_g2lmr")
+animation = &"yes_upgrade"
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="CanvasLayer/Table/Upgrade Increments3" unique_id=1775610202]
+position = Vector2(66.60263, 0)
+sprite_frames = SubResource("SpriteFrames_g2lmr")
+animation = &"yes_upgrade"
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="CanvasLayer/Table/Upgrade Increments3" unique_id=549054773]
+position = Vector2(77.236664, 0)
+sprite_frames = SubResource("SpriteFrames_g2lmr")
+animation = &"yes_upgrade"
+
+[node name="Next Day" type="Button" parent="CanvasLayer" unique_id=572954216]
+offset_left = 1628.0
+offset_top = 948.99994
+offset_right = 1707.0
+offset_bottom = 979.99994
+scale = Vector2(3.1499083, 3.1499083)
+text = "Next Day"
+script = ExtResource("11_efc27")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Next Day" unique_id=2084828772]
+z_index = 100
+sprite_frames = SubResource("SpriteFrames_efc27")
+animation = &"idle"
+
+[node name="Coin" type="Control" parent="CanvasLayer" unique_id=1646371407]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1515.0
+offset_top = 151.0
+offset_right = 1555.0
+offset_bottom = 191.0
+script = ExtResource("7_ydlsn")
+
+[node name="Coin Sprite" type="AnimatedSprite2D" parent="CanvasLayer/Coin" unique_id=2028332414]
+scale = Vector2(8.20107, 8.20107)
+sprite_frames = SubResource("SpriteFrames_cdjou")
+animation = &"idle"
+
+[node name="Label" type="Label" parent="CanvasLayer/Coin" unique_id=1633927926]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -15.0
+offset_top = -47.0
+offset_right = 436.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "NULL"
+label_settings = SubResource("LabelSettings_gjbyp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1188990514]
+anchor_mode = 0
+
+[connection signal="mouse_entered" from="CanvasLayer/Pestle/Add" to="CanvasLayer/Pestle/Add" method="mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Pestle/Add" to="CanvasLayer/Pestle/Add" method="mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Pestle/Add" to="." method="_pestle_add_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pestle/Add" to="CanvasLayer/Pestle/Add" method="mouse_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Boiler/Add2" to="CanvasLayer/Boiler/Add2" method="mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Boiler/Add2" to="CanvasLayer/Boiler/Add2" method="mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Boiler/Add2" to="." method="_pestle_add_pressed"]
+[connection signal="pressed" from="CanvasLayer/Boiler/Add2" to="CanvasLayer/Boiler/Add2" method="mouse_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Table/Add3" to="CanvasLayer/Table/Add3" method="mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Table/Add3" to="CanvasLayer/Table/Add3" method="mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Table/Add3" to="." method="_pestle_add_pressed"]
+[connection signal="pressed" from="CanvasLayer/Table/Add3" to="CanvasLayer/Table/Add3" method="mouse_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Next Day" to="CanvasLayer/Next Day" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Next Day" to="CanvasLayer/Next Day" method="_on_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Next Day" to="CanvasLayer/Next Day" method="_on_pressed"]

@@ -1,31 +1,132 @@
 [gd_scene format=3 uid="uid://c8g1k6fsab7t8"]
 
 [ext_resource type="Script" uid="uid://dv837tgm4bppl" path="res://Assets/Scripts/camera.gd" id="1_l7rmy"]
-[ext_resource type="Texture2D" uid="uid://c53wg8pq2wx7k" path="res://icon.svg" id="2_0t875"]
+[ext_resource type="Texture2D" uid="uid://bjkeoc2ijp3wc" path="res://Assets/Sprites/UI Banner.png" id="2_rem6g"]
+[ext_resource type="Texture2D" uid="uid://dt53v4su62x0l" path="res://Assets/Sprites/Inventory Icon.png" id="3_7fvhq"]
+[ext_resource type="Texture2D" uid="uid://cbcm7oe162d7o" path="res://Assets/Sprites/Sprite Sheets/Coin_Spin_Animation.png" id="3_nkoql"]
 [ext_resource type="PackedScene" uid="uid://dv2c4e5nvt2ck" path="res://Assets/Prefabs/OrderPaper.tscn" id="3_qg7nf"]
+[ext_resource type="Texture2D" uid="uid://ck6j0qdapwccg" path="res://Assets/Sprites/Ingredients/nyaa_leaf.png" id="4_7fvhq"]
+[ext_resource type="FontFile" uid="uid://sa0jbshwh31s" path="res://Assets/Fonts/LowresPixel-Regular.otf" id="7_ay8xc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ay8xc"]
+atlas = ExtResource("3_nkoql")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upunc"]
+atlas = ExtResource("3_nkoql")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rdkw"]
+atlas = ExtResource("3_nkoql")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0sw3j"]
+atlas = ExtResource("3_nkoql")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1t4mh"]
+atlas = ExtResource("3_nkoql")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sipgs"]
+atlas = ExtResource("3_nkoql")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i86m3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ay8xc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_upunc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rdkw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0sw3j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1t4mh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sipgs")
+}],
+"loop": true,
+"name": &"spin",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_upunc"]
+font = ExtResource("7_ay8xc")
+font_size = 60
 
 [node name="Camera2D" type="Camera2D" unique_id=1833252064]
 anchor_mode = 0
 script = ExtResource("1_l7rmy")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1229661176]
-visible = false
-offset_right = 39.6128
-offset_bottom = 40.0
-scale = Vector2(48.46918, 3.345468)
-color = Color(0.7411765, 0.41960785, 1, 0.5137255)
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=446290443]
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=2091628048]
-offset_left = 35.0
-offset_top = 26.0
-offset_right = 163.0
-offset_bottom = 154.0
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("2_0t875")
-
-[node name="OrderPaper" parent="." unique_id=832149662 instance=ExtResource("3_qg7nf")]
+[node name="OrderPaper" parent="CanvasLayer" unique_id=832149662 instance=ExtResource("3_qg7nf")]
 visible = false
+z_index = 4096
 offset_left = 1610.0
 offset_top = 770.0
 offset_right = 1610.0
 offset_bottom = 770.0
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1753305994]
+z_index = 19
+z_as_relative = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UI Banner" type="TextureRect" parent="CanvasLayer/Control" unique_id=1402184454]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 40.0
+scale = Vector2(15, 4.5)
+texture = ExtResource("2_rem6g")
+
+[node name="ItemBoxIcon" type="TextureRect" parent="CanvasLayer/Control" unique_id=2091628048]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 26.0
+offset_right = 204.0
+offset_bottom = 154.0
+scale = Vector2(0.8530843, 0.8530843)
+texture = ExtResource("3_7fvhq")
+
+[node name="Item Icon" type="TextureRect" parent="CanvasLayer/Control/ItemBoxIcon" unique_id=36056525]
+layout_mode = 0
+offset_left = 12.894387
+offset_top = 14.066605
+offset_right = 52.894386
+offset_bottom = 54.066605
+scale = Vector2(2.4344766, 2.4344766)
+texture = ExtResource("4_7fvhq")
+
+[node name="Coin Score" type="Control" parent="CanvasLayer" unique_id=244089595]
+z_index = 20
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Coin" type="AnimatedSprite2D" parent="CanvasLayer/Coin Score" unique_id=1166746721]
+position = Vector2(1684, 67.99999)
+scale = Vector2(4.5859313, 4.5859313)
+sprite_frames = SubResource("SpriteFrames_i86m3")
+animation = &"spin"
+
+[node name="Coin Count" type="Label" parent="CanvasLayer/Coin Score" unique_id=1963435283]
+layout_mode = 0
+offset_left = 1755.0
+offset_top = 41.0
+offset_right = 1795.0
+offset_bottom = 101.0
+text = "0"
+label_settings = SubResource("LabelSettings_upunc")

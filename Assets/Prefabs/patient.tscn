@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bp0yuboa6xdef" path="res://Assets/Prefabs/chat_bubble.tscn" id="4_tkxci"]
 [ext_resource type="Texture2D" uid="uid://b2so8rffbk8pu" path="res://Assets/Sprites/Patience_Bar_Empty.png" id="5_mfah6"]
 [ext_resource type="Texture2D" uid="uid://bg5pe0ffld4bv" path="res://Assets/Sprites/Patience_Bar_Full.png" id="6_x3cs4"]
+[ext_resource type="AudioStream" uid="uid://btbbq1b81w86n" path="res://Assets/Audio/Donk.mp3" id="7_pocpw"]
+[ext_resource type="AudioStream" uid="uid://cyip40e7bqgho" path="res://Assets/Audio/Huh.mp3" id="8_uxrot"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hr5m6"]
 
@@ -102,7 +104,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tkxci"]
 size = Vector2(19.904455, 28.4558)
 
-[node name="Patient" type="Node2D" unique_id=1386610887 node_paths=PackedStringArray("CharacterSprite", "HeadSprite", "BodySprite", "BuffMiawSprite", "FireEyesSprite", "CoughinStarsSprite")]
+[node name="Patient" type="Node2D" unique_id=1386610887 node_paths=PackedStringArray("CharacterSprite", "HeadSprite", "BodySprite", "BuffMiawSprite", "FireEyesSprite", "CoughinStarsSprite", "askingCure", "gettingCure")]
 texture_filter = 3
 script = ExtResource("1_3c0vk")
 CharacterSprite = NodePath("CharacterBody2D/Character Sprite")
@@ -111,6 +113,8 @@ BodySprite = NodePath("CharacterBody2D/Character Sprite/Body")
 BuffMiawSprite = NodePath("CharacterBody2D/Character Sprite/Buff Miaw")
 FireEyesSprite = NodePath("CharacterBody2D/Character Sprite/Fire Eyes")
 CoughinStarsSprite = NodePath("CharacterBody2D/Character Sprite/Starry Cough")
+askingCure = NodePath("Asking")
+gettingCure = NodePath("Getting")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=390868079 groups=["Patient"]]
 
@@ -180,6 +184,12 @@ texture_under = ExtResource("6_x3cs4")
 texture_progress = ExtResource("5_mfah6")
 
 [node name="Patience Timer" type="Timer" parent="." unique_id=873031726]
+
+[node name="Asking" type="AudioStreamPlayer" parent="." unique_id=1961881553]
+stream = ExtResource("8_uxrot")
+
+[node name="Getting" type="AudioStreamPlayer" parent="." unique_id=1506109628]
+stream = ExtResource("7_pocpw")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
