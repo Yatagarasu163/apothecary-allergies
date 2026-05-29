@@ -18,11 +18,16 @@ texture = ExtResource("1_qo24s")
 
 [node name="Symptom 1" type="Sprite2D" parent="." unique_id=422130930]
 z_index = 1
-position = Vector2(168, 135)
-scale = Vector2(2.5, 2.5)
+position = Vector2(160, 90)
+scale = Vector2(3, 3)
 texture = ExtResource("3_prai2")
 
 [node name="Symptom 2" type="Sprite2D" parent="." unique_id=477441175]
-position = Vector2(168, 125)
-scale = Vector2(2.5, 2.5)
+position = Vector2(160, 180)
+scale = Vector2(3, 3)
 texture = ExtResource("3_prai2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=958925961]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

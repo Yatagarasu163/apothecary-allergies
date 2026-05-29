@@ -30,14 +30,13 @@ var items_to_grind = [];
 func _ready() -> void:
 	total_visible_items = 0;
 	pestle_sprite.play("idle");
-	z_index = position.y
+	z_index = int(position.y)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	check_item_visibility();
 	check_player_interaction();
 	grinding_timer = base_grinding_timer - (0.5 * GameManager.upgrades[GameManager.upgrade_category.PESTLE]);
-	
 
 func body_entered(body) -> void:
 	if body.is_in_group("Player"):
@@ -67,6 +66,10 @@ func add_item() -> void:
 func grind_items() -> void:
 	if items_to_grind.size() < 1:
 		print("Not enough items to grind!")
+		return
+	
+	if items_to_grind[0] >= GameManager.items.RUBBISH:
+		print("Cannot grind this item")
 		return
 	
 	var key = get_recipe_key(items_to_grind);
@@ -106,7 +109,7 @@ func grind_items() -> void:
 	total_visible_items = 1;
 	has_grinded_item = true;
 	items_to_grind = [current_item];
-	
+
 func get_recipe_key(items: Array) -> Array:
 	var sorted = items.duplicate();
 	sorted.sort();
@@ -130,14 +133,14 @@ func check_item_visibility() -> void:
 			item_2.position.x = 0;
 			item_3.position.x = 24;
 			item_3.visible = true;
-			
+
 func check_player_interaction() -> void:
 	if is_player_inside:
 		if Input.is_action_just_pressed("Add"):
 			# Checks if the amount of items is less than 3
 			if(total_visible_items < 3):
 				# If the pestle has already grinded something, then pick it up
-				if has_grinded_item:
+				if has_grinded_item and items_to_grind[0] >= GameManager.items.RUBBISH:
 					if GameManager.player_inventory == null:
 						print("Picked up grinded item!");
 						total_visible_items = 0;
