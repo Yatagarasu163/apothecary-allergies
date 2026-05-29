@@ -82,11 +82,12 @@ enum symptoms {
 }
 
 @onready var symptom_sprites: Array[Texture] = [
-	preload("res://Assets/Sprites/Sickness Icons/BuffCat.tres"),
-	preload("res://Assets/Sprites/Sickness Icons/Fire Eyes.tres"),
+	preload("res://Assets/Sprites/Sickness Icons/BuffCat.png"),
+	preload("res://Assets/Sprites/Sickness Icons/Fire Eyes.png"),
 	preload("res://Assets/Sprites/Sickness Icons/UpsideDownIcon.png"),
-	preload("res://Assets/Sprites/Sickness Icons/StarryCough.tres"),
+	preload("res://Assets/Sprites/Sickness Icons/StarryCough.png")
 ]
+
 
 var symptoms_combo = [
 	[symptoms.BUFF_CAT], 
@@ -97,6 +98,8 @@ var symptoms_combo = [
 	[symptoms.STARRY_COUGH],
 	[symptoms.BUFF_CAT, symptoms.STARRY_COUGH]
 ];
+
+@onready var customer: Texture = preload("res://Assets/Sprites/Sickness Icons/UpsideDownIcon.png");
 
 var antidote_combo = {
 	[symptoms.BUFF_CAT]: items.DE_MEOWER, 
@@ -109,6 +112,14 @@ var antidote_combo = {
 }
 
 var current_sickness = [];
+
+enum upgrade_category {TABLE, PESTLE, BOILER}
+
+var upgrades = {
+	upgrade_category.TABLE: 0,
+	upgrade_category.PESTLE: 0,
+	upgrade_category.BOILER: 0
+}
 
 func sort_recipe_key(recipe: Array) -> Array:
 	var sorted = recipe.duplicate();

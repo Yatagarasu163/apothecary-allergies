@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://brp3t2gjv2fgk"
-path="res://.godot/imported/Sickness3.png-5ce1646a817ed39793fb89b8f925cde1.ctex"
+path="res://.godot/imported/StarryCough.png-4cac1ae8960322b1f44d95d6ace8e034.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Sickness Icons/Sickness3.png"
-dest_files=["res://.godot/imported/Sickness3.png-5ce1646a817ed39793fb89b8f925cde1.ctex"]
+source_file="res://Assets/Sprites/Sickness Icons/StarryCough.png"
+dest_files=["res://.godot/imported/StarryCough.png-4cac1ae8960322b1f44d95d6ace8e034.ctex"]
 
 [params]
 

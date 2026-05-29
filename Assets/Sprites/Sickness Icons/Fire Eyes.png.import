@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bi4skxgx3537p"
-path="res://.godot/imported/Sickness2.png-70cd7895966ee2f4e135a315441a0826.ctex"
+path="res://.godot/imported/Fire Eyes.png-9870102aeba2e30e16d69e7c37a82420.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Sickness Icons/Sickness2.png"
-dest_files=["res://.godot/imported/Sickness2.png-70cd7895966ee2f4e135a315441a0826.ctex"]
+source_file="res://Assets/Sprites/Sickness Icons/Fire Eyes.png"
+dest_files=["res://.godot/imported/Fire Eyes.png-9870102aeba2e30e16d69e7c37a82420.ctex"]
 
 [params]
 

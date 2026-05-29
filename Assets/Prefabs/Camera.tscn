@@ -10,7 +10,9 @@
 anchor_mode = 0
 script = ExtResource("1_l7rmy")
 
-[node name="OrderPaper" parent="." unique_id=832149662 instance=ExtResource("3_qg7nf")]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=446290443]
+
+[node name="OrderPaper" parent="CanvasLayer" unique_id=832149662 instance=ExtResource("3_qg7nf")]
 visible = false
 z_index = 4096
 offset_left = 1610.0
@@ -18,7 +20,7 @@ offset_top = 770.0
 offset_right = 1610.0
 offset_bottom = 770.0
 
-[node name="Control" type="Control" parent="." unique_id=1753305994]
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1753305994]
 z_index = 19
 z_as_relative = false
 layout_mode = 3
@@ -26,14 +28,14 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="UI Banner" type="TextureRect" parent="Control" unique_id=1402184454]
+[node name="UI Banner" type="TextureRect" parent="CanvasLayer/Control" unique_id=1402184454]
 layout_mode = 0
 offset_right = 128.0
 offset_bottom = 40.0
 scale = Vector2(15, 4.5)
 texture = ExtResource("2_rem6g")
 
-[node name="ItemBoxIcon" type="TextureRect" parent="Control" unique_id=2091628048]
+[node name="ItemBoxIcon" type="TextureRect" parent="CanvasLayer/Control" unique_id=2091628048]
 layout_mode = 0
 offset_left = 76.0
 offset_top = 26.0
@@ -42,7 +44,7 @@ offset_bottom = 154.0
 scale = Vector2(0.8530843, 0.8530843)
 texture = ExtResource("3_7fvhq")
 
-[node name="Item Icon" type="TextureRect" parent="Control/ItemBoxIcon" unique_id=36056525]
+[node name="Item Icon" type="TextureRect" parent="CanvasLayer/Control/ItemBoxIcon" unique_id=36056525]
 layout_mode = 0
 offset_left = 12.894387
 offset_top = 14.066605
