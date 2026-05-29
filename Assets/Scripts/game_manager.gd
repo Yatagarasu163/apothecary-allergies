@@ -124,7 +124,7 @@ var max_upgrades = {
 }
 
 var upgrades = {
-	upgrade_category.TABLE: 5,
+	upgrade_category.TABLE: 0,
 	upgrade_category.PESTLE: 0,
 	upgrade_category.BOILER: 0
 }

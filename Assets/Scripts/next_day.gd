@@ -4,7 +4,6 @@ extends Button
 
 func _ready() -> void:
 	anim.play("idle");
-	print("Game Manager day:", GameManager.dayas);
 
 func _on_mouse_entered() -> void:
 	anim.play("hover");
