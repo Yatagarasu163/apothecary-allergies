@@ -130,9 +130,9 @@ var upgrades = {
 }
 
 var upgrade_prices = {
-	upgrade_category.TABLE: [10, 10, 15, 15, 20, 20, 25, 30],
-	upgrade_category.PESTLE: [20, 40, 60, 80, 100],
-	upgrade_category.BOILER: [30, 50, 70, 90, 110],
+	upgrade_category.TABLE: [10, 10, 15, 15, 20, 20, 25, 30, "-"],
+	upgrade_category.PESTLE: [20, 40, 60, 80, 100, "-"],
+	upgrade_category.BOILER: [30, 50, 70, 90, 110, "-"],
 }
 
 func sort_recipe_key(recipe: Array) -> Array:

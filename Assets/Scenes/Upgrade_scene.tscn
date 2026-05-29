@@ -86,6 +86,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_r43vx"]
+font = ExtResource("1_hycid")
+font_size = 64
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2lmr"]
 atlas = ExtResource("12_fmeyr")
 region = Rect2(4, 22, 106, 18)
@@ -222,9 +226,9 @@ texture = ExtResource("2_1stmj")
 [node name="Upgrade Increments" type="Control" parent="CanvasLayer/Pestle" unique_id=759503707]
 anchors_preset = 0
 offset_left = 11.0
-offset_top = 313.0
+offset_top = 411.0
 offset_right = 51.0
-offset_bottom = 353.0
+offset_bottom = 451.0
 scale = Vector2(3.5734327, 3.5734327)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Pestle/Upgrade Increments" unique_id=506753885]
@@ -255,9 +259,9 @@ animation = &"yes_upgrade"
 z_index = 100
 layout_mode = 0
 offset_left = 221.0
-offset_top = 280.0
+offset_top = 378.0
 offset_right = 319.0
-offset_bottom = 345.0
+offset_bottom = 443.0
 text = "+"
 flat = true
 script = ExtResource("3_rj8er")
@@ -278,6 +282,16 @@ offset_right = 194.0
 offset_bottom = -75.0
 scale = Vector2(5.50788, 5.50788)
 texture = ExtResource("7_r43vx")
+
+[node name="Label" type="Label" parent="CanvasLayer/Pestle" unique_id=912855144]
+layout_mode = 0
+offset_top = 266.0
+offset_right = 254.0
+offset_bottom = 331.0
+text = "sfdvdfv"
+label_settings = SubResource("LabelSettings_r43vx")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Boiler" type="Control" parent="CanvasLayer" unique_id=1276350966 node_paths=PackedStringArray("upgrades")]
 layout_mode = 3
@@ -301,13 +315,13 @@ texture = ExtResource("3_kjch3")
 z_index = 100
 layout_mode = 0
 offset_left = 833.0
-offset_top = 280.0
+offset_top = 377.0
 offset_right = 931.0
-offset_bottom = 345.0
+offset_bottom = 442.0
 text = "+"
 flat = true
 script = ExtResource("3_rj8er")
-type = 1
+type = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Boiler/Add2" unique_id=177904130]
 position = Vector2(-7, -7)
@@ -319,9 +333,9 @@ centered = false
 [node name="Upgrade Increments2" type="Control" parent="CanvasLayer/Boiler" unique_id=173954836]
 anchors_preset = 0
 offset_left = 627.0
-offset_top = 313.0
+offset_top = 410.0
 offset_right = 667.0
-offset_bottom = 353.0
+offset_bottom = 450.0
 scale = Vector2(3.5734327, 3.5734327)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Boiler/Upgrade Increments2" unique_id=391645136]
@@ -357,6 +371,17 @@ offset_bottom = -75.0
 scale = Vector2(5.50788, 5.50788)
 texture = ExtResource("7_r43vx")
 
+[node name="Label" type="Label" parent="CanvasLayer/Boiler" unique_id=585396578]
+layout_mode = 0
+offset_left = 610.0
+offset_top = 266.0
+offset_right = 864.0
+offset_bottom = 331.0
+text = "sfdvdfv"
+label_settings = SubResource("LabelSettings_r43vx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Table" type="Control" parent="CanvasLayer" unique_id=1162563595 node_paths=PackedStringArray("upgrades")]
 layout_mode = 3
 anchors_preset = 0
@@ -378,13 +403,12 @@ texture = ExtResource("4_p0fs1")
 z_index = 100
 layout_mode = 0
 offset_left = 282.0
-offset_top = 272.0
+offset_top = 370.0
 offset_right = 380.0
-offset_bottom = 337.0
+offset_bottom = 435.0
 text = "+"
 flat = true
 script = ExtResource("3_rj8er")
-type = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Table/Add3" unique_id=1307984840]
 position = Vector2(-7, -7)
@@ -396,9 +420,9 @@ centered = false
 [node name="Upgrade Increments3" type="Control" parent="CanvasLayer/Table" unique_id=259550288]
 anchors_preset = 0
 offset_left = -48.0
-offset_top = 306.0
+offset_top = 404.0
 offset_right = -8.0
-offset_bottom = 346.0
+offset_bottom = 444.0
 scale = Vector2(3.5734327, 3.5734327)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Table/Upgrade Increments3" unique_id=1489261613]
@@ -439,6 +463,17 @@ animation = &"yes_upgrade"
 position = Vector2(77.236664, 0)
 sprite_frames = SubResource("SpriteFrames_g2lmr")
 animation = &"yes_upgrade"
+
+[node name="Label" type="Label" parent="CanvasLayer/Table" unique_id=2070599804]
+layout_mode = 0
+offset_left = -31.0
+offset_top = 266.0
+offset_right = 223.0
+offset_bottom = 331.0
+text = "sfdvdfv"
+label_settings = SubResource("LabelSettings_r43vx")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Next Day" type="Button" parent="CanvasLayer" unique_id=572954216]
 offset_left = 1402.0001
