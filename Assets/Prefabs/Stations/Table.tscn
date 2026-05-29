@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cmd5hdqx527sx" path="res://Assets/Sprites/Table.png" id="2_j7ovb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wmwsv"]
-size = Vector2(188, 170)
+size = Vector2(54, 170)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vurco"]
 size = Vector2(128, 128)

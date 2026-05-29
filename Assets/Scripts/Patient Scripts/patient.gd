@@ -62,11 +62,9 @@ func PatientInteractSystem():
 			label.visible = false
 			patience_bar.value = 0
 			patience_timer.wait_time = 7.0
-			chat_bubble.play_symptom_anim();
-			await get_tree().create_timer(2.0).timeout
-			chat_bubble.visible = false
-			waiting_for_cure = true
 			get_new_sickness();
+			chat_bubble.play_symptom_anim(); 
+			waiting_for_cure = true
 		else:
 			gettingCure.play()
 			serve_medicine();

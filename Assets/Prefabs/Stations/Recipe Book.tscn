@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://ba0ckvfiwashl" path="res://Assets/Sprites/Ingredients/oof_rock.png" id="8_e34go"]
 [ext_resource type="Texture2D" uid="uid://b4vb8ty457ep3" path="res://Assets/Sprites/Ingredients/star_flower.png" id="9_jyr5k"]
 [ext_resource type="Texture2D" uid="uid://d1ux8fs45cbk0" path="res://Assets/Sprites/Ingredients/dragon_scale.png" id="10_kfm4u"]
+[ext_resource type="Texture2D" uid="uid://dbfihs87lo8rt" path="res://Assets/Sprites/Sickness Icons/StarryCough.tres" id="10_ln562"]
 [ext_resource type="Texture2D" uid="uid://df1jptb64kers" path="res://Assets/Sprites/Processed Ingredient/boiled_nyaa_leaf.png" id="11_18wqi"]
 [ext_resource type="Texture2D" uid="uid://d07xxiv532qeh" path="res://Assets/Sprites/Antidote/De-meower.png" id="14_pynol"]
 [ext_resource type="Texture2D" uid="uid://c50od3wk565km" path="res://Assets/Sprites/Processed Ingredient/boiled_star_flower.png" id="15_2yhjo"]
@@ -48,7 +49,7 @@ atlas = ExtResource("8_1p8i2")
 
 [node name="RecipeBook" type="Node2D" unique_id=1057398287 node_paths=PackedStringArray("recipePages", "recipeUI")]
 script = ExtResource("1_l5iqb")
-recipePages = [NodePath("CanvasLayer/RecipeBookUI/Page 1"), NodePath("CanvasLayer/RecipeBookUI/Page 2"), NodePath("CanvasLayer/RecipeBookUI/Page 3"), NodePath("CanvasLayer/RecipeBookUI/Page 5"), NodePath("CanvasLayer/RecipeBookUI/Page 6"), NodePath("CanvasLayer/RecipeBookUI/Page 7"), NodePath("CanvasLayer/RecipeBookUI/Page 8"), NodePath("CanvasLayer/RecipeBookUI/Page 9")]
+recipePages = [NodePath("CanvasLayer/RecipeBookUI/Page 1"), NodePath("CanvasLayer/RecipeBookUI/Page 2"), NodePath("CanvasLayer/RecipeBookUI/Page 3"), NodePath("CanvasLayer/RecipeBookUI/Page 4"), NodePath("CanvasLayer/RecipeBookUI/Page 5"), NodePath("CanvasLayer/RecipeBookUI/Page 6"), NodePath("CanvasLayer/RecipeBookUI/Page 7"), NodePath("CanvasLayer/RecipeBookUI/Page 8"), NodePath("CanvasLayer/RecipeBookUI/Page 9")]
 recipeUI = NodePath("CanvasLayer/RecipeBookUI")
 
 [node name="Table" type="Sprite2D" parent="." unique_id=958087477]
@@ -81,15 +82,6 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="Label" type="Label" parent="CanvasLayer/RecipeBookUI" unique_id=1378001989]
-layout_mode = 0
-offset_left = 541.0
-offset_top = 492.0
-offset_right = 724.0
-offset_bottom = 515.0
-scale = Vector2(5, 5)
-text = "DIS A TEST, NIGGAAAAA"
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/RecipeBookUI" unique_id=1518067068]
 layout_mode = 0
@@ -425,14 +417,14 @@ custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 texture = SubResource("AtlasTexture_jyr5k")
 
-[node name="Starry Cough" type="Control" parent="CanvasLayer/RecipeBookUI/Page 3" unique_id=1729936291]
+[node name="Starry Cough" type="Control" parent="CanvasLayer/RecipeBookUI/Page 3" unique_id=835899221]
 anchors_preset = 0
 offset_left = 1045.0
 offset_top = 120.0
 offset_right = 1745.0
 offset_bottom = 870.0
 
-[node name="Starry Cough" type="Label" parent="CanvasLayer/RecipeBookUI/Page 3/Starry Cough" unique_id=453804393]
+[node name="Starry Cough" type="Label" parent="CanvasLayer/RecipeBookUI/Page 3/Starry Cough" unique_id=761597330]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -444,7 +436,7 @@ label_settings = SubResource("LabelSettings_1p8i2")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Starry Cough2" type="Label" parent="CanvasLayer/RecipeBookUI/Page 3/Starry Cough" unique_id=659461951]
+[node name="Starry Cough2" type="Label" parent="CanvasLayer/RecipeBookUI/Page 3/Starry Cough" unique_id=1710502675]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -458,7 +450,7 @@ label_settings = SubResource("LabelSettings_1p8i2")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Ingredient Steps" type="HBoxContainer" parent="CanvasLayer/RecipeBookUI/Page 3/Starry Cough" unique_id=346930423]
+[node name="Ingredient Steps" type="HBoxContainer" parent="CanvasLayer/RecipeBookUI/Page 3/Starry Cough" unique_id=1975408665]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -473,17 +465,96 @@ grow_vertical = 2
 scale = Vector2(2.2077339, 2.2077339)
 alignment = 1
 
-[node name="Head" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 3/Starry Cough/Ingredient Steps" unique_id=1465725328]
+[node name="Head" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 3/Starry Cough/Ingredient Steps" unique_id=1443405645]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 texture = ExtResource("6_jyr5k")
 
-[node name="Body" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 3/Starry Cough/Ingredient Steps/Head" unique_id=578239289]
+[node name="Body" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 3/Starry Cough/Ingredient Steps/Head" unique_id=540325030]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 0
 offset_right = 150.0
 offset_bottom = 150.0
 texture = ExtResource("7_kfm4u")
+
+[node name="Body2" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 3/Starry Cough/Ingredient Steps/Head" unique_id=1179641280]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 150.0
+texture = ExtResource("10_ln562")
+
+[node name="Page 4" type="Control" parent="CanvasLayer/RecipeBookUI" unique_id=787586451]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Buff Cat + Starry Cough" type="Control" parent="CanvasLayer/RecipeBookUI/Page 4" unique_id=1427963880]
+anchors_preset = 0
+offset_left = 190.0
+offset_top = 120.0
+offset_right = 890.0
+offset_bottom = 870.0
+
+[node name="Label" type="Label" parent="CanvasLayer/RecipeBookUI/Page 4/Buff Cat + Starry Cough" unique_id=344018449]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 32.0
+offset_top = 22.0
+offset_right = -13.0
+offset_bottom = 122.0
+grow_horizontal = 2
+text = "BUFF CAT
+
++ STARRY COUGH"
+label_settings = SubResource("LabelSettings_1p8i2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasLayer/RecipeBookUI/Page 4/Buff Cat + Starry Cough" unique_id=24426149]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 32.0
+offset_top = 623.0
+offset_right = -13.0
+offset_bottom = 768.0
+grow_horizontal = 2
+text = "UNMEWING PENICILLIN"
+label_settings = SubResource("LabelSettings_1p8i2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ingredient Steps" type="HBoxContainer" parent="CanvasLayer/RecipeBookUI/Page 4/Buff Cat + Starry Cough" unique_id=325069753]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -501.99976
+offset_top = -200.99997
+offset_right = -501.99976
+offset_bottom = -50.99997
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.4773982, 2.4773982)
+alignment = 1
+
+[node name="Buff Cat" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 4/Buff Cat + Starry Cough/Ingredient Steps" unique_id=2000559926]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+texture = SubResource("AtlasTexture_jyr5k")
+
+[node name="Buff Cat2" type="TextureRect" parent="CanvasLayer/RecipeBookUI/Page 4/Buff Cat + Starry Cough/Ingredient Steps/Buff Cat" unique_id=1599747660]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 0
+offset_left = -4.555073
+offset_top = -10.091244
+offset_right = 145.44495
+offset_bottom = 139.90875
+texture = ExtResource("10_ln562")
 
 [node name="Page 5" type="Control" parent="CanvasLayer/RecipeBookUI" unique_id=1471152297]
 visible = false
@@ -1245,7 +1316,7 @@ offset_bottom = 100.0
 grow_horizontal = 2
 text = "UNMEOWING
 
-DE-NNERBONE"
+PENICILLIN"
 label_settings = SubResource("LabelSettings_1p8i2")
 horizontal_alignment = 1
 vertical_alignment = 1
