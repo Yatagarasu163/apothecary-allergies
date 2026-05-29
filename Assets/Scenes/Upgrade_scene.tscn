@@ -9,10 +9,12 @@
 [ext_resource type="Script" uid="uid://baybuxlfycpfa" path="res://Assets/Scripts/add.gd" id="3_rj8er"]
 [ext_resource type="Texture2D" uid="uid://caxwgkvdikwr8" path="res://Assets/Sprites/Table_Upgrade.png" id="4_p0fs1"]
 [ext_resource type="Script" uid="uid://fm34wrx7ifum" path="res://Assets/Scripts/boiler.gd" id="7_n6mhv"]
+[ext_resource type="Texture2D" uid="uid://cmqkiuiphk2ws" path="res://Assets/Sprites/Upgrades/Stopwatch.png" id="7_r43vx"]
 [ext_resource type="Texture2D" uid="uid://cbcm7oe162d7o" path="res://Assets/Sprites/Sprite Sheets/Coin_Spin_Animation.png" id="7_rj8er"]
 [ext_resource type="Script" uid="uid://bv6mhy0g468pp" path="res://Assets/Scripts/coin.gd" id="7_ydlsn"]
 [ext_resource type="Script" uid="uid://p01vwsgxn528" path="res://Assets/Scripts/table (2).gd" id="9_iss57"]
 [ext_resource type="Script" uid="uid://c5g3l0x0c6kre" path="res://Assets/Scripts/next_day.gd" id="11_efc27"]
+[ext_resource type="Texture2D" uid="uid://qhpqmb3v324j" path="res://Assets/Sprites/Upgrades/Next_Day_Button.png" id="12_fmeyr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gjbyp"]
 font = ExtResource("1_hycid")
@@ -84,20 +86,41 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2lmr"]
+atlas = ExtResource("12_fmeyr")
+region = Rect2(4, 22, 106, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6sdh"]
+atlas = ExtResource("12_fmeyr")
+region = Rect2(4, 3, 106, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chgne"]
+atlas = ExtResource("12_fmeyr")
+region = Rect2(4, 41, 106, 18)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_efc27"]
 animations = [{
-"frames": [],
-"loop": true,
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2lmr")
+}],
+"loop": false,
 "name": &"hover",
 "speed": 5.0
 }, {
-"frames": [],
-"loop": true,
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6sdh")
+}],
+"loop": false,
 "name": &"idle",
 "speed": 5.0
 }, {
-"frames": [],
-"loop": true,
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chgne")
+}],
+"loop": false,
 "name": &"pressed",
 "speed": 5.0
 }]
@@ -189,6 +212,7 @@ script = ExtResource("2_8upmy")
 upgrades = [NodePath("Upgrade Increments/AnimatedSprite2D"), NodePath("Upgrade Increments/AnimatedSprite2D2"), NodePath("Upgrade Increments/AnimatedSprite2D3"), NodePath("Upgrade Increments/AnimatedSprite2D4"), NodePath("Upgrade Increments/AnimatedSprite2D5")]
 
 [node name="Pestle Sprite" type="TextureRect" parent="CanvasLayer/Pestle" unique_id=2118118887]
+texture_filter = 3
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -245,6 +269,15 @@ scale = Vector2(2.465513, 2.465513)
 sprite_frames = SubResource("SpriteFrames_8upmy")
 animation = &"idle"
 centered = false
+
+[node name="Stopwatch" type="TextureRect" parent="CanvasLayer/Pestle" unique_id=1847767948]
+layout_mode = 0
+offset_left = 154.0
+offset_top = -115.0
+offset_right = 194.0
+offset_bottom = -75.0
+scale = Vector2(5.50788, 5.50788)
+texture = ExtResource("7_r43vx")
 
 [node name="Boiler" type="Control" parent="CanvasLayer" unique_id=1276350966 node_paths=PackedStringArray("upgrades")]
 layout_mode = 3
@@ -314,6 +347,15 @@ animation = &"yes_upgrade"
 position = Vector2(44.495033, 0)
 sprite_frames = SubResource("SpriteFrames_g2lmr")
 animation = &"yes_upgrade"
+
+[node name="Stopwatch" type="TextureRect" parent="CanvasLayer/Boiler" unique_id=224636934]
+layout_mode = 0
+offset_left = 742.0
+offset_top = -115.0
+offset_right = 782.0
+offset_bottom = -75.0
+scale = Vector2(5.50788, 5.50788)
+texture = ExtResource("7_r43vx")
 
 [node name="Table" type="Control" parent="CanvasLayer" unique_id=1162563595 node_paths=PackedStringArray("upgrades")]
 layout_mode = 3
@@ -399,18 +441,21 @@ sprite_frames = SubResource("SpriteFrames_g2lmr")
 animation = &"yes_upgrade"
 
 [node name="Next Day" type="Button" parent="CanvasLayer" unique_id=572954216]
-offset_left = 1628.0
-offset_top = 948.99994
-offset_right = 1707.0
-offset_bottom = 979.99994
-scale = Vector2(3.1499083, 3.1499083)
-text = "Next Day"
+offset_left = 1402.0001
+offset_top = 899.00006
+offset_right = 1544.5328
+offset_bottom = 930.00006
+scale = Vector2(3.0168507, 3.0168507)
+text = "-"
+flat = true
 script = ExtResource("11_efc27")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Next Day" unique_id=2084828772]
 z_index = 100
+scale = Vector2(1.344756, 1.344756)
 sprite_frames = SubResource("SpriteFrames_efc27")
-animation = &"idle"
+animation = &"pressed"
+centered = false
 
 [node name="Coin" type="Control" parent="CanvasLayer" unique_id=1646371407]
 layout_mode = 3

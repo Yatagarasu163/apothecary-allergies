@@ -1,12 +1,3 @@
 [gd_scene format=3 uid="uid://cjhhn3uwnoqc3"]
 
-[ext_resource type="PackedScene" uid="uid://crw08vlyljkh7" path="res://Assets/Prefabs/player.tscn" id="1_n6ix6"]
-[ext_resource type="PackedScene" uid="uid://b40l382tqoc3" path="res://Assets/Prefabs/Stations/Pestle.tscn" id="2_0of8k"]
-
 [node name="MainLevel" type="Node2D" unique_id=1153300467]
-
-[node name="Player" parent="." unique_id=1739173272 instance=ExtResource("1_n6ix6")]
-position = Vector2(398, 214)
-
-[node name="Pestle" parent="." unique_id=205812332 instance=ExtResource("2_0of8k")]
-position = Vector2(636, 319)
