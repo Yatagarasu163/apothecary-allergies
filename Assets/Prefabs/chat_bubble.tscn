@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bp0yuboa6xdef"]
 
 [ext_resource type="Script" uid="uid://ctywyjqh1b7rl" path="res://Assets/Scripts/chat_bubble.gd" id="1_nragh"]
-[ext_resource type="Texture2D" uid="uid://c53wg8pq2wx7k" path="res://icon.svg" id="2_6lmn4"]
 [ext_resource type="Texture2D" uid="uid://ddc7sxtk62lj4" path="res://Assets/Sprites/SpeechBubble.png" id="2_n1kwa"]
+[ext_resource type="Texture2D" uid="uid://drx10l61gxk4m" path="res://Assets/Sprites/Sickness Icons/BuffCat.png" id="3_n1kwa"]
 
 [node name="ChatBubble" type="Node2D" unique_id=629623447]
 script = ExtResource("1_nragh")
@@ -14,6 +14,6 @@ scale = Vector2(4, 4)
 texture = ExtResource("2_n1kwa")
 
 [node name="SymptomSprite" type="Sprite2D" parent="." unique_id=1282594428]
-visible = false
+position = Vector2(0, -15)
 scale = Vector2(3.5, 3.5)
-texture = ExtResource("2_6lmn4")
+texture = ExtResource("3_n1kwa")
