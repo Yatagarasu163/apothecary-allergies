@@ -63,10 +63,10 @@ func goToNextDay()->void:
 		next_day_text.visible = true
 		if(Input.is_action_just_pressed("Enter")):
 			next_day_text.visible = false;
-			get_tree().change_scene_to_file("res://Assets/Scenes/Upgrade_scene.tscn");
 			print("Tomorrow will be another day")
 			GameManager.newDaying = true
 			await get_tree().create_timer(2).timeout;
+			get_tree().change_scene_to_file("res://Assets/Scenes/Upgrade_scene.tscn");
 			GameManager.newDaying = false
 			position = startPosition
 			patient_spawner.start_next_day()

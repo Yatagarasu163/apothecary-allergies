@@ -137,17 +137,16 @@ func check_player_interaction() -> void:
 			# Checks if the amount of items is less than 3
 			if(total_visible_items < 3):
 				# If the pestle has already grinded something, then pick it up
-				if has_grinded_item and items_to_grind[0] > GameManager.items.RUBBISH:
+				if has_grinded_item and items_to_grind[0] >= GameManager.items.RUBBISH:
+					print("HMMM Take")
 					if GameManager.player_inventory == null:
 						print("Picked up grinded item!");
 						total_visible_items = 0;
 						GameManager.player_inventory = items_to_grind[0];
 						if GameManager.player_inventory != GameManager.items.RUBBISH:
-							GameManager.player_inventory_sprite = GameManager.items_sprites\
-							[GameManager.player_inventory];
+							GameManager.player_inventory_sprite = GameManager.items_sprites[GameManager.player_inventory];
 						else:
-							GameManager.player_inventory_sprite = GameManager.items_sprites\
-							[GameManager.items.RUBBISH];
+							GameManager.player_inventory_sprite = GameManager.items_sprites[GameManager.items.RUBBISH];
 						items_to_grind = [];
 					else:
 						print("Player already has an item!");
@@ -155,6 +154,7 @@ func check_player_interaction() -> void:
 					has_grinded_item = false;
 				# Else, then it is just the player adding another item to the grinder.
 				else:
+					print("HMMM add") 
 					add_item();
 			else:
 				print("You cannot add anymore items!");
