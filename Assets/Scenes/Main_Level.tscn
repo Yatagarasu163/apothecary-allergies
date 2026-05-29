@@ -1,3 +1,140 @@
 [gd_scene format=3 uid="uid://cjhhn3uwnoqc3"]
 
+[ext_resource type="FontFile" uid="uid://sa0jbshwh31s" path="res://Assets/Fonts/LowresPixel-Regular.otf" id="1_0e75d"]
+[ext_resource type="Script" uid="uid://cc5cl4ypovh21" path="res://start_button.gd" id="2_ft0oo"]
+[ext_resource type="Texture2D" uid="uid://xxyjqsa2qtf" path="res://Assets/Sprites/Start_Menu_Button_Highlighted.png" id="3_xhncm"]
+[ext_resource type="Texture2D" uid="uid://dhq5hokvelp3m" path="res://Assets/Sprites/Start_Menu_Button.png" id="4_ji5u7"]
+[ext_resource type="Texture2D" uid="uid://dwu0webnm2f6m" path="res://Assets/Sprites/Start_Menu_Button_Pressed.png" id="5_ni0wm"]
+[ext_resource type="Script" uid="uid://50v207knuh1x" path="res://exit_button.gd" id="6_7gyyy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_c2ltq"]
+font = ExtResource("1_0e75d")
+font_size = 128
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqbe1"]
+atlas = ExtResource("3_xhncm")
+region = Rect2(9, 0, 79, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1kr7"]
+atlas = ExtResource("4_ji5u7")
+region = Rect2(9, 0, 79, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktbps"]
+atlas = ExtResource("5_ni0wm")
+region = Rect2(9, 0, 79, 21)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rh74t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqbe1")
+}],
+"loop": true,
+"name": &"hover",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1kr7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktbps")
+}],
+"loop": true,
+"name": &"pressed",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvtyf"]
+atlas = ExtResource("3_xhncm")
+region = Rect2(9, 21, 79, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwtel"]
+atlas = ExtResource("4_ji5u7")
+region = Rect2(9, 21, 79, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iv8hr"]
+atlas = ExtResource("5_ni0wm")
+region = Rect2(9, 21, 79, 21)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hky6v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvtyf")
+}],
+"loop": true,
+"name": &"hover",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwtel")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iv8hr")
+}],
+"loop": true,
+"name": &"pressed",
+"speed": 5.0
+}]
+
 [node name="MainLevel" type="Node2D" unique_id=1153300467]
+
+[node name="Label" type="Label" parent="." unique_id=14352704]
+offset_left = 273.0
+offset_top = 109.0
+offset_right = 1544.0
+offset_bottom = 284.0
+text = "Apothecary Allergies"
+label_settings = SubResource("LabelSettings_c2ltq")
+
+[node name="Start_Button" type="Button" parent="." unique_id=325110178]
+offset_left = 588.0
+offset_top = 415.0
+offset_right = 1126.0
+offset_bottom = 560.0
+action_mode = 0
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_ft0oo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Start_Button" unique_id=1716166605]
+position = Vector2(73, -6.9999995)
+scale = Vector2(6.880952, 6.8809524)
+sprite_frames = SubResource("SpriteFrames_rh74t")
+animation = &"pressed"
+centered = false
+
+[node name="Exit_Button" type="Button" parent="." unique_id=1743094352]
+offset_left = 668.0
+offset_top = 653.0
+offset_right = 1200.0
+offset_bottom = 799.0
+flat = true
+script = ExtResource("6_7gyyy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Exit_Button" unique_id=290307984]
+position = Vector2(-3.9999957, 1.0000006)
+scale = Vector2(6.785714, 6.785714)
+sprite_frames = SubResource("SpriteFrames_hky6v")
+animation = &"pressed"
+centered = false
+
+[connection signal="mouse_entered" from="Start_Button" to="Start_Button" method="mouse_entered"]
+[connection signal="mouse_exited" from="Start_Button" to="Start_Button" method="mouse_exited"]
+[connection signal="pressed" from="Start_Button" to="Start_Button" method="mouse_pressed"]
+[connection signal="mouse_entered" from="Exit_Button" to="Exit_Button" method="mouse_entered"]
+[connection signal="mouse_exited" from="Exit_Button" to="Exit_Button" method="mouse_exited"]
+[connection signal="pressed" from="Exit_Button" to="Exit_Button" method="mouse_pressed"]

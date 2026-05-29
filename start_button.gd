@@ -1,0 +1,18 @@
+extends Button
+
+@onready var anim = $AnimatedSprite2D;
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	anim.play("idle");
+
+func mouse_entered() -> void:
+	anim.play("hover");
+
+func mouse_exited() -> void:
+	anim.play("idle");
+	
+func mouse_pressed() -> void:
+	anim.play("pressed");
+	get_tree().change_scene_to_file("res://Assets/Scenes/testing_scene.tscn");
