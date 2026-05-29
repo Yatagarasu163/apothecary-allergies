@@ -53,10 +53,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c5sqm"]
-size = Vector2(52.5, 50.375)
+size = Vector2(11.25, 50.375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i2c3m"]
-size = Vector2(32, 19.75)
+size = Vector2(32, 31.5)
 
 [sub_resource type="Gradient" id="Gradient_i2c3m"]
 offsets = PackedFloat32Array(0.11405835, 0.6100796)
@@ -70,6 +70,7 @@ fill_from = Vector2(0.5, 0.5)
 [node name="Boiler" type="Node2D" unique_id=1355668019]
 scale = Vector2(4, 4)
 script = ExtResource("1_c5sqm")
+boiling_timer = 5.0
 
 [node name="Boiler Sprite" type="AnimatedSprite2D" parent="." unique_id=548914325]
 light_mask = 2
@@ -81,6 +82,7 @@ frame_progress = 0.08486358
 [node name="Collision Detector" type="Area2D" parent="." unique_id=1292967573]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collision Detector" unique_id=501262757]
+position = Vector2(0.125, 0)
 shape = SubResource("RectangleShape2D_c5sqm")
 
 [node name="Items" type="Node2D" parent="." unique_id=762423721]
@@ -94,7 +96,7 @@ texture = ExtResource("3_i2c3m")
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=635866809]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1949838909]
-position = Vector2(0, 6.125)
+position = Vector2(0, 0.25)
 shape = SubResource("RectangleShape2D_i2c3m")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=581472478]

@@ -13,5 +13,5 @@ symptom_display_delay = 1.5
 texture = ExtResource("2_6lmn4")
 
 [node name="SymptomSprite" type="Sprite2D" parent="." unique_id=1282594428]
-scale = Vector2(0.3203125, 0.3203125)
+scale = Vector2(3, 3)
 texture = ExtResource("2_6lmn4")

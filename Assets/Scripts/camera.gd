@@ -2,7 +2,7 @@ extends Camera2D
 class_name CameraControl
 
 @export var camMoveSpeed: float = 15
-@onready var current_item_gui = $TextureRect;
+@onready var current_item_gui = $"Control/ItemBoxIcon/Item Icon";
 var currentTargetPosition: Vector2
 
 func _process(_delta: float) -> void:

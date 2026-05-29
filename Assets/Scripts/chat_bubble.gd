@@ -7,7 +7,7 @@ var symptom_list_textures: Array[Texture] = [
 ];
 @onready var symptom_sprite = $SymptomSprite;
 
-@export var symptom_display_delay: float = 1.0;
+@export var symptom_display_delay: float = 6.0;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 func play_symptom_anim() -> void:
 	print("PLAYING SYMPTOM ANIM")
 	visible = true;
-	for symptom in symptom_list:
+	for symptom in GameManager.current_sickness:
 		symptom_sprite.texture = GameManager.symptom_sprites[symptom];
 		symptom_sprite.visible = true;
 		match symptom:

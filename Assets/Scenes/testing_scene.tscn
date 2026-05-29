@@ -39,7 +39,7 @@ size = Vector2(113, 1017.375)
 size = Vector2(121.00006, 436.6875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7tmfp"]
-size = Vector2(4.033333, 1.7799988)
+size = Vector2(4.033333, 11.169999)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j6xku"]
 size = Vector2(4.122221, 1.5100021)
@@ -272,10 +272,11 @@ fill_to = Vector2(0, 1)
 
 [node name="Testing Scene" type="Node2D" unique_id=1542158696]
 
+[node name="Camera2D" parent="." unique_id=1833252064 instance=ExtResource("5_rpgfy")]
+position = Vector2(0, -65)
+
 [node name="Player" parent="." unique_id=2026092582 instance=ExtResource("1_eegtx")]
 position = Vector2(619, 574)
-
-[node name="Camera2D" parent="." unique_id=1833252064 instance=ExtResource("5_rpgfy")]
 
 [node name="Shop Layout" type="Node2D" parent="." unique_id=1616522250]
 
@@ -318,10 +319,11 @@ shape = SubResource("RectangleShape2D_vapop")
 [node name="ServingArea" type="Area2D" parent="Shop Layout" unique_id=1463895568 node_paths=PackedStringArray("camera_2d")]
 position = Vector2(905, 501)
 script = ExtResource("2_7tmfp")
+roomCamPosition = Vector2(0, -65)
 camera_2d = NodePath("../../Camera2D")
 
 [node name="ServingAreaCollision" type="CollisionShape2D" parent="Shop Layout/ServingArea" unique_id=1375387400]
-position = Vector2(-392.5, 464)
+position = Vector2(-392.5, 229.25)
 scale = Vector2(90, 50)
 shape = SubResource("RectangleShape2D_7tmfp")
 
@@ -411,17 +413,40 @@ item_sprite = ExtResource("11_4odsj")
 position = Vector2(1700, 180)
 
 [node name="Pestle" parent="Shop Stuff" unique_id=205812332 instance=ExtResource("4_oceud")]
-position = Vector2(1200, 700)
+position = Vector2(1213, 637)
 interaction_range = 1.5
 
 [node name="Boiler" parent="Shop Stuff" unique_id=1355668019 instance=ExtResource("8_mepfo")]
-position = Vector2(1200, 500)
+position = Vector2(1213, 512)
 
 [node name="RecipeBook" parent="Shop Stuff" unique_id=1057398287 instance=ExtResource("10_35qsv")]
-position = Vector2(300, 800)
+position = Vector2(319, 349)
 
-[node name="Table" parent="Shop Stuff" unique_id=1914519163 instance=ExtResource("16_vapop")]
-position = Vector2(800, 180)
+[node name="Tables" type="Node2D" parent="Shop Stuff" unique_id=705874414]
+
+[node name="Table" parent="Shop Stuff/Tables" unique_id=1914519163 instance=ExtResource("16_vapop")]
+position = Vector2(1086, 514)
+
+[node name="Table2" parent="Shop Stuff/Tables" unique_id=699653528 instance=ExtResource("16_vapop")]
+position = Vector2(957, 514)
+
+[node name="Table3" parent="Shop Stuff/Tables" unique_id=368029458 instance=ExtResource("16_vapop")]
+position = Vector2(957, 638)
+
+[node name="Table4" parent="Shop Stuff/Tables" unique_id=588237897 instance=ExtResource("16_vapop")]
+position = Vector2(1085, 638)
+
+[node name="Table5" parent="Shop Stuff/Tables" unique_id=1909470830 instance=ExtResource("16_vapop")]
+position = Vector2(1342, 514)
+
+[node name="Table6" parent="Shop Stuff/Tables" unique_id=664506026 instance=ExtResource("16_vapop")]
+position = Vector2(1341, 638)
+
+[node name="Table7" parent="Shop Stuff/Tables" unique_id=2083219211 instance=ExtResource("16_vapop")]
+position = Vector2(1471, 514)
+
+[node name="Table8" parent="Shop Stuff/Tables" unique_id=906227180 instance=ExtResource("16_vapop")]
+position = Vector2(1470, 638)
 
 [connection signal="body_entered" from="Shop Layout/ServingArea" to="Shop Layout/ServingArea" method="_on_body_entered"]
 [connection signal="body_entered" from="Shop Layout/KitchenArea" to="Shop Layout/KitchenArea" method="_on_body_entered"]
