@@ -1,6 +1,6 @@
 extends Node2D;
 
-var player_score: int
+var player_score: int = 0;
 
 #THESE VAR IS USE FOR PATIENT SPAWNER
 # DETECT THE AMOUNT OF PATIENT ON SCREEN (FOR PATIENT_SPAWNER)
@@ -117,10 +117,22 @@ var current_sickness = [];
 
 enum upgrade_category {TABLE, PESTLE, BOILER}
 
+var max_upgrades = {
+	upgrade_category.TABLE: 8,
+	upgrade_category.PESTLE: 5,
+	upgrade_category.BOILER: 5,
+}
+
 var upgrades = {
-	upgrade_category.TABLE: 0,
+	upgrade_category.TABLE: 5,
 	upgrade_category.PESTLE: 0,
 	upgrade_category.BOILER: 0
+}
+
+var upgrade_prices = {
+	upgrade_category.TABLE: [10, 10, 15, 15, 20, 20, 25, 30],
+	upgrade_category.PESTLE: [20, 40, 60, 80, 100],
+	upgrade_category.BOILER: [30, 50, 70, 90, 110],
 }
 
 func sort_recipe_key(recipe: Array) -> Array:

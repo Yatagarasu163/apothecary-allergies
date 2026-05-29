@@ -7,6 +7,10 @@
 [node name="OrderPaper" type="Control" unique_id=832149662]
 layout_mode = 3
 anchors_preset = 0
+offset_left = -20.0
+offset_top = -9.0
+offset_right = -20.0
+offset_bottom = -9.0
 script = ExtResource("1_prai2")
 
 [node name="Papir" type="TextureRect" parent="." unique_id=1904680325]

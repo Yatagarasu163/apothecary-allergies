@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://lku2iex7kybq" path="res://Assets/Prefabs/Stations/Recipe Book.tscn" id="10_35qsv"]
 [ext_resource type="Texture2D" uid="uid://ba0ckvfiwashl" path="res://Assets/Sprites/Ingredients/oof_rock.png" id="10_lpbfe"]
 [ext_resource type="Texture2D" uid="uid://d1ux8fs45cbk0" path="res://Assets/Sprites/Ingredients/dragon_scale.png" id="11_4odsj"]
-[ext_resource type="Script" uid="uid://cbhbvodiqlf0f" path="res://Assets/Scenes/table_manager.gd" id="16_lpbfe"]
+[ext_resource type="Script" uid="uid://cbhbvodiqlf0f" path="res://Assets/Scripts/table_manager.gd" id="16_lpbfe"]
 [ext_resource type="PackedScene" uid="uid://duuei02ys6c5y" path="res://Assets/Prefabs/Stations/Table.tscn" id="16_vapop"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eegtx"]
