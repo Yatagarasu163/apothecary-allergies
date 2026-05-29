@@ -32,7 +32,7 @@ func _process(_delta: float) -> void:
 		current_item_gui.visible = true;
 	position = lerp(position, currentTargetPosition, camMoveSpeed * _delta);
 	
-	if GameManager.nextDaying:
+	if GameManager.newDaying:
 		curtain.position.y = lerp(curtain.position.y, 0.0, curtainSpeed / 10)
 		currentTargetPosition = Vector2(0,-65)
 	else: 

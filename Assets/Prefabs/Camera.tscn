@@ -194,6 +194,7 @@ animations = [{
 [node name="Camera2D" type="Camera2D" unique_id=1833252064]
 anchor_mode = 0
 script = ExtResource("1_l7rmy")
+openCurtainY = -900.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=446290443]
 visible = false
