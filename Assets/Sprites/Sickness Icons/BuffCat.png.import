@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://drx10l61gxk4m"
-path="res://.godot/imported/Sickness1.png-6441ce0f6f44a279b80e295ce502ded2.ctex"
+path="res://.godot/imported/BuffCat.png-d8f35465fb3efc5e108ad423415c5c74.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Sickness Icons/Sickness1.png"
-dest_files=["res://.godot/imported/Sickness1.png-6441ce0f6f44a279b80e295ce502ded2.ctex"]
+source_file="res://Assets/Sprites/Sickness Icons/BuffCat.png"
+dest_files=["res://.godot/imported/BuffCat.png-d8f35465fb3efc5e108ad423415c5c74.ctex"]
 
 [params]
 
