@@ -124,6 +124,12 @@ func serve_medicine() -> void:
 		GameManager.player_inventory = null;
 		GameManager.player_inventory_sprite = null;
 		patien_status = true;
+		
+		GameManager.player_score += 1
+		if patience_timer.time_left > 2:
+			GameManager.player_score += 1
+		if patience_timer.time_left > 5:
+			GameManager.player_score += 1
 	else:
 		label.text = "That's not my allergy!";
 		label.visible = true;
