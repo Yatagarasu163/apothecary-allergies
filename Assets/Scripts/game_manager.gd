@@ -1,5 +1,7 @@
 extends Node2D;
 
+var player_score: int
+
 #THESE VAR IS USE FOR PATIENT SPAWNER
 # DETECT THE AMOUNT OF PATIENT ON SCREEN (FOR PATIENT_SPAWNER)
 var amount_of_patient_on_screen = 0;
