@@ -2,17 +2,17 @@
 
 [ext_resource type="FontFile" uid="uid://sa0jbshwh31s" path="res://Assets/Fonts/LowresPixel-Regular.otf" id="1_hycid"]
 [ext_resource type="Texture2D" uid="uid://dtxhpjux25t4r" path="res://Assets/Sprites/Recipe Book/Grinder_Atlas.tres" id="2_1stmj"]
-[ext_resource type="Script" uid="uid://b8ieyttnym2tq" path="res://Assets/Scenes/pestle.gd" id="2_8upmy"]
+[ext_resource type="Script" uid="uid://b8ieyttnym2tq" path="res://Assets/Scripts/pestle (2).gd" id="2_8upmy"]
 [ext_resource type="Texture2D" uid="uid://6qwlsn0mevbh" path="res://Assets/Sprites/Upgrades/Upgrade_Step.png" id="3_b0nj8"]
 [ext_resource type="Texture2D" uid="uid://om8oh72t3or1" path="res://Assets/Sprites/Recipe Book/Boiler_Atlas.tres" id="3_kjch3"]
 [ext_resource type="Texture2D" uid="uid://bt1hmpkq2flpk" path="res://Assets/Sprites/Upgrades/Plus_Button.png" id="3_p0fs1"]
-[ext_resource type="Script" uid="uid://baybuxlfycpfa" path="res://Assets/Scenes/add.gd" id="3_rj8er"]
+[ext_resource type="Script" uid="uid://baybuxlfycpfa" path="res://Assets/Scripts/add.gd" id="3_rj8er"]
 [ext_resource type="Texture2D" uid="uid://caxwgkvdikwr8" path="res://Assets/Sprites/Table_Upgrade.png" id="4_p0fs1"]
-[ext_resource type="Script" uid="uid://fm34wrx7ifum" path="res://Assets/Scenes/boiler.gd" id="7_n6mhv"]
+[ext_resource type="Script" uid="uid://fm34wrx7ifum" path="res://Assets/Scripts/boiler.gd" id="7_n6mhv"]
 [ext_resource type="Texture2D" uid="uid://cbcm7oe162d7o" path="res://Assets/Sprites/Sprite Sheets/Coin_Spin_Animation.png" id="7_rj8er"]
-[ext_resource type="Script" uid="uid://bv6mhy0g468pp" path="res://Assets/Scenes/coin.gd" id="7_ydlsn"]
-[ext_resource type="Script" uid="uid://p01vwsgxn528" path="res://Assets/Scenes/table.gd" id="9_iss57"]
-[ext_resource type="Script" uid="uid://c5g3l0x0c6kre" path="res://Assets/Scenes/next_day.gd" id="11_efc27"]
+[ext_resource type="Script" uid="uid://bv6mhy0g468pp" path="res://Assets/Scripts/coin.gd" id="7_ydlsn"]
+[ext_resource type="Script" uid="uid://p01vwsgxn528" path="res://Assets/Scripts/table (2).gd" id="9_iss57"]
+[ext_resource type="Script" uid="uid://c5g3l0x0c6kre" path="res://Assets/Scripts/next_day.gd" id="11_efc27"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gjbyp"]
 font = ExtResource("1_hycid")
