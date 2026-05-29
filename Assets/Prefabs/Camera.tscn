@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dv837tgm4bppl" path="res://Assets/Scripts/camera.gd" id="1_l7rmy"]
 [ext_resource type="Texture2D" uid="uid://c53wg8pq2wx7k" path="res://icon.svg" id="2_0t875"]
+[ext_resource type="PackedScene" uid="uid://dv2c4e5nvt2ck" path="res://Assets/Prefabs/OrderPaper.tscn" id="3_qg7nf"]
 
 [node name="Camera2D" type="Camera2D" unique_id=1833252064]
 anchor_mode = 0
@@ -21,3 +22,10 @@ offset_right = 163.0
 offset_bottom = 154.0
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_0t875")
+
+[node name="OrderPaper" parent="." unique_id=832149662 instance=ExtResource("3_qg7nf")]
+visible = false
+offset_left = 1610.0
+offset_top = 770.0
+offset_right = 1610.0
+offset_bottom = 770.0

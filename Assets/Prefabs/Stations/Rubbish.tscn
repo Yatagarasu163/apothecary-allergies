@@ -1,7 +1,61 @@
 [gd_scene format=3 uid="uid://d2oj4bhdh1lim"]
 
 [ext_resource type="Script" uid="uid://sfvo1qoae553" path="res://Assets/Scripts/Stations/rubbish.gd" id="1_1w3i3"]
-[ext_resource type="Texture2D" uid="uid://c53wg8pq2wx7k" path="res://icon.svg" id="2_evh7b"]
+[ext_resource type="Texture2D" uid="uid://45yvapnk231r" path="res://Assets/Sprites/Sprite Sheets/PotionTools.png" id="2_1w3i3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evh7b"]
+atlas = ExtResource("2_1w3i3")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxluw"]
+atlas = ExtResource("2_1w3i3")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wes2s"]
+atlas = ExtResource("2_1w3i3")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1c1o"]
+atlas = ExtResource("2_1w3i3")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qt86m"]
+atlas = ExtResource("2_1w3i3")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ggkyn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evh7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evh7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxluw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxluw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wes2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1c1o")
+}],
+"loop": true,
+"name": &"burning",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qt86m")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyw0i"]
 size = Vector2(75, 140.5)
@@ -10,11 +64,14 @@ size = Vector2(75, 140.5)
 size = Vector2(128, 128)
 
 [node name="Rubbish" type="Node2D" unique_id=55351558]
-texture_filter = 5
 script = ExtResource("1_1w3i3")
 
-[node name="Rubbish Sprite" type="Sprite2D" parent="." unique_id=1471421336]
-texture = ExtResource("2_evh7b")
+[node name="Rubbish Sprite" type="AnimatedSprite2D" parent="." unique_id=2046360247]
+position = Vector2(0.125, 0.125)
+scale = Vector2(3.9921875, 3.9921875)
+sprite_frames = SubResource("SpriteFrames_ggkyn")
+animation = &"burning"
+frame_progress = 0.2670952
 
 [node name="Collision Detector" type="Area2D" parent="." unique_id=46704245]
 

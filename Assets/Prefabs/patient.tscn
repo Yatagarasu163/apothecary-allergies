@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cw81w0syjwqdd" path="res://Assets/Sprites/Sprite Sheets/CustomerVarients.png" id="2_tkxci"]
 [ext_resource type="Texture2D" uid="uid://danr6lhqx2m" path="res://Assets/Sprites/Sprite Sheets/Sickness.png" id="3_hr5m6"]
 [ext_resource type="PackedScene" uid="uid://bp0yuboa6xdef" path="res://Assets/Prefabs/chat_bubble.tscn" id="4_tkxci"]
+[ext_resource type="Texture2D" uid="uid://b2so8rffbk8pu" path="res://Assets/Sprites/Patience_Bar_Empty.png" id="5_mfah6"]
+[ext_resource type="Texture2D" uid="uid://bg5pe0ffld4bv" path="res://Assets/Sprites/Patience_Bar_Full.png" id="6_x3cs4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hr5m6"]
 
@@ -75,12 +77,40 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tkxci"]
-size = Vector2(19.904455, 11.876862)
+[sub_resource type="AtlasTexture" id="AtlasTexture_pocpw"]
+atlas = ExtResource("3_hr5m6")
+region = Rect2(0, 64, 32, 32)
 
-[node name="Patient" type="Node2D" unique_id=1386610887]
+[sub_resource type="AtlasTexture" id="AtlasTexture_utfjr"]
+atlas = ExtResource("3_hr5m6")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_prkx0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pocpw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utfjr")
+}],
+"loop": true,
+"name": &"active",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tkxci"]
+size = Vector2(19.904455, 28.4558)
+
+[node name="Patient" type="Node2D" unique_id=1386610887 node_paths=PackedStringArray("CharacterSprite", "HeadSprite", "BodySprite", "BuffMiawSprite", "FireEyesSprite", "CoughinStarsSprite")]
 texture_filter = 3
 script = ExtResource("1_3c0vk")
+CharacterSprite = NodePath("CharacterBody2D/Character Sprite")
+HeadSprite = NodePath("CharacterBody2D/Character Sprite/Head")
+BodySprite = NodePath("CharacterBody2D/Character Sprite/Body")
+BuffMiawSprite = NodePath("CharacterBody2D/Character Sprite/Buff Miaw")
+FireEyesSprite = NodePath("CharacterBody2D/Character Sprite/Fire Eyes")
+CoughinStarsSprite = NodePath("CharacterBody2D/Character Sprite/Starry Cough")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=390868079 groups=["Patient"]]
 
@@ -88,34 +118,45 @@ script = ExtResource("1_3c0vk")
 scale = Vector2(6.402699, 6.402699)
 shape = SubResource("RectangleShape2D_hr5m6")
 
-[node name="Body" type="Sprite2D" parent="CharacterBody2D" unique_id=1002828061]
+[node name="Character Sprite" type="Node2D" parent="CharacterBody2D" unique_id=343797911]
+
+[node name="Body" type="Sprite2D" parent="CharacterBody2D/Character Sprite" unique_id=1002828061]
 scale = Vector2(4, 4)
 texture = ExtResource("2_tkxci")
 hframes = 4
 vframes = 2
 frame = 3
 
-[node name="Head" type="Sprite2D" parent="CharacterBody2D" unique_id=342883244]
+[node name="Head" type="Sprite2D" parent="CharacterBody2D/Character Sprite" unique_id=342883244]
 scale = Vector2(4, 4)
 texture = ExtResource("2_tkxci")
 hframes = 4
 vframes = 2
 frame = 7
 
-[node name="Buff Miaw" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=590828283]
+[node name="Buff Miaw" type="AnimatedSprite2D" parent="CharacterBody2D/Character Sprite" unique_id=590828283]
+visible = false
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_pocpw")
-animation = &"none"
+animation = &"active"
 
-[node name="Fire Eyes" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=996449405]
+[node name="Fire Eyes" type="AnimatedSprite2D" parent="CharacterBody2D/Character Sprite" unique_id=996449405]
+visible = false
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_utfjr")
-animation = &"none"
+animation = &"active"
+
+[node name="Starry Cough" type="AnimatedSprite2D" parent="CharacterBody2D/Character Sprite" unique_id=62289191]
+visible = false
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_prkx0")
+animation = &"active"
+frame_progress = 0.85459214
 
 [node name="Area2D" type="Area2D" parent="." unique_id=624450733]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=44697536]
-position = Vector2(-0.75, -105.03174)
+position = Vector2(-0.75, -158.03174)
 scale = Vector2(6.5060806, 6.393654)
 shape = SubResource("RectangleShape2D_tkxci")
 
@@ -128,5 +169,18 @@ offset_bottom = -86.0
 [node name="ChatBubble" parent="." unique_id=629623447 instance=ExtResource("4_tkxci")]
 position = Vector2(95, -100)
 
+[node name="Patience Bar" type="TextureProgressBar" parent="." unique_id=1483023181]
+offset_left = -143.0
+offset_top = -58.000008
+offset_right = -103.0
+offset_bottom = -18.000008
+scale = Vector2(3.8595023, 3.8595023)
+fill_mode = 2
+texture_under = ExtResource("6_x3cs4")
+texture_progress = ExtResource("5_mfah6")
+
+[node name="Patience Timer" type="Timer" parent="." unique_id=873031726]
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Patience Timer" to="." method="_on_patience_timer_timeout"]

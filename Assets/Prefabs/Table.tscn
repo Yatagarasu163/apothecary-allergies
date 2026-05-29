@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://duuei02ys6c5y"]
+
+[ext_resource type="Script" uid="uid://ca0vyx3h88fio" path="res://Assets/Scripts/table.gd" id="1_j7ovb"]
+[ext_resource type="Texture2D" uid="uid://cmd5hdqx527sx" path="res://Assets/Sprites/Table.png" id="2_j7ovb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wmwsv"]
+size = Vector2(188, 170)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vurco"]
+size = Vector2(128, 128)
+
+[node name="Table" type="Node2D" unique_id=1914519163]
+texture_filter = 5
+script = ExtResource("1_j7ovb")
+
+[node name="Table Sprite" type="Sprite2D" parent="." unique_id=1626858534]
+scale = Vector2(3.8496704, 4.428683)
+texture = ExtResource("2_j7ovb")
+
+[node name="Collision Detector" type="Area2D" parent="." unique_id=85105121]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision Detector" unique_id=1044364678]
+shape = SubResource("RectangleShape2D_wmwsv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=996541082]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=850902910]
+shape = SubResource("RectangleShape2D_vurco")
+
+[node name="TextureRect" type="Sprite2D" parent="." unique_id=1793239965]
+
+[connection signal="body_entered" from="Collision Detector" to="." method="body_entered"]
+[connection signal="body_exited" from="Collision Detector" to="." method="body_exited"]

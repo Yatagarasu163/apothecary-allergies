@@ -10,6 +10,8 @@ var total_visible_items: int = 0;
 var has_grinded_item: bool = false;
 var items_to_grind = [];
 
+@onready var light: PointLight2D= $PointLight2D;
+
 # INTERACTION AREA
 @onready var interactable_area = $"Collision Detector/CollisionShape2D";
 @onready var anim = $PestleSprite;
@@ -31,7 +33,6 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	check_item_visibility();
 	check_player_interaction();
-	
 
 func body_entered(body) -> void:
 	if body.is_in_group("Player"):
@@ -40,7 +41,7 @@ func body_entered(body) -> void:
 func body_exited(body) -> void:
 	if body.is_in_group("Player"):
 		is_player_inside = false;
-	
+
 func add_item() -> void:
 	if GameManager.player_inventory == null:
 		print("No item to add to the pestle!");
@@ -142,6 +143,7 @@ func check_player_interaction() -> void:
 						items_to_grind = [];
 					else:
 						print("Player already has an item!");
+						return;
 					has_grinded_item = false;
 				# Else, then it is just the player adding another item to the grinder.
 				else:

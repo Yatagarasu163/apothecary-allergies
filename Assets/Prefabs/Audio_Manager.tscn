@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bvskgbh6e0ohe"]
+
+[ext_resource type="Script" uid="uid://dckrmkouuwoi3" path="res://Assets/Scripts/audio_manager.gd" id="1_ug3v4"]
+
+[node name="AudioManager" type="Node2D" unique_id=1432097209]
+script = ExtResource("1_ug3v4")
+
+[node name="bgm" type="AudioStreamPlayer" parent="." unique_id=1570393179]
+volume_db = -0.16
