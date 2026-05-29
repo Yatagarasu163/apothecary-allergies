@@ -65,7 +65,7 @@ func goToNextDay()->void:
 			next_day_text.visible = false;
 			print("Tomorrow will be another day")
 			GameManager.newDaying = true
-			await get_tree().create_timer(2).timeout;
+			await get_tree().create_timer(1).timeout;
 			get_tree().change_scene_to_file("res://Assets/Scenes/Upgrade_scene.tscn");
 			GameManager.newDaying = false
 			position = startPosition

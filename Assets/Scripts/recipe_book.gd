@@ -2,6 +2,7 @@ extends Node2D
 
 @export var recipePages: Array[Control]
 @export var currentPage: int
+var isReading: bool
 
 @export var recipeUI: Node
 
@@ -19,7 +20,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if is_player_inside && Input.is_action_just_pressed("Add"):
+	if Input.is_action_just_pressed("Add"):
+		_on_prevous_page_pressed()
+	if Input.is_action_just_pressed("Interact"):
+		_on_next_page_pressed()
+	
+	if is_player_inside && Input.is_action_just_pressed("Add") and not isReading:
 		for page in recipePages:
 			page.visible = false;
 		recipePages[4].visible = true;
@@ -28,7 +34,6 @@ func _process(_delta: float) -> void:
 		recipeUI.visible = !recipeUI.visible;
 	if is_player_inside == false:
 		recipeUI.visible = false;
-		
 
 func updatePage():
 	recipePages[currentPage].visible = false
