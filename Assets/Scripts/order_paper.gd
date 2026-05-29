@@ -1,7 +1,8 @@
 extends Control
 
-@onready var symptom_1_sprite = $"Symptom 1";
-@onready var symptom_2_sprite = $"Symptom 2";
+@onready var symptom_1_sprite: Sprite2D = $"Symptom 1";
+@onready var symptom_2_sprite: Sprite2D = $"Symptom 2";
+@export var symptom_sprite: Array[Texture]
 
 func _ready() -> void:
 	symptom_1_sprite.visible = false;
@@ -33,11 +34,13 @@ func _process(_delta: float) -> void:
 				symptom_2_sprite.position.y = 135;
 				symptom_2_sprite.visible = true; 
 			else:
-				symptom_2_sprite.visible = false;
-				symptom_1_sprite.position.y = 135;
 				symptom_1_sprite.texture = GameManager.symptom_sprites[GameManager.current_sickness[0]];
 				symptom_1_sprite.rotation = deg_to_rad(0);
 				symptom_1_sprite.visible = true;
+				symptom_1_sprite.position.y = 135;
+				
+				symptom_2_sprite.visible = false;
+				symptom_2_sprite.rotation = 0;
 		else:
 			symptom_1_sprite.position.x = 168;
 			symptom_2_sprite.position.x = 168;
@@ -52,7 +55,7 @@ func _process(_delta: float) -> void:
 				symptom_1_sprite.position.y = 135;
 				symptom_1_sprite.texture = GameManager.symptom_sprites[GameManager.symptoms.BUFF_CAT];
 				symptom_1_sprite.visible = true;
-				symptom_2_sprite.position.y = 135;
+				symptom_2_sprite.position.y = 125;
 				symptom_2_sprite.texture = GameManager.symptom_sprites[GameManager.symptoms.FIRE_EYES];
 				symptom_2_sprite.visible = true;
 			elif GameManager.current_sickness.has(GameManager.symptoms.BUFF_CAT) && GameManager.current_sickness.has(GameManager.symptoms.STARRY_COUGH):

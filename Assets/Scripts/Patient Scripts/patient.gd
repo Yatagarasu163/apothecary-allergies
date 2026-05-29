@@ -12,7 +12,8 @@ var waiting_for_cure : bool = false
 @export var queue_point:Vector2 = Vector2(530, 600);
 @export var yeepee_point:Vector2 = Vector2(1399.0, 300.0)
 var current_sickness = null;
-
+#to show how many score we got on a single order
+var score_earn = 0;
 
 @export var CharacterSprite: Node2D
 @export var HeadSprite: Sprite2D
@@ -67,10 +68,10 @@ func PatientInteractSystem():
 			chat_bubble.play_symptom_anim(); 
 			waiting_for_cure = true
 		else:
+
 			gettingCure.pitch_scale = randf_range(0.5, 2.0);
 			gettingCure.play()
 			serve_medicine();
-			patience_timer.stop();
 
 func CheckSymptoms(symptoms: int):
 	match symptoms:
@@ -100,10 +101,10 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if(body.is_in_group("Player") && queueing == false):
 		interactable = true
 		if(!waiting_for_cure):
-			label.text = "Press K to take order"
+			label.text = "Press P to take order"
 			label.visible = true
 		else:
-			label.text = "Press K to give medicine"
+			label.text = "Press P to give medicine"
 	elif(body.is_in_group("Patient")):
 		speed = 0
 		queueing = true
@@ -123,17 +124,21 @@ func serve_medicine() -> void:
 	print(key);
 	if(given_medicine == key):
 		print("Taken the right cure!");
+		gettingCure.play();
 		GameManager.player_inventory = null;
 		GameManager.player_inventory_sprite = null;
 		patien_status = true;
 		
-		GameManager.player_score += 1
-		if patience_timer.time_left > 2:
-			GameManager.player_score += 1
-		if patience_timer.time_left > 5:
-			GameManager.player_score += 1
+		score_earn += 1
+		if patience_bar.value < 80:
+			score_earn += 1
+		if patience_bar.value < 50:
+			score_earn += 1
+		GameManager.player_score += score_earn
+		label.text = "+" + str(score_earn)
 	else:
 		label.text = "That's not my allergy!";
+		patience_bar.value += 5;
 		label.visible = true;
 		await get_tree().create_timer(2.0).timeout;
 		label.visible = false;
@@ -146,6 +151,7 @@ func check_patient_status() -> void:
 		patient_leave();
 
 func patient_leave()->void:
+	patience_timer.stop()
 	if(position.x < yeepee_point.x):
 		position.x += speed
 	elif(position.y > yeepee_point.y):
