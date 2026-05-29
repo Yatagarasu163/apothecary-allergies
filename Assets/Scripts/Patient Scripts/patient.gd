@@ -37,6 +37,7 @@ func _ready() -> void:
 	
 	chat_bubble.visible = false
 	label.visible = false
+	patience_bar.visible = false
 	position.x = queue_point.x
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -53,6 +54,7 @@ func get_new_sickness():
 func PatientInteractSystem():
 	if Input.is_action_just_pressed("Interact"):
 		if(!waiting_for_cure):
+			patience_bar.visible = true
 			label.visible = false
 			patience_bar.value = 0
 			patience_timer.wait_time = 7.0

@@ -6,6 +6,9 @@ extends CharacterBody2D;
 @export var slippery: float = 10
 var current_dash_cooldown: float = 0.0;
 
+@export_category("Sound")
+@export var walkingSound: AudioStreamPlayer
+
 @onready var anim := $"Player Sprite"
 @onready var light := $PointLight2D;
 @onready var next_day_text: Label = $NextDayText
@@ -22,6 +25,7 @@ func handleInput():
 	
 	moveDirection = Input.get_vector("WalkLeft","WalkRight","WalkUp","WalkDown")
 	velocity += moveDirection * base_speed;
+	walkingSound.playing = moveDirection != Vector2.ZERO
 	
 	if Input.is_action_just_pressed("Dash") && current_dash_cooldown <= 0:
 		current_dash_cooldown = dash_cooldown;

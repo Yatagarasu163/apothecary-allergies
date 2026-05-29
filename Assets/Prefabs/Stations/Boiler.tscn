@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c2fcdwmvfyklc" path="res://Assets/Scripts/Stations/boiler.gd" id="1_c5sqm"]
 [ext_resource type="Texture2D" uid="uid://45yvapnk231r" path="res://Assets/Sprites/Sprite Sheets/PotionTools.png" id="2_i2c3m"]
 [ext_resource type="Texture2D" uid="uid://d1ux8fs45cbk0" path="res://Assets/Sprites/Ingredients/dragon_scale.png" id="3_i2c3m"]
+[ext_resource type="AudioStream" uid="uid://bumtyf5pjj87x" path="res://Assets/Audio/Boiling.mp3" id="4_jqcmu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jqcmu"]
 atlas = ExtResource("2_i2c3m")
@@ -67,9 +68,10 @@ gradient = SubResource("Gradient_i2c3m")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[node name="Boiler" type="Node2D" unique_id=1355668019]
+[node name="Boiler" type="Node2D" unique_id=1355668019 node_paths=PackedStringArray("audio")]
 scale = Vector2(4, 4)
 script = ExtResource("1_c5sqm")
+audio = NodePath("AudioStreamPlayer")
 
 [node name="Boiler Sprite" type="AnimatedSprite2D" parent="." unique_id=548914325]
 light_mask = 2
@@ -103,6 +105,10 @@ energy = 2.0
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_i2c3m")
 texture_scale = 4.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1940141575]
+stream = ExtResource("4_jqcmu")
+volume_db = 5.0
 
 [connection signal="body_entered" from="Collision Detector" to="." method="body_entered"]
 [connection signal="body_exited" from="Collision Detector" to="." method="body_exited"]

@@ -3,6 +3,7 @@ extends Node2D
 # EDITABLE VARIABLES
 @export var boiling_timer: float = 3.0; 
 @export var interaction_range: float = 2.0;
+@export var audio: AudioStreamPlayer
 
 # VARIABLES
 var is_player_inside: bool = false;
@@ -52,7 +53,9 @@ func boil_item() -> void:
 		print("Interacting with the boiler!");
 		total_visible_items = 0;
 		boiler_sprite.play("Using");
+		audio.play(2)
 		await get_tree().create_timer(boiling_timer).timeout;
+		audio.stop()
 		boiler_sprite.play("Idle");
 		print("Boiled an item!");
 		item_to_boil = boiled_versions[item_to_boil];
