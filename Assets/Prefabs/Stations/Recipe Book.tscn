@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://yirbr82rvnec" path="res://Assets/Scripts/recipe_book.gd" id="1_l5iqb"]
 [ext_resource type="Texture2D" uid="uid://dw6blcmiogtmi" path="res://Assets/Sprites/SpellBook.png" id="2_706vf"]
+[ext_resource type="Texture2D" uid="uid://cmd5hdqx527sx" path="res://Assets/Sprites/Table.png" id="2_pe647"]
 [ext_resource type="Texture2D" uid="uid://b85aayqdj7764" path="res://Assets/Sprites/Recipe Book/SpellBook.png" id="3_3u5pv"]
 [ext_resource type="FontFile" uid="uid://sa0jbshwh31s" path="res://Assets/Fonts/LowresPixel-Regular.otf" id="4_7eswm"]
 [ext_resource type="Texture2D" uid="uid://om8oh72t3or1" path="res://Assets/Sprites/Recipe Book/Boiler_Atlas.tres" id="4_706vf"]
@@ -56,8 +57,13 @@ script = ExtResource("1_l5iqb")
 recipePages = [NodePath("CanvasLayer/RecipeBookUI/Page 1"), NodePath("CanvasLayer/RecipeBookUI/Page 2"), NodePath("CanvasLayer/RecipeBookUI/Page 3"), NodePath("CanvasLayer/RecipeBookUI/Page 5"), NodePath("CanvasLayer/RecipeBookUI/Page 6"), NodePath("CanvasLayer/RecipeBookUI/Page 7"), NodePath("CanvasLayer/RecipeBookUI/Page 8"), NodePath("CanvasLayer/RecipeBookUI/Page 9")]
 recipeUI = NodePath("CanvasLayer/RecipeBookUI")
 
-[node name="Book Sprite" type="Sprite2D" parent="." unique_id=1955881859]
-scale = Vector2(1.3734637, 1.3734637)
+[node name="Table" type="Sprite2D" parent="." unique_id=958087477]
+scale = Vector2(4, 4)
+texture = ExtResource("2_pe647")
+
+[node name="Book Sprite" type="Sprite2D" parent="Table" unique_id=1955881859]
+position = Vector2(0, -9)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_706vf")
 
 [node name="Collision Detector" type="Area2D" parent="." unique_id=605446250]
@@ -74,6 +80,7 @@ shape = SubResource("RectangleShape2D_arwjt")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=750066251]
 
 [node name="RecipeBookUI" type="Control" parent="CanvasLayer" unique_id=241845652]
+visible = false
 light_mask = 0
 z_index = 2
 layout_mode = 3

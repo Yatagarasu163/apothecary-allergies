@@ -1,7 +1,7 @@
 extends Node2D
 
 var is_player_inside: bool = false;
-@onready var item_sprite: Sprite2D = $TextureRect;
+@onready var item_sprite: Sprite2D = $ItemSprite;
 var item = null;
 
 func _process(_delta: float) -> void:

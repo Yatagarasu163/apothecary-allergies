@@ -14,6 +14,7 @@ func _ready() -> void:
 		page.visible = false;
 	recipePages[3].visible = true;
 	currentPage = 3;
+	z_index = position.y
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

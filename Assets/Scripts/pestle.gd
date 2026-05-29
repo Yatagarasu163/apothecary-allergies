@@ -28,6 +28,7 @@ var items_to_grind = [];
 func _ready() -> void:
 	total_visible_items = 0;
 	pestle_sprite.play("idle");
+	z_index = position.y
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

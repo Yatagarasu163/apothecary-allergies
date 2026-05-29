@@ -29,6 +29,8 @@ func handleInput():
 		await get_tree().create_timer(dash_cooldown).timeout;
 
 func handleSpriteAnim() -> void:
+	z_index = position.y
+	
 	if Input.is_action_just_pressed("WalkRight"): walkedRight = true
 	if Input.is_action_just_pressed("WalkLeft"): walkedRight = false
 	if Input.is_action_just_pressed("WalkDown"): walkedDown = true
