@@ -1,0 +1,158 @@
+[gd_scene format=3 uid="uid://8877nngw1rvj"]
+
+[ext_resource type="FontFile" uid="uid://sa0jbshwh31s" path="res://Assets/Fonts/LowresPixel-Regular.otf" id="1_fymnb"]
+[ext_resource type="Texture2D" uid="uid://k0p637tmcmpp" path="res://Assets/Sprites/Sprite Sheets/witch.png" id="7_ronfb"]
+[ext_resource type="Texture2D" uid="uid://danr6lhqx2m" path="res://Assets/Sprites/Sprite Sheets/Sickness.png" id="8_jjgok"]
+[ext_resource type="Texture2D" uid="uid://bv82ot6afbk1" path="res://Assets/Sprites/Antidote/Honey, it's a rock.png" id="10_h6it8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_c2ltq"]
+font = ExtResource("1_fymnb")
+font_size = 128
+
+[sub_resource type="LabelSettings" id="LabelSettings_7gyyy"]
+font = ExtResource("1_fymnb")
+font_size = 50
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebihn"]
+atlas = ExtResource("7_ronfb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4ukv"]
+atlas = ExtResource("7_ronfb")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0ojv"]
+atlas = ExtResource("7_ronfb")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kvxw"]
+atlas = ExtResource("7_ronfb")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31k2i"]
+atlas = ExtResource("7_ronfb")
+region = Rect2(0, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydfdc"]
+atlas = ExtResource("7_ronfb")
+region = Rect2(32, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0i3at"]
+atlas = ExtResource("7_ronfb")
+region = Rect2(64, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b60ru"]
+atlas = ExtResource("7_ronfb")
+region = Rect2(96, 256, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xhncm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebihn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4ukv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0ojv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kvxw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31k2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydfdc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0i3at")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b60ru")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2ltq"]
+atlas = ExtResource("8_jjgok")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rh74t"]
+atlas = ExtResource("8_jjgok")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nvtyf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2ltq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rh74t")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="MainLevel" type="Node2D" unique_id=1153300467]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=379069116]
+scale = Vector2(0.7, 0.7)
+transform = Transform2D(0.7, 0, 0, 0.7, 0, 0)
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=356989229]
+offset_right = 25.944397
+offset_bottom = 25.94439
+scale = Vector2(50.798237, 50.798237)
+color = Color(0.6008988, 0.0020854091, 0.817791, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=14352704]
+offset_left = 129.00006
+offset_top = 403.0
+offset_right = 980.00006
+offset_bottom = 664.0
+text = "Apothecary 
+Allergies"
+label_settings = SubResource("LabelSettings_c2ltq")
+
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=202304824]
+offset_left = 492.00006
+offset_top = 1070.0
+offset_right = 1206.0
+offset_bottom = 1194.0
+text = "Made by: 
+Ape Shied the Slave Machine"
+label_settings = SubResource("LabelSettings_7gyyy")
+
+[node name="Player Sprite" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=130508451]
+position = Vector2(290.99994, 1019.99994)
+scale = Vector2(10.128604, 10.107741)
+sprite_frames = SubResource("SpriteFrames_xhncm")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Buff Cat" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=980916206]
+position = Vector2(400.99994, 212)
+rotation = -0.5234459
+scale = Vector2(6.265935, 6.265935)
+sprite_frames = SubResource("SpriteFrames_nvtyf")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Buff Cat2" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=955501857]
+position = Vector2(1086, 402.99988)
+rotation = 0.5235988
+scale = Vector2(6.265935, 6.265935)
+sprite_frames = SubResource("SpriteFrames_nvtyf")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Potion" type="Sprite2D" parent="CanvasLayer" unique_id=1031334060]
+position = Vector2(1006.9823, 895.0404)
+scale = Vector2(12.43861, 12.412989)
+texture = ExtResource("10_h6it8")
